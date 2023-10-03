@@ -21,6 +21,10 @@ public class CategoriaService {
         return categorias;
     }
 
+    public Categoria getOne(Integer id) {
+      return repo.findById(id).orElse(null);
+    }
+
     public void add(Categoria categoria){
         repo.save(categoria);
     }

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/categorias")
@@ -26,4 +27,10 @@ public class CategoriaController {
     public List<Categoria> getAll(){
         return ser.getAll();
     }
+
+    @GetMapping("/{id}")
+    public Categoria getOne(@PathVariable int id){
+        return ser.getOne(id);
+    }
 }
+
