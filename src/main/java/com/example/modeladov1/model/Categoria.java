@@ -21,7 +21,7 @@ import lombok.ToString;
 @ToString
 @Data
 @Entity
-@Table(name = "Categoria")
+@Table(name = "categoria")
 public class Categoria {
 
     @Id
@@ -34,12 +34,10 @@ public class Categoria {
 
     // Getters y setters
 
-    @Column(name="getId_categoria")
     public Long getId_categoria() {
         return id_categoria;
     }
 
-    @Column(name="setId_categoria")
     public void setId_categoria(Long id_categoria) {
         this.id_categoria = id_categoria;
     }

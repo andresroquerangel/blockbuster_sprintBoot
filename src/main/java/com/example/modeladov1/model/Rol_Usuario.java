@@ -22,7 +22,7 @@ import lombok.ToString;
 @ToString
 @Data
 @Entity
-@Table(name = "Rol_Usuario")
+@Table(name = "rol_usuario")
 public class Rol_Usuario {
 
     @Id
@@ -32,12 +32,10 @@ public class Rol_Usuario {
 
     @ManyToOne
     @JoinColumn(name = "id_usuario")
-    @Column(name="usuario")
     private Usuario usuario;
 
     @ManyToOne
     @JoinColumn(name = "id_rol")
-    @Column(name="rol")
     private Rol rol;
 
     // Getters y setters

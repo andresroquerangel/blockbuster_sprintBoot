@@ -22,7 +22,7 @@ import lombok.ToString;
 @ToString
 @Data
 @Entity
-@Table(name = "Tienda")
+@Table(name = "tienda")
 public class Tienda {
 
     @Id

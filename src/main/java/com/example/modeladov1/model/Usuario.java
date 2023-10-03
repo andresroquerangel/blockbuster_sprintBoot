@@ -22,7 +22,7 @@ import lombok.ToString;
 @ToString
 @Data
 @Entity
-@Table(name = "Usuario")
+@Table(name = "usuario")
 public class Usuario {
 
     @Id
@@ -45,7 +45,6 @@ public class Usuario {
 
     @ManyToOne
     @JoinColumn(name = "id_ciudad")
-    @Column(name="ciudad")
     private Ciudad ciudad;
 
     // Getters y setters
