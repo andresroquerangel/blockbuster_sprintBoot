@@ -2,6 +2,7 @@ package com.example.modeladov1.model;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -55,7 +56,8 @@ public class Producto {
     @ManyToOne
     @JoinColumn(name = "id_categoria")
     private Categoria categoria;
-
+    //@OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL, orphanRemoval = true)
+    //private List<Producto> productos;
     // Getters y setters
 
     public Long getId_producto() {

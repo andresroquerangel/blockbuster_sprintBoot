@@ -12,6 +12,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import javax.persistence.*;
+import java.util.List;
 
 //Holaaa
 @AllArgsConstructor
@@ -31,6 +33,14 @@ public class Categoria {
 
     @Column(name="nombre")
     private String nombre;
+
+//    @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL, orphanRemoval = true)
+ //   private List<Producto> productos;
+//@OneToMany(mappedBy = "categoria", fetch = FetchType.LAZY)
+//private List<Producto> productos;
+    @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Producto> productos;
+
 
     // Getters y setters
 

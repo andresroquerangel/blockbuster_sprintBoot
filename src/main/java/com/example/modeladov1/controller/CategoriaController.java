@@ -32,5 +32,9 @@ public class CategoriaController {
     public Categoria getOne(@PathVariable int id){
         return ser.getOne(id);
     }
+    @DeleteMapping("/{id}")
+    public void eliminarCategoria(@PathVariable int id) {
+        ser.eliminarCategoria(id);
+    }
 }
 
