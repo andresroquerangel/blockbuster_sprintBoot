@@ -38,6 +38,7 @@ public class Categoria {
 
 //    @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL, orphanRemoval = true)
  //   private List<Producto> productos;
+//   hola
 //@OneToMany(mappedBy = "categoria", fetch = FetchType.LAZY)
 //private List<Producto> productos;
     @OneToMany(mappedBy = "categoria", cascade = CascadeType.PERSIST)
