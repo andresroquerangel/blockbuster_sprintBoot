@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -54,6 +56,7 @@ public class Producto {
     private TipoProducto tipoProducto;
 
     @ManyToOne
+    @JsonBackReference
     @JoinColumn(name = "id_categoria")
     private Categoria categoria;
     //@OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL, orphanRemoval = true)

@@ -6,6 +6,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -38,7 +40,8 @@ public class Categoria {
  //   private List<Producto> productos;
 //@OneToMany(mappedBy = "categoria", fetch = FetchType.LAZY)
 //private List<Producto> productos;
-    @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "categoria", cascade = CascadeType.PERSIST)
+    @JsonManagedReference
     private List<Producto> productos;
 
 
