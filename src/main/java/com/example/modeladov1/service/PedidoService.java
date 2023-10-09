@@ -1,8 +1,8 @@
 package com.example.modeladov1.service;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.example.modeladov1.model.Categoria;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 import com.example.modeladov1.model.Pedido;
 import com.example.modeladov1.repository.PedidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,5 +28,23 @@ public class PedidoService {
     public void add(Pedido pedido){
         repo.save(pedido);
     }
-}
 
+    public void eliminarPedido(int id) {
+        repo.deleteById(id);
+    }
+
+    public Pedido actualizarPedido(Integer id_pedido, Pedido pedidoActualizado) {
+        Optional<Pedido> pedidoExistente = repo.findById(id_pedido);
+
+        if (pedidoExistente.isPresent()) {
+            Pedido pedido = pedidoExistente.get();
+            pedido.setFecha_pedido(pedidoActualizado.getFecha_pedido());
+            // Actualiza otros campos según sea necesario
+
+            // Guarda el pedido actualizado en la base de datos
+            return repo.save(pedido);
+        } else {
+            throw new NoSuchElementException("Pedido no encontrado");
+        }
+    }
+}

@@ -1,8 +1,9 @@
 package com.example.modeladov1.service;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
-import com.example.modeladov1.model.Categoria;
 import com.example.modeladov1.model.NotificacionesPedido;
 import com.example.modeladov1.repository.NotificacionesPedidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +16,8 @@ public class NotificacionesPedidoService {
 
     public List<NotificacionesPedido> getAll(){
         List<NotificacionesPedido> notificacionesPedidos = new ArrayList<>();
-        for(NotificacionesPedido notificacionPedido : repo.findAll()){
-            notificacionesPedidos.add(notificacionPedido);
+        for(NotificacionesPedido notificacionesPedido : repo.findAll()){
+            notificacionesPedidos.add(notificacionesPedido);
         }
         return notificacionesPedidos;
     }
@@ -25,8 +26,27 @@ public class NotificacionesPedidoService {
         return repo.findById(id).orElse(null);
     }
 
-    public void add(NotificacionesPedido notificacionPedido){
-        repo.save(notificacionPedido);
+    public void add(NotificacionesPedido notificacionesPedido){
+        repo.save(notificacionesPedido);
+    }
+
+    public void eliminarNotificacionesPedido(int id) {
+        repo.deleteById(id);
+    }
+
+    public NotificacionesPedido actualizarNotificacionesPedido(Integer id_notificacionesPedido, NotificacionesPedido notificacionesPedidoActualizado) {
+        Optional<NotificacionesPedido> notificacionesPedidoExistente = repo.findById(id_notificacionesPedido);
+
+        if (notificacionesPedidoExistente.isPresent()) {
+            NotificacionesPedido notificacionesPedido = notificacionesPedidoExistente.get();
+            notificacionesPedido.setMensaje(notificacionesPedidoActualizado.getMensaje());
+            notificacionesPedido.setFecha_hora_creacion(notificacionesPedidoActualizado.getFecha_hora_creacion());
+            // Actualiza otros campos según sea necesario
+
+            // Guarda las notificaciones del pedido actualizadas en la base de datos
+            return repo.save(notificacionesPedido);
+        } else {
+            throw new NoSuchElementException("Notificaciones del pedido no encontradas");
+        }
     }
 }
-
