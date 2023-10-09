@@ -3,6 +3,9 @@ package com.example.modeladov1.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
+
 import com.example.modeladov1.model.Categoria;
 import com.example.modeladov1.repository.CategoriaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,5 +33,20 @@ public class CategoriaService {
     }
     public void eliminarCategoria(int id) {
         repo.deleteById(id);
+    }
+
+    public Categoria actualizarCategoria(Integer id_categoria, Categoria categoriaActualizada) {
+        Optional<Categoria> categoriaExistente = repo.findById(id_categoria);
+
+        if (categoriaExistente.isPresent()) {
+            Categoria categoria = categoriaExistente.get();
+            categoria.setNombre(categoriaActualizada.getNombre());
+            // Actualiza otros campos según sea necesario
+
+            // Guarda la categoría actualizada en la base de datos
+            return repo.save(categoria);
+        } else {
+            throw new NoSuchElementException("Categoría no encontrada");
+        }
     }
 }

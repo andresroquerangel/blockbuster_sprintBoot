@@ -7,7 +7,7 @@ import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -36,15 +36,10 @@ public class Categoria {
     @Column(name="nombre")
     private String nombre;
 
-//    @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL, orphanRemoval = true)
- //   private List<Producto> productos;
-//   hola
-//@OneToMany(mappedBy = "categoria", fetch = FetchType.LAZY)
-//private List<Producto> productos;
-    @OneToMany(mappedBy = "categoria", cascade = CascadeType.PERSIST)
-    @JsonManagedReference
+    @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonBackReference
+    @JsonIgnore
     private List<Producto> productos;
-
 
     // Getters y setters
 

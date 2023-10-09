@@ -12,6 +12,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -49,18 +51,19 @@ public class Producto {
 
     @ManyToOne
     @JoinColumn(name = "id_tienda")
+    @JsonIgnoreProperties({"descripcion","nombre"})
     private Tienda tienda;
 
     @ManyToOne
     @JoinColumn(name = "id_tipo")
+    @JsonIgnoreProperties({"nombre"})
     private TipoProducto tipoProducto;
 
+    @JsonManagedReference
     @ManyToOne
-    @JsonBackReference
     @JoinColumn(name = "id_categoria")
+    @JsonIgnoreProperties({"nombre"})
     private Categoria categoria;
-    //@OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL, orphanRemoval = true)
-    //private List<Producto> productos;
     // Getters y setters
 
     public Long getId_producto() {
