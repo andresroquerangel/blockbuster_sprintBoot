@@ -8,6 +8,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -30,12 +33,16 @@ public class Rol_Usuario {
     @Column(name = "rol_usuario")
     private int rol_usuario;
 
+    @JsonManagedReference
     @ManyToOne
     @JoinColumn(name = "id_usuario")
+    @JsonIgnoreProperties({"nombre","email","contraseña","direccion","telefono","token","ciudad"})
     private Usuario usuario;
 
+    @JsonManagedReference
     @ManyToOne
     @JoinColumn(name = "id_rol")
+    @JsonIgnoreProperties({"rol"})
     private Rol rol;
 
     // Getters y setters

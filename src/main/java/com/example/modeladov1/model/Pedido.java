@@ -2,6 +2,7 @@ package com.example.modeladov1.model;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +10,11 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -34,17 +40,28 @@ public class Pedido {
     @Column(name="fecha_pedido")
     private Date fecha_pedido;
 
+    @JsonManagedReference
     @ManyToOne
     @JoinColumn(name = "id_usuario")
+    @JsonIgnoreProperties({"nombre","email","contraseña","direccion","telefono","token","ciudad"})
     private Usuario usuario;
 
+    @JsonManagedReference
     @ManyToOne
+    @JsonIgnoreProperties({"descripcion","nombre"})
     @JoinColumn(name = "id_tienda")
     private Tienda tienda;
 
+    @JsonManagedReference
     @ManyToOne
     @JoinColumn(name = "id_venta")
+    @JsonIgnoreProperties({"usuario","tipopago"})
     private Venta venta;
+
+    @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonBackReference
+    @JsonIgnore
+    private List<NotificacionesPedido> notificaciones;
 
     // Getters y setters
 

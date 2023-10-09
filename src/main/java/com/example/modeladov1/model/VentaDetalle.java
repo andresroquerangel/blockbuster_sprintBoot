@@ -9,6 +9,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -38,12 +41,16 @@ public class VentaDetalle {
     @Column(name = "cantidad")
     private int cantidad;
 
+    @JsonManagedReference
     @ManyToOne
     @JoinColumn(name = "id_venta")
+    @JsonIgnoreProperties({"usuario","tipoPago"})
     private Venta venta;
 
+    @JsonManagedReference
     @ManyToOne
     @JoinColumn(name = "id_producto")
+    @JsonIgnoreProperties({"nombre","descripcion","precio","cantidad","photo","tienda","tipoProducto","categoria"})
     private Producto producto;
 
     // Getters y setters

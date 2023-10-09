@@ -8,6 +8,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -33,8 +36,10 @@ public class Ciudad {
     @Column(name="nombre")
     private String nombre;
 
+    @JsonManagedReference
     @ManyToOne
     @JoinColumn(name = "id_municipio")
+    @JsonIgnoreProperties({"nombre","estado"})
     private Municipio municipio;
 
     // Getters y setters

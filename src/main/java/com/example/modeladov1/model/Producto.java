@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
@@ -49,11 +50,13 @@ public class Producto {
     @Column(name = "photo")
     private byte[] photo; // Debes especificar el tipo de datos adecuado para las fotos
 
+    @JsonManagedReference
     @ManyToOne
     @JoinColumn(name = "id_tienda")
     @JsonIgnoreProperties({"descripcion","nombre"})
     private Tienda tienda;
 
+    @JsonManagedReference
     @ManyToOne
     @JoinColumn(name = "id_tipo")
     @JsonIgnoreProperties({"nombre"})
@@ -64,6 +67,11 @@ public class Producto {
     @JoinColumn(name = "id_categoria")
     @JsonIgnoreProperties({"nombre"})
     private Categoria categoria;
+
+    @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonBackReference
+    @JsonIgnore
+    private List<Resena> resena;
     // Getters y setters
 
     public int getId_producto() {

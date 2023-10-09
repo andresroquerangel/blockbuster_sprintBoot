@@ -9,6 +9,11 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -31,16 +36,23 @@ public class Venta {
     @Column(name = "id_venta")
     private int id_venta;
 
+    @JsonManagedReference
     @ManyToOne
     @JoinColumn(name = "id_usuario")
+    @JsonIgnoreProperties({"nombre","email","contraseña","direccion","telefono","token","ciudad"})
     private Usuario usuario;
 
+    @JsonManagedReference
     @ManyToOne
+    @JsonIgnoreProperties({"nombre","descripcion"})
     @JoinColumn(name = "id_tipo_pago")
     private TipoPago tipoPago;
 
-    @OneToMany(mappedBy = "venta")
+    @OneToMany(mappedBy = "venta", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonBackReference
+    @JsonIgnore
     private List<Pedido> pedidos;
+
 
     // Getters y setters
 

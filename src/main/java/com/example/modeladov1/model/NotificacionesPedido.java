@@ -9,6 +9,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -36,16 +39,22 @@ public class NotificacionesPedido {
     @Column(name = "fecha_hora_creacion")
     private Time fecha_hora_creacion;
 
+    @JsonManagedReference
     @ManyToOne
     @JoinColumn(name = "id_pedido")
+    @JsonIgnoreProperties({"fecha_pedido","usuario","tienda","venta"})
     private Pedido pedido;
 
+    @JsonManagedReference
     @ManyToOne
     @JoinColumn(name = "id_estado_pedido")
+    @JsonIgnoreProperties({"nombre"})
     private EstadoPedido estadoPedido;
 
+    @JsonManagedReference
     @ManyToOne
     @JoinColumn(name = "id_usuario")
+    @JsonIgnoreProperties({"nombre","email","contraseña","direccion","telefono","token","ciudad"})
     private Usuario usuario;
 
     // Getters y setters
