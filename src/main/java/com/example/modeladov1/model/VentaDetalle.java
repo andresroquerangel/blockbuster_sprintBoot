@@ -53,6 +53,9 @@ public class VentaDetalle {
     @JsonIgnoreProperties({"nombre","descripcion","precio","cantidad","photo","tienda","tipoProducto","categoria"})
     private Producto producto;
 
+    @Column(name="nombre")
+    private String nombre;
+
     // Getters y setters
 
     public int getId_venta_detalle() {
@@ -101,5 +104,9 @@ public class VentaDetalle {
 
     public void setProducto(Producto producto) {
         this.producto = producto;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 }
