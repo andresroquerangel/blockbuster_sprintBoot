@@ -1,6 +1,8 @@
 package com.example.modeladov1.service;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.example.modeladov1.model.Categoria;
 import com.example.modeladov1.model.EstadoPedido;
 import com.example.modeladov1.repository.EstadoPedidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,10 @@ public class EstadoPedidoService {
             estadosPedidos.add(estadoPedido);
         }
         return estadosPedidos;
+    }
+
+    public EstadoPedido getOne(Integer id) {
+        return repo.findById(id).orElse(null);
     }
 
     public void add(EstadoPedido estadoPedido){

@@ -28,7 +28,7 @@ public class Estado {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_estado")
-    private Long id_estado;
+    private int id_estado;
 
     @Column(name="nombre")
     private String nombre;
@@ -39,11 +39,11 @@ public class Estado {
 
     // Getters y setters
 
-    public Long getId_estado() {
+    public int getId_estado() {
         return id_estado;
     }
 
-    public void setId_estado(Long id_estado) {
+    public void setId_estado(int id_estado) {
         this.id_estado = id_estado;
     }
 

@@ -28,7 +28,7 @@ public class Rol_Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "rol_usuario")
-    private Long rol_usuario;
+    private int rol_usuario;
 
     @ManyToOne
     @JoinColumn(name = "id_usuario")
@@ -40,11 +40,11 @@ public class Rol_Usuario {
 
     // Getters y setters
 
-    public Long getRol_usuario() {
+    public int getRol_usuario() {
         return rol_usuario;
     }
 
-    public void setRol_usuario(Long rol_usuario) {
+    public void setRol_usuario(int rol_usuario) {
         this.rol_usuario = rol_usuario;
     }
 

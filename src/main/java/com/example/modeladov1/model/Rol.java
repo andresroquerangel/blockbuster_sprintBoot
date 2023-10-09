@@ -28,18 +28,18 @@ public class Rol {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_rol")
-    private Long id_rol;
+    private int id_rol;
 
     @Column(name="rol")
     private String rol;
 
     // Getters y setters
 
-    public Long getId_rol() {
+    public int getId_rol() {
         return id_rol;
     }
 
-    public void setId_rol(Long id_rol) {
+    public void setId_rol(int id_rol) {
         this.id_rol = id_rol;
     }
 

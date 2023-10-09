@@ -29,7 +29,7 @@ public class NotificacionesPedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_notificaciones_pedido")
-    private Long id_notificaciones_pedido;
+    private int id_notificaciones_pedido;
 
     @Column(name = "mensaje")
     private String mensaje;
@@ -50,11 +50,11 @@ public class NotificacionesPedido {
 
     // Getters y setters
 
-    public Long getId_notificaciones_pedido() {
+    public int getId_notificaciones_pedido() {
         return id_notificaciones_pedido;
     }
 
-    public void setId_notificaciones_pedido(Long id_notificaciones_pedido) {
+    public void setId_notificaciones_pedido(int id_notificaciones_pedido) {
         this.id_notificaciones_pedido = id_notificaciones_pedido;
     }
 

@@ -28,18 +28,18 @@ public class Pais {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_pais")
-    private Long id_pais;
+    private int id_pais;
 
     @Column(name = "nombre")
     private String nombre;
 
     // Getters y setters
 
-    public Long getId_pais() {
+    public int getId_pais() {
         return id_pais;
     }
 
-    public void setId_pais(Long id_pais) {
+    public void setId_pais(int id_pais) {
         this.id_pais = id_pais;
     }
 

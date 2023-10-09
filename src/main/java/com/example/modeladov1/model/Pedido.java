@@ -29,7 +29,7 @@ public class Pedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_pedido")
-    private Long id_pedido;
+    private int id_pedido;
 
     @Column(name="fecha_pedido")
     private Date fecha_pedido;
@@ -48,11 +48,11 @@ public class Pedido {
 
     // Getters y setters
 
-    public Long getId_pedido() {
+    public int getId_pedido() {
         return id_pedido;
     }
 
-    public void setId_pedido(Long id_pedido) {
+    public void setId_pedido(int id_pedido) {
         this.id_pedido = id_pedido;
     }
 

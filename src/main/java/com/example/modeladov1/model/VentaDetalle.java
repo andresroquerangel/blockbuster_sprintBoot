@@ -29,7 +29,7 @@ public class VentaDetalle {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_venta_detalle")
-    private Long id_venta_detalle;
+    private int id_venta_detalle;
 
     @Column(name="precio")
     private BigDecimal precio;
@@ -48,11 +48,11 @@ public class VentaDetalle {
 
     // Getters y setters
 
-    public Long getId_venta_detalle() {
+    public int getId_venta_detalle() {
         return id_venta_detalle;
     }
 
-    public void setId_venta_detalle(Long id_venta_detalle) {
+    public void setId_venta_detalle(int id_venta_detalle) {
         this.id_venta_detalle = id_venta_detalle;
     }
 

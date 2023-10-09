@@ -28,18 +28,18 @@ public class EstadoPedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_estado_pedido")
-    private Long id_estado_pedido;
+    private int id_estado_pedido;
 
     @Column(name = "nombre")
     private String nombre;
 
     // Getters y setters
 
-    public Long getId_estado_pedido() {
+    public int getId_estado_pedido() {
         return id_estado_pedido;
     }
 
-    public void setId_estado_pedido(Long id_estado_pedido) {
+    public void setId_estado_pedido(int id_estado_pedido) {
         this.id_estado_pedido = id_estado_pedido;
     }
 

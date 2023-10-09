@@ -1,6 +1,8 @@
 package com.example.modeladov1.service;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.example.modeladov1.model.Categoria;
 import com.example.modeladov1.model.Municipio;
 import com.example.modeladov1.repository.MunicipioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,10 @@ public class MunicipioService {
             municipios.add(municipio);
         }
         return municipios;
+    }
+
+    public Municipio getOne(Integer id) {
+        return repo.findById(id).orElse(null);
     }
 
     public void add(Municipio municipio){

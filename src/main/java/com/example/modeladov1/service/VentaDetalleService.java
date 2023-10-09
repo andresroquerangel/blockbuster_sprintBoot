@@ -2,6 +2,8 @@ package com.example.modeladov1.service;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.example.modeladov1.model.Categoria;
 import com.example.modeladov1.model.VentaDetalle;
 import com.example.modeladov1.repository.VentaDetalleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,10 @@ public class VentaDetalleService {
             ventasdetalles.add(ventadetalle);
         }
         return ventasdetalles;
+    }
+
+    public VentaDetalle getOne(Integer id) {
+        return repo.findById(id).orElse(null);
     }
 
     public void add(VentaDetalle ventadetalle){

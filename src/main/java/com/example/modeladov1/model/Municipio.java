@@ -28,7 +28,7 @@ public class Municipio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_municipio")
-    private Long id_municipio;
+    private int id_municipio;
 
     @Column(name = "nombre")
     private String nombre;
@@ -39,11 +39,11 @@ public class Municipio {
 
     // Getters y setters
 
-    public Long getId_municipio() {
+    public int getId_municipio() {
         return id_municipio;
     }
 
-    public void setId_municipio(Long id_municipio) {
+    public void setId_municipio(int id_municipio) {
         this.id_municipio = id_municipio;
     }
 

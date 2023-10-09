@@ -28,7 +28,7 @@ public class TipoPago {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_tipo_pago")
-    private Long id_tipo_pago;
+    private int id_tipo_pago;
 
     @Column(name="nombre")
     private String nombre;
@@ -37,11 +37,11 @@ public class TipoPago {
 
     // Getters y setters
 
-    public Long getId_tipo_pago() {
+    public int getId_tipo_pago() {
         return id_tipo_pago;
     }
 
-    public void setId_tipo_pago(Long id_tipo_pago) {
+    public void setId_tipo_pago(int id_tipo_pago) {
         this.id_tipo_pago = id_tipo_pago;
     }
 

@@ -28,7 +28,7 @@ public class Resena {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_resena")
-    private Long id_resena;
+    private int id_resena;
 
     @Column(name = "resena")
     private String resena;
@@ -45,11 +45,11 @@ public class Resena {
 
     // Getters y setters
 
-    public Long getId_resena() {
+    public int getId_resena() {
         return id_resena;
     }
 
-    public void setId_resena(Long id_resena) {
+    public void setId_resena(int id_resena) {
         this.id_resena = id_resena;
     }
 

@@ -29,7 +29,7 @@ public class Venta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_venta")
-    private Long id_venta;
+    private int id_venta;
 
     @ManyToOne
     @JoinColumn(name = "id_usuario")
@@ -44,11 +44,11 @@ public class Venta {
 
     // Getters y setters
 
-    public Long getId_venta() {
+    public int getId_venta() {
         return id_venta;
     }
 
-    public void setId_venta(Long id_venta) {
+    public void setId_venta(int id_venta) {
         this.id_venta = id_venta;
     }
 

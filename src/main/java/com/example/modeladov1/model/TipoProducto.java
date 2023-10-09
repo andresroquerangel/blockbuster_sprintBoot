@@ -28,18 +28,18 @@ public class TipoProducto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_tipo")
-    private Long id_tipo;
+    private int id_tipo;
 
     @Column(name="nombre")
     private String nombre;
 
     // Getters y setters
 
-    public Long getId_tipo() {
+    public int getId_tipo() {
         return id_tipo;
     }
 
-    public void setId_tipo(Long id_tipo) {
+    public void setId_tipo(int id_tipo) {
         this.id_tipo = id_tipo;
     }
 
