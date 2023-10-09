@@ -41,7 +41,9 @@ public class VentaDetalleService {
 
         if (ventaDetalleExistente.isPresent()) {
             VentaDetalle ventaDetalle = ventaDetalleExistente.get();
-            ventaDetalle.setNombre(ventaDetalleActualizada.getNombre());
+            ventaDetalle.setPrecio(ventaDetalleActualizada.getPrecio());
+            ventaDetalle.setSubtotal(ventaDetalleActualizada.getSubtotal());
+            ventaDetalle.setCantidad(ventaDetalleActualizada.getCantidad());
             // Actualiza otros campos según sea necesario
 
             // Guarda la categoría actualizada en la base de datos
