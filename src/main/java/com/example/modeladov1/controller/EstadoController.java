@@ -5,6 +5,7 @@ import java.util.List;
 import com.example.modeladov1.model.Categoria;
 import com.example.modeladov1.model.Estado;
 import com.example.modeladov1.service.EstadoService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,5 +28,18 @@ public class EstadoController {
     @GetMapping("/{id}")
     public Estado getOne(@PathVariable int id){
         return ser.getOne(id);
+    }
+
+    @DeleteMapping("/{id}")
+    public void eliminarEstado(@PathVariable int id) {
+        ser.eliminarEstado(id);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Estado> actualizarEstado(
+            @RequestBody Estado body,
+            @PathVariable Integer id) {
+        Estado estado = ser.actualizarEstado(id, body);
+        return ResponseEntity.ok(estado);
     }
 }
