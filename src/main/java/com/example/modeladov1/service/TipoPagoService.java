@@ -41,6 +41,7 @@ public class TipoPagoService {
         if (tipoPagoExistente.isPresent()) {
             TipoPago tipoPago = tipoPagoExistente.get();
             tipoPago.setNombre(tipoPagoActualizada.getNombre());
+            tipoPago.setDescripcion(tipoPagoActualizada.getDescripcion());
             // Actualiza otros campos según sea necesario
 
             // Guarda la categoría actualizada en la base de datos
