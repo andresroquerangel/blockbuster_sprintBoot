@@ -53,6 +53,9 @@ public class Venta {
     @JsonIgnore
     private List<Pedido> pedidos;
 
+    @Column(name="nombre")
+    private String nombre;
+
 
     // Getters y setters
 
@@ -87,4 +90,9 @@ public class Venta {
     public void setPedidos(List<Pedido> pedidos) {
         this.pedidos = pedidos;
     }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
 }

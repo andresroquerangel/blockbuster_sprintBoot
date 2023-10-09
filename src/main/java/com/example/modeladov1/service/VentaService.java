@@ -2,6 +2,8 @@ package com.example.modeladov1.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
 import com.example.modeladov1.model.Categoria;
 import com.example.modeladov1.model.Venta;
@@ -28,6 +30,25 @@ public class VentaService {
 
     public void add(Venta venta){
         repo.save(venta);
+    }
+
+    public void eliminarVenta(int id) {
+        repo.deleteById(id);
+    }
+
+    public Venta actualizarVenta(Integer id_venta, Venta ventaActualizada) {
+        Optional<Venta> ventaExistente = repo.findById(id_venta);
+
+        if (ventaExistente.isPresent()) {
+            Venta venta = ventaExistente.get();
+            venta.setNombre(ventaActualizada.getNombre());
+            // Actualiza otros campos según sea necesario
+
+            // Guarda la categoría actualizada en la base de datos
+            return repo.save(venta);
+        } else {
+            throw new NoSuchElementException("Venta no encontrada");
+        }
     }
 
 }
