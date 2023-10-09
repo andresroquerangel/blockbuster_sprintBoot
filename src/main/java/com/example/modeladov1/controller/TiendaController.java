@@ -2,9 +2,9 @@ package com.example.modeladov1.controller;
 
 import java.util.List;
 
-import com.example.modeladov1.model.Categoria;
 import com.example.modeladov1.model.Tienda;
 import com.example.modeladov1.service.TiendaService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,4 +28,18 @@ public class TiendaController {
     public Tienda getOne(@PathVariable int id){
         return ser.getOne(id);
     }
+
+    @DeleteMapping("/{id}")
+    public void eliminarTienda(@PathVariable int id) {
+        ser.eliminarTienda(id);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Tienda> actualizarTienda(
+            @RequestBody Tienda body,
+            @PathVariable Integer id) {
+        Tienda tienda = ser.actualizarTienda(id, body);
+        return ResponseEntity.ok(tienda);
+    }
+
 }
