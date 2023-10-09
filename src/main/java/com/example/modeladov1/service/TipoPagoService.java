@@ -1,6 +1,8 @@
 package com.example.modeladov1.service;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
 import com.example.modeladov1.model.Categoria;
 import com.example.modeladov1.model.TipoPago;
@@ -27,5 +29,24 @@ public class TipoPagoService {
 
     public void add(TipoPago tipoPago){
         repo.save(tipoPago);
+    }
+
+    public void eliminarTipoPago(int id) {
+        repo.deleteById(id);
+    }
+
+    public TipoPago actualizarTipoPago(Integer id_tipo_pago, TipoPago tipoPagoActualizada) {
+        Optional<TipoPago> tipoPagoExistente = repo.findById(id_tipo_pago);
+
+        if (tipoPagoExistente.isPresent()) {
+            TipoPago tipoPago = tipoPagoExistente.get();
+            tipoPago.setNombre(tipoPagoActualizada.getNombre());
+            // Actualiza otros campos según sea necesario
+
+            // Guarda la categoría actualizada en la base de datos
+            return repo.save(tipoPago);
+        } else {
+            throw new NoSuchElementException("El tipo de pago no encontrado");
+        }
     }
 }

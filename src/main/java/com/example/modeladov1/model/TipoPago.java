@@ -45,6 +45,7 @@ public class TipoPago {
     @JsonIgnore
     private List<Venta> ventas;
 
+
     // Getters y setters
 
     public int getId_tipo_pago() {
