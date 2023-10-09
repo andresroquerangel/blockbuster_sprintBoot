@@ -6,6 +6,7 @@ import com.example.modeladov1.model.Categoria;
 import com.example.modeladov1.model.Municipio;
 import com.example.modeladov1.service.MunicipioService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -27,5 +28,18 @@ public class MunicipioController {
     @GetMapping("/{id}")
     public Municipio getOne(@PathVariable int id){
         return ser.getOne(id);
+    }
+
+    @DeleteMapping("/{id}")
+    public void eliminarMunicipio(@PathVariable int id) {
+        ser.eliminarMunicipio(id);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Municipio> actualizarMunicipio(
+            @RequestBody Municipio body,
+            @PathVariable Integer id) {
+        Municipio municipio = ser.actualizarMunicipio(id, body);
+        return ResponseEntity.ok(municipio);
     }
 }

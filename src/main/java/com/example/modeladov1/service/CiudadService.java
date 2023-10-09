@@ -1,6 +1,9 @@
 package com.example.modeladov1.service;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.NoSuchElementException;
 
 import com.example.modeladov1.model.Categoria;
 import com.example.modeladov1.model.Ciudad;
@@ -27,5 +30,24 @@ public class CiudadService {
 
     public void add(Ciudad ciudad){
         repo.save(ciudad);
+    }
+
+    public void eliminarCiudad(int id) {
+        repo.deleteById(id);
+    }
+
+    public Ciudad actualizarCiudad(Integer id_ciudad, Ciudad ciudadActualizada) {
+        Optional<Ciudad> ciudadExistente = repo.findById(id_ciudad);
+
+        if (ciudadExistente.isPresent()) {
+            Ciudad ciudad = ciudadExistente.get();
+            ciudad.setNombre(ciudadActualizada.getNombre());
+            // Actualiza otros campos según sea necesario
+
+            // Guarda la ciudad actualizada en la base de datos
+            return repo.save(ciudad);
+        } else {
+            throw new NoSuchElementException("Ciudad no encontrada");
+        }
     }
 }
