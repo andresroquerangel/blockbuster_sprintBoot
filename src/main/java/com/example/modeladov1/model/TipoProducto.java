@@ -38,25 +38,5 @@ public class TipoProducto {
     @Column(name="nombre")
     private String nombre;
 
-    @OneToMany(mappedBy = "tipoProducto", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonBackReference
-    @JsonIgnore
-    private List<Producto> productos;
     // Getters y setters
-
-    public int getId_tipo() {
-        return id_tipo;
-    }
-
-    public void setId_tipo(int id_tipo) {
-        this.id_tipo = id_tipo;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
 }

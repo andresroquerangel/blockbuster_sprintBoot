@@ -44,9 +44,9 @@ public class ProductoService {
             producto.setPrecio(productoActualizado.getPrecio());
             producto.setCantidad(productoActualizado.getCantidad());
             producto.setPhoto(productoActualizado.getPhoto());
-            // Actualiza otros campos según sea necesario
-
-            // Guarda el producto actualizado en la base de datos
+            producto.setId_tienda(productoActualizado.getId_tienda());
+            producto.setId_tipo(productoActualizado.getId_tipo());
+            producto.setId_categoria(producto.getId_categoria());
             return repo.save(producto);
         } else {
             throw new NoSuchElementException("Producto no encontrado");

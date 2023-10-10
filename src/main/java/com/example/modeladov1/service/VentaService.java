@@ -41,8 +41,8 @@ public class VentaService {
 
         if (ventaExistente.isPresent()) {
             Venta venta = ventaExistente.get();
-            venta.setUsuario(ventaActualizada.getUsuario());
-            venta.setTipoPago(ventaActualizada.getTipoPago());
+            venta.setId_usuario(ventaActualizada.getId_usuario());
+            venta.setId_tipo_pago(ventaActualizada.getId_tipo_pago());
             // Actualiza otros campos según sea necesario
 
             // Guarda la categoría actualizada en la base de datos

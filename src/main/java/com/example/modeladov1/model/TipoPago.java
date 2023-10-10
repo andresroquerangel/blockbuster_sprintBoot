@@ -40,35 +40,5 @@ public class TipoPago {
     @Column(name="descripcion")
     private String descripcion;
 
-    @OneToMany(mappedBy = "tipoPago", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonBackReference
-    @JsonIgnore
-    private List<Venta> ventas;
-
-
     // Getters y setters
-
-    public int getId_tipo_pago() {
-        return id_tipo_pago;
-    }
-
-    public void setId_tipo_pago(int id_tipo_pago) {
-        this.id_tipo_pago = id_tipo_pago;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
 }

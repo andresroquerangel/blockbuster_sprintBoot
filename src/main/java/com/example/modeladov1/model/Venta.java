@@ -35,58 +35,11 @@ public class Venta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_venta")
     private int id_venta;
-
-    @JsonManagedReference
-    @ManyToOne
-    @JoinColumn(name = "id_usuario")
-    @JsonIgnoreProperties({"nombre","email","contraseña","direccion","telefono","token","ciudad"})
-    private Usuario usuario;
-
-    @JsonManagedReference
-    @ManyToOne
-    @JsonIgnoreProperties({"nombre","descripcion"})
-    @JoinColumn(name = "id_tipo_pago")
-    private TipoPago tipoPago;
-
-    @OneToMany(mappedBy = "venta", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonBackReference
-    @JsonIgnore
-    private List<Pedido> pedidos;
+    @Column(name = "id_usuario")
+    private int id_usuario;
+    @Column(name = "id_tipo_pago")
+    private int id_tipo_pago;
 
 
     // Getters y setters
-
-    public int getId_venta() {
-        return id_venta;
-    }
-
-    public void setId_venta(int id_venta) {
-        this.id_venta = id_venta;
-    }
-
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
-
-    public TipoPago getTipoPago() {
-        return tipoPago;
-    }
-
-    public void setTipoPago(TipoPago tipoPago) {
-        this.tipoPago = tipoPago;
-    }
-
-    public List<Pedido> getPedidos() {
-        return pedidos;
-    }
-
-    public void setPedidos(List<Pedido> pedidos) {
-        this.pedidos = pedidos;
-    }
-
-
 }

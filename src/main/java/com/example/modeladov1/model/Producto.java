@@ -45,104 +45,13 @@ public class Producto {
     private BigDecimal precio;
     @Column(name="cantidad")
     private int cantidad;
-
-    @Lob
     @Column(name = "photo")
-    private byte[] photo; // Debes especificar el tipo de datos adecuado para las fotos
-
-    @JsonManagedReference
-    @ManyToOne
-    @JoinColumn(name = "id_tienda")
-    @JsonIgnoreProperties({"descripcion","nombre"})
-    private Tienda tienda;
-
-    @JsonManagedReference
-    @ManyToOne
-    @JoinColumn(name = "id_tipo")
-    @JsonIgnoreProperties({"nombre"})
-    private TipoProducto tipoProducto;
-
-    @JsonManagedReference
-    @ManyToOne
-    @JoinColumn(name = "id_categoria")
-    @JsonIgnoreProperties({"nombre"})
-    private Categoria categoria;
-
-    @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonBackReference
-    @JsonIgnore
-    private List<Resena> resena;
+    private byte[] photo;
+    @Column(name = "id_tienda")
+    private int id_tienda;
+    @Column(name = "id_tipo")
+    private int id_tipo;
+    @Column(name = "id_categoria")
+    private int id_categoria;
     // Getters y setters
-
-    public int getId_producto() {
-        return id_producto;
-    }
-
-    public void setId_producto(int id_producto) {
-        this.id_producto = id_producto;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public BigDecimal getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(BigDecimal precio) {
-        this.precio = precio;
-    }
-
-    public int getCantidad() {
-        return cantidad;
-    }
-
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
-    }
-
-    public byte[] getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(byte[] photo) {
-        this.photo = photo;
-    }
-
-    public Tienda getTienda() {
-        return tienda;
-    }
-
-    public void setTienda(Tienda tienda) {
-        this.tienda = tienda;
-    }
-
-    public TipoProducto getTipoProducto() {
-        return tipoProducto;
-    }
-
-    public void setTipoProducto(TipoProducto tipoProducto) {
-        this.tipoProducto = tipoProducto;
-    }
-
-    public Categoria getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
-    }
 }

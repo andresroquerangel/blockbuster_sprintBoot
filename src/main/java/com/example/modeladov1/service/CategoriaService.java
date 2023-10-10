@@ -41,9 +41,6 @@ public class CategoriaService {
         if (categoriaExistente.isPresent()) {
             Categoria categoria = categoriaExistente.get();
             categoria.setNombre(categoriaActualizada.getNombre());
-            // Actualiza otros campos según sea necesario
-
-            // Guarda la categoría actualizada en la base de datos
             return repo.save(categoria);
         } else {
             throw new NoSuchElementException("Categoría no encontrada");

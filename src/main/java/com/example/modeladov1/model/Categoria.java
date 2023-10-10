@@ -23,7 +23,6 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-@Data
 @Entity
 @Table(name = "categoria")
 public class Categoria {
@@ -36,26 +35,5 @@ public class Categoria {
     @Column(name="nombre")
     private String nombre;
 
-    @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonBackReference
-    @JsonIgnore
-    private List<Producto> productos;
-
     // Getters y setters
-
-    public int getId_categoria() {
-        return id_categoria;
-    }
-
-    public void setId_categoria(int id_categoria) {
-        this.id_categoria = id_categoria;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
 }
