@@ -29,50 +29,10 @@ import java.util.List;
 @Entity
 @Table(name = "tienda")
 public class Tienda {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_tienda")
     private int id_tienda;
 
-    @Column(name="descripcion")
-    private String descripcion;
-    @Column(name="nombre")
     private String nombre;
-
-    @OneToMany(mappedBy = "tienda", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonBackReference
-    @JsonIgnore
-    private List<Producto> productos;
-
-    @OneToMany(mappedBy = "tienda", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonBackReference
-    @JsonIgnore
-    private List<Pedido> pedidos;
-
-    // Getters y setters
-
-    public int getId_tienda() {
-        return id_tienda;
-    }
-
-    public void setId_tienda(int id_tienda) {
-        this.id_tienda = id_tienda;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+    private String descripcion;
 }
