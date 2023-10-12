@@ -4,14 +4,12 @@ package com.example.modeladov1.model;
 import com.fasterxml.jackson.annotation.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+
+import javax.persistence.*;
+
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -19,11 +17,13 @@ import javax.persistence.GenerationType;
 @Setter
 @ToString
 @Entity
-@Table
+@Table(name="categoria")
 public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id_categoria")
     private int id_categoria;
 
+    @Column(name="nombre")
     private String nombre;
 }

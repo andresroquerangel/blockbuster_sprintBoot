@@ -39,71 +39,14 @@ public class NotificacionesPedido {
     @Column(name = "fecha_hora_creacion")
     private Time fecha_hora_creacion;
 
-    @JsonManagedReference
-    @ManyToOne
-    @JoinColumn(name = "id_pedido")
-    @JsonIgnoreProperties({"fecha_pedido","usuario","tienda","venta"})
-    private Pedido pedido;
+    @Column(name="id_pedido")
+    private int id_pedido;
 
-    @JsonManagedReference
-    @ManyToOne
-    @JoinColumn(name = "id_estado_pedido")
-    @JsonIgnoreProperties({"nombre"})
-    private EstadoPedido estadoPedido;
+    @Column(name="id_estado_pedido")
+    private int id_estado_pedido;
 
-    @JsonManagedReference
-    @ManyToOne
-    @JoinColumn(name = "id_usuario")
-    @JsonIgnoreProperties({"nombre","email","contraseña","direccion","telefono","token","ciudad"})
-    private Usuario usuario;
+    @Column(name="id_usuario")
+    private int id_usuario;
 
     // Getters y setters
-
-    public int getId_notificaciones_pedido() {
-        return id_notificaciones_pedido;
-    }
-
-    public void setId_notificaciones_pedido(int id_notificaciones_pedido) {
-        this.id_notificaciones_pedido = id_notificaciones_pedido;
-    }
-
-    public String getMensaje() {
-        return mensaje;
-    }
-
-    public void setMensaje(String mensaje) {
-        this.mensaje = mensaje;
-    }
-
-    public Time getFecha_hora_creacion() {
-        return fecha_hora_creacion;
-    }
-
-    public void setFecha_hora_creacion(Time fecha_hora_creacion) {
-        this.fecha_hora_creacion = fecha_hora_creacion;
-    }
-
-    public Pedido getPedido() {
-        return pedido;
-    }
-
-    public void setPedido(Pedido pedido) {
-        this.pedido = pedido;
-    }
-
-    public EstadoPedido getEstadoPedido() {
-        return estadoPedido;
-    }
-
-    public void setEstadoPedido(EstadoPedido estadoPedido) {
-        this.estadoPedido = estadoPedido;
-    }
-
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
 }

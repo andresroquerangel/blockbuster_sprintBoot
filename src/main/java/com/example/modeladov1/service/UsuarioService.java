@@ -46,6 +46,7 @@ public class UsuarioService {
             usuario.setDireccion(usuarioActualizado.getDireccion());
             usuario.setTelefono(usuarioActualizado.getTelefono());
             usuario.setToken(usuarioActualizado.getToken());
+            usuario.setId_ciudad(usuarioActualizado.getId_ciudad());
             // Actualiza otros campos según sea necesario
 
             // Guarda el usuario actualizado en la base de datos

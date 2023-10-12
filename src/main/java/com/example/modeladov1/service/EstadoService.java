@@ -42,9 +42,7 @@ public class EstadoService {
         if (estadoExistente.isPresent()) {
             Estado estado = estadoExistente.get();
             estado.setNombre(estadoActualizado.getNombre());
-            // Actualiza otros campos según sea necesario
-
-            // Guarda el estado actualizado en la base de datos
+            estado.setId_pais(estadoActualizado.getId_pais());
             return repo.save(estado);
         } else {
             throw new NoSuchElementException("Estado no encontrado");

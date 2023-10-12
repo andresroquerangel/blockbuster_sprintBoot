@@ -19,11 +19,13 @@ import lombok.ToString;
 @Setter
 @ToString
 @Entity
-@Table
+@Table(name="tipo_producto")
 public class TipoProducto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id_tipo")
     private int id_tipo;
+    @Column(name="nombre")
     private String nombre;
 }

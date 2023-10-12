@@ -1,6 +1,8 @@
 package com.example.modeladov1.controller;
 
 import java.util.List;
+
+import com.example.modeladov1.model.Pais;
 import com.example.modeladov1.model.Producto;
 import com.example.modeladov1.service.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,31 +12,39 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/productos")
 public class ProductoController {
-    private final ProductoService productoService;
+    private final ProductoService ser;
 
     @Autowired
     public ProductoController(ProductoService productoService) {
-        this.productoService = productoService;
+        this.ser = productoService;
     }
 
-    @GetMapping("/all")
+    @GetMapping("/getAll")
     public List<Producto> getProductos() {
-        return productoService.getProductos();
+        return ser.getProductos();
     }
 
-    @GetMapping("/getOne/{id}")
+    @GetMapping("/{id}")
     public Producto getProductoById(@PathVariable int id) {
-        return productoService.getProductoById(id);
+        return ser.getProductoById(id);
     }
 
     @PostMapping("/add")
     public Producto saveProducto(@RequestBody Producto producto) {
-        return productoService.saveProducto(producto);
+        return ser.saveProducto(producto);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @PutMapping("/{id}")
+    public ResponseEntity<Producto> actualizarProducto(
+            @RequestBody Producto body,
+            @PathVariable Integer id) {
+        Producto producto = ser.actualizarProducto(id, body);
+        return ResponseEntity.ok(producto);
+    }
+
+    @DeleteMapping("/{id}")
     public void deleteProducto(@PathVariable int id) {
-        productoService.deleteProducto(id);
+        ser.deleteProducto(id);
     }
 
 }

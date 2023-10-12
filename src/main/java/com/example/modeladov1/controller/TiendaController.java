@@ -2,6 +2,7 @@ package com.example.modeladov1.controller;
 
 import java.util.List;
 
+import com.example.modeladov1.model.Pais;
 import com.example.modeladov1.model.Tienda;
 import com.example.modeladov1.service.TiendaService;
 import org.springframework.http.ResponseEntity;
@@ -11,30 +12,38 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/tiendas")
 public class TiendaController {
-    private final TiendaService tiendaService;
+    private final TiendaService ser;
 
     @Autowired
     public TiendaController(TiendaService tiendaService) {
-        this.tiendaService = tiendaService;
+        this.ser = tiendaService;
     }
 
-    @GetMapping("/all")
+    @GetMapping("/getAll")
     public List<Tienda> getTiendas() {
-        return tiendaService.getTiendas();
+        return ser.getTiendas();
     }
 
-    @GetMapping("/getOne/{id}")
+    @GetMapping("/{id}")
     public Tienda getTiendaById(@PathVariable int id) {
-        return tiendaService.getTiendaById(id);
+        return ser.getTiendaById(id);
     }
 
     @PostMapping("/add")
     public Tienda saveTienda(@RequestBody Tienda tienda) {
-        return tiendaService.saveTienda(tienda);
+        return ser.saveTienda(tienda);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @PutMapping("/{id}")
+    public ResponseEntity<Tienda> tiendaCategoria(
+            @RequestBody Tienda body,
+            @PathVariable Integer id) {
+        Tienda tienda = ser.actualizarTienda(id, body);
+        return ResponseEntity.ok(tienda);
+    }
+
+    @DeleteMapping("/{id}")
     public void deleteTienda(@PathVariable int id) {
-        tiendaService.deleteTienda(id);
+        ser.deleteTienda(id);
     }
 }

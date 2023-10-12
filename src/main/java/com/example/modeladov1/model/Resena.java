@@ -38,57 +38,11 @@ public class Resena {
     @Column(name="calificacion")
     private int calificacion;
 
-    @JsonManagedReference
-    @ManyToOne
-    @JoinColumn(name = "id_usuario")
-    @JsonIgnoreProperties({"nombre","email","contraseña","direccion","telefono","token","ciudad"})
-    private Usuario usuario;
+   @Column(name = "id_usuario")
+   private int id_usuario;
 
-    @JsonManagedReference
-    @ManyToOne
-    @JoinColumn(name = "id_producto")
-    @JsonIgnoreProperties({"nombre","descripcion","precio","cantidad","photo","tipoProducto","categoria"})
-    private Producto producto;
+   @Column(name = "id_producto")
+   private int id_producto;
 
     // Getters y setters
-
-    public int getId_resena() {
-        return id_resena;
-    }
-
-    public void setId_resena(int id_resena) {
-        this.id_resena = id_resena;
-    }
-
-    public String getResena() {
-        return resena;
-    }
-
-    public void setResena(String resena) {
-        this.resena = resena;
-    }
-
-    public int getCalificacion() {
-        return calificacion;
-    }
-
-    public void setCalificacion(int calificacion) {
-        this.calificacion = calificacion;
-    }
-
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
-
-    public Producto getProducto() {
-        return producto;
-    }
-
-    public void setProducto(Producto producto) {
-        this.producto = producto;
-    }
 }

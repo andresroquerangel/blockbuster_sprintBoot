@@ -39,41 +39,8 @@ public class Estado {
 
     @Column(name="nombre")
     private String nombre;
-
-    @OneToMany(mappedBy = "estado", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonBackReference
-    @JsonIgnore
-    private List<Municipio> municipios;
-
-    @JsonManagedReference
-    @ManyToOne
-    @JoinColumn(name = "id_pais")
-    @JsonIgnoreProperties({"nombre"})
-    private Pais pais;
+    @Column(name="id_pais")
+    private int id_pais;
 
     // Getters y setters
-
-    public int getId_estado() {
-        return id_estado;
-    }
-
-    public void setId_estado(int id_estado) {
-        this.id_estado = id_estado;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public Pais getPais() {
-        return pais;
-    }
-
-    public void setPais(Pais pais) {
-        this.pais = pais;
-    }
 }

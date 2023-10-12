@@ -38,26 +38,5 @@ public class EstadoPedido {
     @Column(name = "nombre")
     private String nombre;
 
-    @OneToMany(mappedBy = "estadoPedido", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonBackReference
-    @JsonIgnore
-    private List<NotificacionesPedido> notificaciones;
-
     // Getters y setters
-
-    public int getId_estado_pedido() {
-        return id_estado_pedido;
-    }
-
-    public void setId_estado_pedido(int id_estado_pedido) {
-        this.id_estado_pedido = id_estado_pedido;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
 }

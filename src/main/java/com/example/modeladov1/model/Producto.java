@@ -19,21 +19,30 @@ import lombok.ToString;
 @Setter
 @ToString
 @Entity
-@Table
+@Table(name="producto")
 public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_producto")
     private int id_producto;
 
+    @Column(name="nombre")
     private String nombre;
+    @Column(name="descripcion")
     private String descripcion;
+    @Column(name="precio")
     private double precio;
+    @Column(name="cantidad")
     private int cantidad;
 
     @Lob
+    @Column(name="photo")
     private byte[] photo;
 
+    @Column(name="id_tienda")
     private int id_tienda;
+    @Column(name="id_tipo")
     private int id_tipo;
+    @Column(name="id_categoria")
     private int id_categoria;
 }

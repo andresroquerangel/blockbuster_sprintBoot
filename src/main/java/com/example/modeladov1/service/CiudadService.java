@@ -42,9 +42,7 @@ public class CiudadService {
         if (ciudadExistente.isPresent()) {
             Ciudad ciudad = ciudadExistente.get();
             ciudad.setNombre(ciudadActualizada.getNombre());
-            // Actualiza otros campos según sea necesario
-
-            // Guarda la ciudad actualizada en la base de datos
+            ciudad.setId_municipio(ciudadActualizada.getId_municipio());
             return repo.save(ciudad);
         } else {
             throw new NoSuchElementException("Ciudad no encontrada");

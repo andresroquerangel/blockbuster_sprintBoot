@@ -42,9 +42,7 @@ public class MunicipioService {
         if (municipioExistente.isPresent()) {
             Municipio municipio = municipioExistente.get();
             municipio.setNombre(municipioActualizado.getNombre());
-            // Actualiza otros campos según sea necesario
-
-            // Guarda el municipio actualizado en la base de datos
+            municipio.setId_estado(municipioActualizado.getId_estado());
             return repo.save(municipio);
         } else {
             throw new NoSuchElementException("Municipio no encontrado");

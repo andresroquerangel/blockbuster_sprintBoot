@@ -41,8 +41,8 @@ public class Rol_UsuarioService {
 
         if (rolUsuarioExistente.isPresent()) {
             Rol_Usuario rolUsuario = rolUsuarioExistente.get();
-            rolUsuario.setUsuario(rolUsuarioActualizado.getUsuario());
-            rolUsuario.setRol(rolUsuarioActualizado.getRol());
+            rolUsuario.setId_usuario(rolUsuarioActualizado.getId_usuario());
+            rolUsuario.setId_rol(rolUsuarioActualizado.getId_rol());
             // Actualiza otros campos según sea necesario
 
             // Guarda el rolUsuario actualizado en la base de datos

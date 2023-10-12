@@ -19,12 +19,14 @@ import lombok.ToString;
 @Setter
 @ToString
 @Entity
-@Table
+@Table(name="pais")
 public class Pais {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id_pais")
     private int id_pais;
 
+    @Column(name="nombre")
     private String nombre;
 
 }

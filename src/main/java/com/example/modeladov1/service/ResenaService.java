@@ -41,6 +41,8 @@ public class ResenaService {
             Resena resena = resenaExistente.get();
             resena.setResena(resenaActualizada.getResena());
             resena.setCalificacion(resenaActualizada.getCalificacion());
+            resena.setId_producto(resenaActualizada.getId_producto());
+            resena.setId_usuario(resenaActualizada.getId_usuario());
             // Actualiza otros campos según sea necesario
 
             // Guarda la reseña actualizada en la base de datos

@@ -41,66 +41,13 @@ public class VentaDetalle {
     @Column(name = "cantidad")
     private int cantidad;
 
-    @JsonManagedReference
-    @ManyToOne
-    @JoinColumn(name = "id_venta")
-    @JsonIgnoreProperties({"usuario","tipoPago"})
-    private Venta venta;
+    @Column(name = "id_venta")
+    private int id_venta;
 
-    @JsonManagedReference
-    @ManyToOne
-    @JoinColumn(name = "id_producto")
-    @JsonIgnoreProperties({"nombre","descripcion","precio","cantidad","photo","tienda","tipoProducto","categoria"})
-    private Producto producto;
+    @Column(name = "id_producto")
+    private int id_producto;
 
 
     // Getters y setters
 
-    public int getId_venta_detalle() {
-        return id_venta_detalle;
-    }
-
-    public void setId_venta_detalle(int id_venta_detalle) {
-        this.id_venta_detalle = id_venta_detalle;
-    }
-
-    public BigDecimal getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(BigDecimal precio) {
-        this.precio = precio;
-    }
-
-    public BigDecimal getSubtotal() {
-        return subtotal;
-    }
-
-    public void setSubtotal(BigDecimal subtotal) {
-        this.subtotal = subtotal;
-    }
-
-    public int getCantidad() {
-        return cantidad;
-    }
-
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
-    }
-
-    public Venta getVenta() {
-        return venta;
-    }
-
-    public void setVenta(Venta venta) {
-        this.venta = venta;
-    }
-
-    public Producto getProducto() {
-        return producto;
-    }
-
-    public void setProducto(Producto producto) {
-        this.producto = producto;
-    }
 }

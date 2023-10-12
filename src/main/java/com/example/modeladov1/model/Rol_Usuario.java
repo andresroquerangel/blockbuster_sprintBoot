@@ -33,41 +33,12 @@ public class Rol_Usuario {
     @Column(name = "rol_usuario")
     private int rol_usuario;
 
-    @JsonManagedReference
-    @ManyToOne
-    @JoinColumn(name = "id_usuario")
-    @JsonIgnoreProperties({"nombre","email","contraseña","direccion","telefono","token","ciudad"})
-    private Usuario usuario;
+    @Column(name="id_rol")
+    private int id_rol;
 
-    @JsonManagedReference
-    @ManyToOne
-    @JoinColumn(name = "id_rol")
-    @JsonIgnoreProperties({"rol"})
-    private Rol rol;
+    @Column(name="id_usuario")
+    private int id_usuario;
+
 
     // Getters y setters
-
-    public int getRol_usuario() {
-        return rol_usuario;
-    }
-
-    public void setRol_usuario(int rol_usuario) {
-        this.rol_usuario = rol_usuario;
-    }
-
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
-
-    public Rol getRol() {
-        return rol;
-    }
-
-    public void setRol(Rol rol) {
-        this.rol = rol;
-    }
 }

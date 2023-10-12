@@ -40,40 +40,8 @@ public class Municipio {
     @Column(name = "nombre")
     private String nombre;
 
-    @OneToMany(mappedBy = "municipio", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonBackReference
-    @JsonIgnore
-    private List<Ciudad> ciudades;
-
-    @JsonManagedReference
-    @ManyToOne
-    @JoinColumn(name = "id_estado")
-    @JsonIgnoreProperties({"nombre","pais"})
-    private Estado estado;
+    @Column(name="id_estado")
+    private int id_estado;
 
     // Getters y setters
-
-    public int getId_municipio() {
-        return id_municipio;
-    }
-
-    public void setId_municipio(int id_municipio) {
-        this.id_municipio = id_municipio;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public Estado getEstado() {
-        return estado;
-    }
-
-    public void setEstado(Estado estado) {
-        this.estado = estado;
-    }
 }

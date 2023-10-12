@@ -35,36 +35,8 @@ public class Ciudad {
 
     @Column(name="nombre")
     private String nombre;
-
-    @JsonManagedReference
-    @ManyToOne
-    @JoinColumn(name = "id_municipio")
-    @JsonIgnoreProperties({"nombre","estado"})
-    private Municipio municipio;
+    @Column(name="id_municipio")
+    private int id_municipio;
 
     // Getters y setters
-
-    public int getId_ciudad() {
-        return id_ciudad;
-    }
-
-    public void setId_ciudad(int id_ciudad) {
-        this.id_ciudad = id_ciudad;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public Municipio getMunicipio() {
-        return municipio;
-    }
-
-    public void setMunicipio(Municipio municipio) {
-        this.municipio = municipio;
-    }
 }

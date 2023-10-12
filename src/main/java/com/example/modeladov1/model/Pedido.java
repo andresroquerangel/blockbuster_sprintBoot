@@ -40,68 +40,15 @@ public class Pedido {
     @Column(name="fecha_pedido")
     private Date fecha_pedido;
 
-    @JsonManagedReference
-    @ManyToOne
-    @JoinColumn(name = "id_usuario")
-    @JsonIgnoreProperties({"nombre","email","contraseña","direccion","telefono","token","ciudad"})
-    private Usuario usuario;
+    @Column(name="id_tienda")
+    private int id_tienda;
 
-    @JsonManagedReference
-    @ManyToOne
-    @JsonIgnoreProperties({"descripcion","nombre"})
-    @JoinColumn(name = "id_tienda")
-    private Tienda tienda;
+    @Column(name="id_venta")
+    private int id_venta;
 
-    @JsonManagedReference
-    @ManyToOne
-    @JoinColumn(name = "id_venta")
-    @JsonIgnoreProperties({"usuario","tipopago"})
-    private Venta venta;
-
-    @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonBackReference
-    @JsonIgnore
-    private List<NotificacionesPedido> notificaciones;
+    @Column(name="id_usuario")
+    private int id_usuario;
 
     // Getters y setters
 
-    public int getId_pedido() {
-        return id_pedido;
-    }
-
-    public void setId_pedido(int id_pedido) {
-        this.id_pedido = id_pedido;
-    }
-
-    public Date getFecha_pedido() {
-        return fecha_pedido;
-    }
-
-    public void setFecha_pedido(Date fecha_pedido) {
-        this.fecha_pedido = fecha_pedido;
-    }
-
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
-
-    public Tienda getTienda() {
-        return tienda;
-    }
-
-    public void setTienda(Tienda tienda) {
-        this.tienda = tienda;
-    }
-
-    public Venta getVenta() {
-        return venta;
-    }
-
-    public void setVenta(Venta venta) {
-        this.venta = venta;
-    }
 }

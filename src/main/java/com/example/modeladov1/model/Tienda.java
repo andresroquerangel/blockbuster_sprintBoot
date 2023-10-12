@@ -31,8 +31,12 @@ import java.util.List;
 public class Tienda {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id_tienda")
     private int id_tienda;
 
+    @Column(name="nombre")
     private String nombre;
+
+    @Column(name="descripcion")
     private String descripcion;
 }

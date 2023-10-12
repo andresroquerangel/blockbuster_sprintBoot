@@ -44,6 +44,8 @@ public class VentaDetalleService {
             ventaDetalle.setPrecio(ventaDetalleActualizada.getPrecio());
             ventaDetalle.setSubtotal(ventaDetalleActualizada.getSubtotal());
             ventaDetalle.setCantidad(ventaDetalleActualizada.getCantidad());
+            ventaDetalle.setId_venta(ventaDetalleActualizada.getId_venta());
+            ventaDetalle.setId_producto(ventaDetalleActualizada.getId_producto());
             // Actualiza otros campos según sea necesario
 
             // Guarda la categoría actualizada en la base de datos

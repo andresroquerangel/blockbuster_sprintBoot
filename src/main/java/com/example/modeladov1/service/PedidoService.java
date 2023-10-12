@@ -39,9 +39,9 @@ public class PedidoService {
         if (pedidoExistente.isPresent()) {
             Pedido pedido = pedidoExistente.get();
             pedido.setFecha_pedido(pedidoActualizado.getFecha_pedido());
-            // Actualiza otros campos según sea necesario
-
-            // Guarda el pedido actualizado en la base de datos
+            pedido.setId_tienda(pedidoActualizado.getId_tienda());
+            pedido.setId_venta(pedidoActualizado.getId_venta());
+            pedido.setId_usuario(pedidoActualizado.getId_usuario());
             return repo.save(pedido);
         } else {
             throw new NoSuchElementException("Pedido no encontrado");

@@ -39,17 +39,23 @@ public class Usuario {
 
     @Column(name="nombre")
     private String nombre;
+
     @Column(name="email")
     private String email;
+
     @Column(name="contraseña")
     private String contraseña;
+
     @Column(name="direccion")
     private String direccion;
+
     @Column(name="telefono")
     private String telefono;
+
     @Column(name="token")
     private String token;
 
-
+    @Column(name="id_ciudad")
+    private int id_ciudad;
     // Getters y setters
 }

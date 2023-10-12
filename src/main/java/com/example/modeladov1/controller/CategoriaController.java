@@ -2,6 +2,7 @@ package com.example.modeladov1.controller;
 
 import java.util.List;
 import com.example.modeladov1.model.Categoria;
+import com.example.modeladov1.model.Pedido;
 import com.example.modeladov1.service.CategoriaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,31 +16,39 @@ import org.springframework.http.HttpStatus;
 @RestController
 @RequestMapping("/categorias")
 public class CategoriaController {
-    private final CategoriaService categoriaService;
+    private final CategoriaService ser;
 
     @Autowired
     public CategoriaController(CategoriaService categoriaService) {
-        this.categoriaService = categoriaService;
+        this.ser = categoriaService;
     }
 
-    @GetMapping("/all")
+    @GetMapping("/getAll")
     public List<Categoria> getCategorias() {
-        return categoriaService.getCategorias();
+        return ser.getCategorias();
     }
 
-    @GetMapping("/getOne/{id}")
+    @GetMapping("/{id}")
     public Categoria getCategoriaById(@PathVariable int id) {
-        return categoriaService.getCategoriaById(id);
+        return ser.getCategoriaById(id);
     }
 
-    @PostMapping("/create")
+    @PostMapping("/add")
     public Categoria saveCategoria(@RequestBody Categoria categoria) {
-        return categoriaService.saveCategoria(categoria);
+        return ser.saveCategoria(categoria);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @PutMapping("/{id}")
+    public ResponseEntity<Categoria> actualizarCategoria(
+            @RequestBody Categoria body,
+            @PathVariable Integer id) {
+        Categoria categoria = ser.actualizarCategoria(id, body);
+        return ResponseEntity.ok(categoria);
+    }
+
+    @DeleteMapping("/{id}")
     public void deleteCategoria(@PathVariable int id) {
-        categoriaService.deleteCategoria(id);
+        ser.deleteCategoria(id);
     }
 }
 

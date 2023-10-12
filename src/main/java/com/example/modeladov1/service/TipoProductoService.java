@@ -1,7 +1,10 @@
 package com.example.modeladov1.service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
+import com.example.modeladov1.model.Pais;
 import com.example.modeladov1.model.TipoProducto;
 import com.example.modeladov1.repository.TipoProductoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,26 +12,37 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class TipoProductoService {
-    private final TipoProductoRepository tipoProductoRepository;
+    private final TipoProductoRepository repo;
 
     @Autowired
     public TipoProductoService(TipoProductoRepository tipoProductoRepository) {
-        this.tipoProductoRepository = tipoProductoRepository;
+        this.repo = tipoProductoRepository;
     }
 
     public List<TipoProducto> getTiposProducto() {
-        return tipoProductoRepository.findAll();
+        return repo.findAll();
     }
 
     public TipoProducto getTipoProductoById(int id) {
-        return tipoProductoRepository.findById(id).orElse(null);
+        return repo.findById(id).orElse(null);
     }
 
     public TipoProducto saveTipoProducto(TipoProducto tipoProducto) {
-        return tipoProductoRepository.save(tipoProducto);
+        return repo.save(tipoProducto);
+    }
+
+    public TipoProducto actualizarTipoProducto(Integer id_pais, TipoProducto tipoProductoActualizada) {
+        Optional<TipoProducto> tipoProductoExistente = repo.findById(id_pais);
+        if (tipoProductoExistente.isPresent()) {
+            TipoProducto tipoProducto = tipoProductoExistente.get();
+            tipoProducto.setNombre(tipoProductoActualizada.getNombre());
+            return repo.save(tipoProducto);
+        } else {
+            throw new NoSuchElementException("Tipo de producto no encontrado");
+        }
     }
 
     public void deleteTipoProducto(int id) {
-        tipoProductoRepository.deleteById(id);
+        repo.deleteById(id);
     }
 }

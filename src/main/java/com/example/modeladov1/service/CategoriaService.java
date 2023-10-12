@@ -7,32 +7,45 @@ import java.util.NoSuchElementException;
 import java.util.Optional;
 
 import com.example.modeladov1.model.Categoria;
+import com.example.modeladov1.model.Pedido;
 import com.example.modeladov1.repository.CategoriaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class CategoriaService {
-    private final CategoriaRepository categoriaRepository;
+    private final CategoriaRepository repo;
+
 
     @Autowired
     public CategoriaService(CategoriaRepository categoriaRepository) {
-        this.categoriaRepository = categoriaRepository;
+        this.repo = categoriaRepository;
     }
 
     public List<Categoria> getCategorias() {
-        return categoriaRepository.findAll();
+        return repo.findAll();
     }
 
     public Categoria getCategoriaById(int id) {
-        return categoriaRepository.findById(id).orElse(null);
+        return repo.findById(id).orElse(null);
     }
 
     public Categoria saveCategoria(Categoria categoria) {
-        return categoriaRepository.save(categoria);
+        return repo.save(categoria);
+    }
+
+    public Categoria actualizarCategoria(Integer id_categoria, Categoria categoriaActualizada) {
+        Optional<Categoria> categoriaExistente = repo.findById(id_categoria);
+        if (categoriaExistente.isPresent()) {
+            Categoria categoria = categoriaExistente.get();
+            categoria.setNombre(categoriaActualizada.getNombre());
+            return repo.save(categoria);
+        } else {
+            throw new NoSuchElementException("Categoria no encontrado");
+        }
     }
 
     public void deleteCategoria(int id) {
-        categoriaRepository.deleteById(id);
+        repo.deleteById(id);
     }
 }

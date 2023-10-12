@@ -41,6 +41,9 @@ public class NotificacionesPedidoService {
             NotificacionesPedido notificacionesPedido = notificacionesPedidoExistente.get();
             notificacionesPedido.setMensaje(notificacionesPedidoActualizado.getMensaje());
             notificacionesPedido.setFecha_hora_creacion(notificacionesPedidoActualizado.getFecha_hora_creacion());
+            notificacionesPedido.setId_estado_pedido(notificacionesPedidoActualizado.getId_estado_pedido());
+            notificacionesPedido.setId_pedido(notificacionesPedidoActualizado.getId_pedido());
+            notificacionesPedido.setId_usuario(notificacionesPedidoActualizado.getId_usuario());
             // Actualiza otros campos según sea necesario
 
             // Guarda las notificaciones del pedido actualizadas en la base de datos

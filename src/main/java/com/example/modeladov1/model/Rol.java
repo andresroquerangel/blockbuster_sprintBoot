@@ -37,26 +37,5 @@ public class Rol {
 
     @Column(name="rol")
     private String rol;
-
-    @OneToMany(mappedBy = "rol", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonBackReference
-    @JsonIgnore
-    private List<Rol_Usuario> usuarios;
     // Getters y setters
-
-    public int getId_rol() {
-        return id_rol;
-    }
-
-    public void setId_rol(int id_rol) {
-        this.id_rol = id_rol;
-    }
-
-    public String getRol() {
-        return rol;
-    }
-
-    public void setRol(String rol) {
-        this.rol = rol;
-    }
 }
