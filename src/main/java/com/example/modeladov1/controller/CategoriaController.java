@@ -15,37 +15,31 @@ import org.springframework.http.HttpStatus;
 @RestController
 @RequestMapping("/categorias")
 public class CategoriaController {
+    private final CategoriaService categoriaService;
 
     @Autowired
-    CategoriaService ser;
-
-    @PostMapping("/add")
-    public void add(@RequestBody Categoria body){
-        ser.add(body);
+    public CategoriaController(CategoriaService categoriaService) {
+        this.categoriaService = categoriaService;
     }
 
-    @GetMapping("/getAll")
-    public List<Categoria> getAll(){
-        return ser.getAll();
+    @GetMapping("/all")
+    public List<Categoria> getCategorias() {
+        return categoriaService.getCategorias();
     }
 
-    @GetMapping("/{id}")
-    public Categoria getOne(@PathVariable int id){
-        return ser.getOne(id);
+    @GetMapping("/getOne/{id}")
+    public Categoria getCategoriaById(@PathVariable int id) {
+        return categoriaService.getCategoriaById(id);
     }
 
-    @DeleteMapping("/{id}")
-    public void eliminarCategoria(@PathVariable int id) {
-        ser.eliminarCategoria(id);
+    @PostMapping("/create")
+    public Categoria saveCategoria(@RequestBody Categoria categoria) {
+        return categoriaService.saveCategoria(categoria);
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Categoria> actualizarCategoria(
-            @RequestBody Categoria body,
-            @PathVariable Integer id) {
-        System.out.println(body);
-        Categoria categoria = ser.actualizarCategoria(id, body);
-        return ResponseEntity.ok(categoria);
+    @DeleteMapping("/delete/{id}")
+    public void deleteCategoria(@PathVariable int id) {
+        categoriaService.deleteCategoria(id);
     }
 }
 

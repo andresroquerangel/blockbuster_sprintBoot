@@ -11,35 +11,30 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/tiendas")
 public class TiendaController {
+    private final TiendaService tiendaService;
+
     @Autowired
-    TiendaService ser;
+    public TiendaController(TiendaService tiendaService) {
+        this.tiendaService = tiendaService;
+    }
+
+    @GetMapping("/all")
+    public List<Tienda> getTiendas() {
+        return tiendaService.getTiendas();
+    }
+
+    @GetMapping("/getOne/{id}")
+    public Tienda getTiendaById(@PathVariable int id) {
+        return tiendaService.getTiendaById(id);
+    }
 
     @PostMapping("/add")
-    public void add(@RequestBody Tienda body){
-        ser.add(body);
+    public Tienda saveTienda(@RequestBody Tienda tienda) {
+        return tiendaService.saveTienda(tienda);
     }
 
-    @GetMapping("/getAll")
-    public List<Tienda> getAll(){
-        return ser.getAll();
+    @DeleteMapping("/delete/{id}")
+    public void deleteTienda(@PathVariable int id) {
+        tiendaService.deleteTienda(id);
     }
-
-    @GetMapping("/{id}")
-    public Tienda getOne(@PathVariable int id){
-        return ser.getOne(id);
-    }
-
-    @DeleteMapping("/{id}")
-    public void eliminarTienda(@PathVariable int id) {
-        ser.eliminarTienda(id);
-    }
-
-    @PutMapping("/{id}")
-    public ResponseEntity<Tienda> actualizarTienda(
-            @RequestBody Tienda body,
-            @PathVariable Integer id) {
-        Tienda tienda = ser.actualizarTienda(id, body);
-        return ResponseEntity.ok(tienda);
-    }
-
 }

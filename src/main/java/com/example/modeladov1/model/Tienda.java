@@ -29,14 +29,10 @@ import java.util.List;
 @Entity
 @Table(name = "tienda")
 public class Tienda {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_tienda")
     private int id_tienda;
 
-    @Column(name="descripcion")
-    private String descripcion;
-    @Column(name="nombre")
     private String nombre;
+    private String descripcion;
 }

@@ -13,36 +13,30 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/tiposproductos")
 
 public class TipoProductoController {
+    private final TipoProductoService tipoProductoService;
 
     @Autowired
-    TipoProductoService ser;
+    public TipoProductoController(TipoProductoService tipoProductoService) {
+        this.tipoProductoService = tipoProductoService;
+    }
+
+    @GetMapping("/all")
+    public List<TipoProducto> getTiposProducto() {
+        return tipoProductoService.getTiposProducto();
+    }
+
+    @GetMapping("/getOne/{id}")
+    public TipoProducto getTipoProductoById(@PathVariable int id) {
+        return tipoProductoService.getTipoProductoById(id);
+    }
 
     @PostMapping("/add")
-    public void add(@RequestBody TipoProducto body){
-        ser.add(body);
+    public TipoProducto saveTipoProducto(@RequestBody TipoProducto tipoProducto) {
+        return tipoProductoService.saveTipoProducto(tipoProducto);
     }
 
-    @GetMapping("/getAll")
-    public List<TipoProducto> getAll(){
-        return ser.getAll();
-    }
-
-    @GetMapping("/{id}")
-    public TipoProducto getOne(@PathVariable int id){
-        return ser.getOne(id);
-    }
-
-    @DeleteMapping("/{id}")
-    public void eliminarTipoProducto(@PathVariable int id) {
-        ser.eliminarTipoProducto(id);
-    }
-
-    @PutMapping("/{id}")
-    public ResponseEntity<TipoProducto> actualizarTipoProducto(
-            @RequestBody TipoProducto body,
-            @PathVariable Integer id) {
-        System.out.println(body);
-        TipoProducto tipoProducto = ser.actualizarTipoProducto(id, body);
-        return ResponseEntity.ok(tipoProducto);
+    @DeleteMapping("/delete/{id}")
+    public void deleteTipoProducto(@PathVariable int id) {
+        tipoProductoService.deleteTipoProducto(id);
     }
 }

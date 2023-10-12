@@ -12,33 +12,30 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/paises")
 public class PaisController {
+    private final PaisService paisService;
+
     @Autowired
-    PaisService ser;
+    public PaisController(PaisService paisService) {
+        this.paisService = paisService;
+    }
+
+    @GetMapping("/all")
+    public List<Pais> getPaises() {
+        return paisService.getPaises();
+    }
+
+    @GetMapping("/getOne/{id}")
+    public Pais getPaisById(@PathVariable int id) {
+        return paisService.getPaisById(id);
+    }
 
     @PostMapping("/add")
-    public void add(@RequestBody Pais body){
-        ser.add(body);
+    public Pais savePais(@RequestBody Pais pais) {
+        return paisService.savePais(pais);
     }
 
-    @GetMapping("/getAll")
-    public List<Pais> getAll(){
-        return ser.getAll();
-    }
-
-    @GetMapping("/{id}")
-    public Pais getOne(@PathVariable int id){
-        return ser.getOne(id);
-    }
-    @DeleteMapping("/{id}")
-    public void eliminarPais(@PathVariable int id) {
-        ser.eliminarPais(id);
-    }
-
-    @PutMapping("/{id}")
-    public ResponseEntity<Pais> actualizarPais(
-            @RequestBody Pais body,
-            @PathVariable Integer id) {
-        Pais pais = ser.actualizarPais(id, body);
-        return ResponseEntity.ok(pais);
+    @DeleteMapping("/delete/{id}")
+    public void deletePais(@PathVariable int id) {
+        paisService.deletePais(id);
     }
 }

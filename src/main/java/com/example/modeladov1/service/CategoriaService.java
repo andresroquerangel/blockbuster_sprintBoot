@@ -13,37 +13,26 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CategoriaService {
+    private final CategoriaRepository categoriaRepository;
+
     @Autowired
-    CategoriaRepository repo;
-
-    public List<Categoria> getAll(){
-        List<Categoria> categorias = new ArrayList<>();
-        for(Categoria categoria : repo.findAll()){
-            categorias.add(categoria);
-        }
-        return categorias;
+    public CategoriaService(CategoriaRepository categoriaRepository) {
+        this.categoriaRepository = categoriaRepository;
     }
 
-    public Categoria getOne(Integer id) {
-      return repo.findById(id).orElse(null);
+    public List<Categoria> getCategorias() {
+        return categoriaRepository.findAll();
     }
 
-    public void add(Categoria categoria){
-        repo.save(categoria);
-    }
-    public void eliminarCategoria(int id) {
-        repo.deleteById(id);
+    public Categoria getCategoriaById(int id) {
+        return categoriaRepository.findById(id).orElse(null);
     }
 
-    public Categoria actualizarCategoria(Integer id_categoria, Categoria categoriaActualizada) {
-        Optional<Categoria> categoriaExistente = repo.findById(id_categoria);
+    public Categoria saveCategoria(Categoria categoria) {
+        return categoriaRepository.save(categoria);
+    }
 
-        if (categoriaExistente.isPresent()) {
-            Categoria categoria = categoriaExistente.get();
-            categoria.setNombre(categoriaActualizada.getNombre());
-            return repo.save(categoria);
-        } else {
-            throw new NoSuchElementException("Categoría no encontrada");
-        }
+    public void deleteCategoria(int id) {
+        categoriaRepository.deleteById(id);
     }
 }

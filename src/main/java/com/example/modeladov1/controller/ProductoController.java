@@ -10,36 +10,31 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/productos")
 public class ProductoController {
+    private final ProductoService productoService;
 
     @Autowired
-    ProductoService ser;
+    public ProductoController(ProductoService productoService) {
+        this.productoService = productoService;
+    }
+
+    @GetMapping("/all")
+    public List<Producto> getProductos() {
+        return productoService.getProductos();
+    }
+
+    @GetMapping("/getOne/{id}")
+    public Producto getProductoById(@PathVariable int id) {
+        return productoService.getProductoById(id);
+    }
 
     @PostMapping("/add")
-    public void add(@RequestBody Producto body){
-        ser.add(body);
+    public Producto saveProducto(@RequestBody Producto producto) {
+        return productoService.saveProducto(producto);
     }
 
-    @GetMapping("/getAll")
-    public List<Producto> getAll(){
-        return ser.getAll();
+    @DeleteMapping("/delete/{id}")
+    public void deleteProducto(@PathVariable int id) {
+        productoService.deleteProducto(id);
     }
 
-    @GetMapping("/{id}")
-    public Producto getOne(@PathVariable int id){
-        return ser.getOne(id);
-    }
-
-    @DeleteMapping("/{id}")
-    public void eliminarProducto(@PathVariable int id) {
-        ser.eliminarProducto(id);
-    }
-
-    @PutMapping("/{id}")
-    public ResponseEntity<Producto> actualizarProducto(
-            @RequestBody Producto body,
-            @PathVariable Integer id) {
-        System.out.println(body);
-        Producto producto = ser.actualizarProducto(id, body);
-        return ResponseEntity.ok(producto);
-    }
 }

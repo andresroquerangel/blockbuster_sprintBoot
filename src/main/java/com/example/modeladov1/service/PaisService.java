@@ -12,42 +12,27 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class PaisService {
+    private final PaisRepository paisRepository;
+
     @Autowired
-    PaisRepository repo;
-
-    public List<Pais> getAll(){
-        List<Pais> paises = new ArrayList<>();
-        for(Pais pais : repo.findAll()){
-            paises.add(pais);
-        }
-        return paises;
+    public PaisService(PaisRepository paisRepository) {
+        this.paisRepository = paisRepository;
     }
 
-    public Pais getOne(Integer id) {
-        return repo.findById(id).orElse(null);
+    public List<Pais> getPaises() {
+        return paisRepository.findAll();
     }
 
-    public void add(Pais pais){
-        repo.save(pais);
+    public Pais getPaisById(int id) {
+        return paisRepository.findById(id).orElse(null);
     }
 
-    public void eliminarPais(int id) {
-        repo.deleteById(id);
+    public Pais savePais(Pais pais) {
+        return paisRepository.save(pais);
     }
 
-    public Pais actualizarPais(Integer id_pais, Pais paisActualizado) {
-        Optional<Pais> paisExistente = repo.findById(id_pais);
-
-        if (paisExistente.isPresent()) {
-            Pais pais = paisExistente.get();
-            pais.setNombre(paisActualizado.getNombre());
-            // Actualiza otros campos según sea necesario
-
-            // Guarda el país actualizado en la base de datos
-            return repo.save(pais);
-        } else {
-            throw new NoSuchElementException("Pais no encontrado");
-        }
+    public void deletePais(int id) {
+        paisRepository.deleteById(id);
     }
 }
 
