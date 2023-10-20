@@ -35,8 +35,9 @@ public class Ciudad {
 
     @Column(name="nombre")
     private String nombre;
-    @Column(name="id_municipio")
-    private int id_municipio;
 
-    // Getters y setters
+    @ManyToOne
+    @JoinColumn(name="id_municipio", referencedColumnName = "id_municipio")
+    private Municipio municipio;
+
 }

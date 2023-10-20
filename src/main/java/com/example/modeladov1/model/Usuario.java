@@ -55,7 +55,7 @@ public class Usuario {
     @Column(name="token")
     private String token;
 
-    @Column(name="id_ciudad")
-    private int id_ciudad;
-    // Getters y setters
+    @ManyToOne
+    @JoinColumn(name="id_ciudad", referencedColumnName = "id_ciudad")
+    private Ciudad ciudad;
 }

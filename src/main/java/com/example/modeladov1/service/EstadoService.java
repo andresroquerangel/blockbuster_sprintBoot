@@ -7,7 +7,9 @@ import java.util.Optional;
 
 import com.example.modeladov1.model.Categoria;
 import com.example.modeladov1.model.Estado;
+import com.example.modeladov1.model.Pais;
 import com.example.modeladov1.repository.EstadoRepository;
+import com.example.modeladov1.service.PaisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,10 @@ import org.springframework.stereotype.Service;
 public class EstadoService {
     @Autowired
     EstadoRepository repo;
+
+    @Autowired
+    PaisService paisService; // Inyecta PaisService
+
 
     public List<Estado> getAll(){
         List<Estado> estados = new ArrayList<>();
@@ -29,8 +35,12 @@ public class EstadoService {
     }
 
     public void add(Estado estado){
+        Pais pais = paisService.getPaisById(estado.getPais().getId_pais()); // Usa paisService para llamar a getPaisById
+        estado.setPais(pais); // Establece el Pais en el Estado
         repo.save(estado);
     }
+
+
 
     public void eliminarEstado(int id) {
         repo.deleteById(id);
@@ -42,11 +52,13 @@ public class EstadoService {
         if (estadoExistente.isPresent()) {
             Estado estado = estadoExistente.get();
             estado.setNombre(estadoActualizado.getNombre());
-            estado.setId_pais(estadoActualizado.getId_pais());
+            Pais pais = paisService.getPaisById(estadoActualizado.getPais().getId_pais()); // Usa paisService para llamar a getPaisById
+            estado.setPais(pais); // Establece el Pais en el Estado
             return repo.save(estado);
         } else {
             throw new NoSuchElementException("Estado no encontrado");
         }
     }
+
 }
 

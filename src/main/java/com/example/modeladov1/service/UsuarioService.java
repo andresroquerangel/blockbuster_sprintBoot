@@ -5,7 +5,9 @@ import java.util.NoSuchElementException;
 import java.util.Optional;
 
 import com.example.modeladov1.model.Categoria;
+import com.example.modeladov1.model.Municipio;
 import com.example.modeladov1.model.Usuario;
+import com.example.modeladov1.model.Ciudad;
 import com.example.modeladov1.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +16,9 @@ import org.springframework.stereotype.Service;
 public class UsuarioService {
     @Autowired
     UsuarioRepository repo;
+
+    @Autowired
+    CiudadService ciudadService; // Inyecta ciudadService
 
     public List<Usuario> getAll(){
         List<Usuario> usuarios = new ArrayList<>();
@@ -28,6 +33,8 @@ public class UsuarioService {
     }
 
     public void add(Usuario usuario){
+        Ciudad ciudad = ciudadService.getOne(usuario.getCiudad().getId_ciudad()); // Usa municipioService para llamar a getOne
+        usuario.setCiudad(ciudad); // Establece el Municipio en la Ciudad
         repo.save(usuario);
     }
 
@@ -46,7 +53,10 @@ public class UsuarioService {
             usuario.setDireccion(usuarioActualizado.getDireccion());
             usuario.setTelefono(usuarioActualizado.getTelefono());
             usuario.setToken(usuarioActualizado.getToken());
-            usuario.setId_ciudad(usuarioActualizado.getId_ciudad());
+
+
+            Ciudad ciudad = ciudadService.getOne(usuarioActualizado.getCiudad().getId_ciudad()); // Usa municipioService para llamar a getOne
+            usuario.setCiudad(ciudad); // Establece el Municipio en la Ciudad
             // Actualiza otros campos según sea necesario
 
             // Guarda el usuario actualizado en la base de datos

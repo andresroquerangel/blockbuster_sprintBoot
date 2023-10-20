@@ -39,10 +39,15 @@ public class Producto {
     @Column(name="photo")
     private byte[] photo;
 
-    @Column(name="id_tienda")
-    private int id_tienda;
-    @Column(name="id_tipo")
-    private int id_tipo;
-    @Column(name="id_categoria")
-    private int id_categoria;
+    @ManyToOne
+    @JoinColumn(name="id_tienda", referencedColumnName = "id_tienda")
+    private Tienda tienda;
+
+    @ManyToOne
+    @JoinColumn(name="id_tipo", referencedColumnName = "id_tipo")
+    private TipoProducto tipoProducto;
+
+    @ManyToOne
+    @JoinColumn(name="id_categoria", referencedColumnName = "id_categoria")
+    private Categoria categoria;
 }

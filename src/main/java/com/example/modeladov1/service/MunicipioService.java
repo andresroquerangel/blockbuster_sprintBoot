@@ -7,6 +7,7 @@ import java.util.NoSuchElementException;
 
 import com.example.modeladov1.model.Categoria;
 import com.example.modeladov1.model.Municipio;
+import com.example.modeladov1.model.Estado;
 import com.example.modeladov1.repository.MunicipioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,9 @@ import org.springframework.stereotype.Service;
 public class MunicipioService {
     @Autowired
     MunicipioRepository repo;
+
+    @Autowired
+    EstadoService estadoService; // Inyecta estadoService
 
     public List<Municipio> getAll(){
         List<Municipio> municipios = new ArrayList<>();
@@ -29,8 +33,11 @@ public class MunicipioService {
     }
 
     public void add(Municipio municipio){
+        Estado estado = estadoService.getOne(municipio.getEstado().getId_estado()); // Usa estadoService para llamar a getOne
+        municipio.setEstado(estado); // Establece el Estado en el Municipio
         repo.save(municipio);
     }
+
 
     public void eliminarMunicipio(int id) {
         repo.deleteById(id);
@@ -42,7 +49,8 @@ public class MunicipioService {
         if (municipioExistente.isPresent()) {
             Municipio municipio = municipioExistente.get();
             municipio.setNombre(municipioActualizado.getNombre());
-            municipio.setId_estado(municipioActualizado.getId_estado());
+            Estado estado = estadoService.getOne(municipioActualizado.getEstado().getId_estado()); // Usa estadoService para llamar a getOne
+            municipio.setEstado(estado); // Establece el Estado en el Municipio
             return repo.save(municipio);
         } else {
             throw new NoSuchElementException("Municipio no encontrado");
