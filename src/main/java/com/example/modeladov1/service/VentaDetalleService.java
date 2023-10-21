@@ -5,7 +5,9 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
-import com.example.modeladov1.model.Categoria;
+import com.example.modeladov1.model.Pedido;
+import com.example.modeladov1.model.Venta;
+import com.example.modeladov1.model.Producto;
 import com.example.modeladov1.model.VentaDetalle;
 import com.example.modeladov1.repository.VentaDetalleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,12 @@ import org.springframework.stereotype.Service;
 public class VentaDetalleService {
     @Autowired
     VentaDetalleRepository repo;
+
+    @Autowired
+    VentaService ventaService; // Inyecta ventaService
+
+    @Autowired
+    ProductoService productoService;
 
     public List<VentaDetalle> getAll(){
         List<VentaDetalle> ventasdetalles = new ArrayList<>();
@@ -28,8 +36,12 @@ public class VentaDetalleService {
         return repo.findById(id).orElse(null);
     }
 
-    public void add(VentaDetalle ventadetalle){
-        repo.save(ventadetalle);
+    public void add(VentaDetalle ventaDetalle){
+        Venta venta = ventaService.getOne(ventaDetalle.getVenta().getId_venta()); // Usa ventaService para llamar a getOne
+        Producto producto = productoService.getProductoById(ventaDetalle.getProducto().getId_producto()); // Usa productoService para llamar a getOne
+        ventaDetalle.setVenta(venta); // Establece la Venta en el VentaDetalle
+        ventaDetalle.setProducto(producto); // Establece el Producto en el VentaDetalle
+        repo.save(ventaDetalle);
     }
 
     public void eliminarVentaDetalle(int id) {
@@ -41,14 +53,13 @@ public class VentaDetalleService {
 
         if (ventaDetalleExistente.isPresent()) {
             VentaDetalle ventaDetalle = ventaDetalleExistente.get();
+            Venta venta = ventaService.getOne(ventaDetalleActualizada.getVenta().getId_venta()); // Usa ventaService para llamar a getOne
+            Producto producto = productoService.getProductoById(ventaDetalleActualizada.getProducto().getId_producto()); // Usa productoService para llamar a getOne
+            ventaDetalle.setVenta(venta); // Establece la Venta en el VentaDetalle
+            ventaDetalle.setProducto(producto); // Establece el Producto en el VentaDetalle
             ventaDetalle.setPrecio(ventaDetalleActualizada.getPrecio());
             ventaDetalle.setSubtotal(ventaDetalleActualizada.getSubtotal());
             ventaDetalle.setCantidad(ventaDetalleActualizada.getCantidad());
-            ventaDetalle.setId_venta(ventaDetalleActualizada.getId_venta());
-            ventaDetalle.setId_producto(ventaDetalleActualizada.getId_producto());
-            // Actualiza otros campos según sea necesario
-
-            // Guarda la categoría actualizada en la base de datos
             return repo.save(ventaDetalle);
         } else {
             throw new NoSuchElementException("Venta Detalle no encontrada");

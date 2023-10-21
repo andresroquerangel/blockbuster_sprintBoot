@@ -38,11 +38,15 @@ public class Resena {
     @Column(name="calificacion")
     private int calificacion;
 
-   @Column(name = "id_usuario")
-   private int id_usuario;
+    @ManyToOne
+    @JoinColumn(name="id_usuario", referencedColumnName = "id_usuario")
+    private Usuario usuario; // Agrega la relación ManyToOne con Municipio
 
-   @Column(name = "id_producto")
-   private int id_producto;
+
+    @ManyToOne
+    @JoinColumn(name="id_producto", referencedColumnName = "id_producto")
+    private Producto producto; // Agrega la relación ManyToOne con Municipio
+
 
     // Getters y setters
 }

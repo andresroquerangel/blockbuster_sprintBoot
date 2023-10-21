@@ -41,11 +41,13 @@ public class VentaDetalle {
     @Column(name = "cantidad")
     private int cantidad;
 
-    @Column(name = "id_venta")
-    private int id_venta;
+    @ManyToOne
+    @JoinColumn(name="id_venta", referencedColumnName = "id_venta")
+    private Venta venta; // Agrega la relación ManyToOne con Municipio
 
-    @Column(name = "id_producto")
-    private int id_producto;
+    @ManyToOne
+    @JoinColumn(name="id_producto", referencedColumnName = "id_producto")
+    private Producto producto; // Agrega la relación ManyToOne con Municipio
 
 
     // Getters y setters

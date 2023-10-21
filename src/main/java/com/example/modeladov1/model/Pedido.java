@@ -40,14 +40,20 @@ public class Pedido {
     @Column(name="fecha_pedido")
     private Date fecha_pedido;
 
-    @Column(name="id_tienda")
-    private int id_tienda;
+    @ManyToOne
+    @JoinColumn(name="id_tienda", referencedColumnName = "id_tienda")
+    private Tienda tienda; // Agrega la relación ManyToOne con Municipio
 
-    @Column(name="id_venta")
-    private int id_venta;
 
-    @Column(name="id_usuario")
-    private int id_usuario;
+    @ManyToOne
+    @JoinColumn(name="id_venta", referencedColumnName = "id_venta")
+    private Venta venta; // Agrega la relación ManyToOne con Municipio
+
+
+    @ManyToOne
+    @JoinColumn(name="id_usuario", referencedColumnName = "id_usuario")
+    private Usuario usuario; // Agrega la relación ManyToOne con Municipio
+
 
     // Getters y setters
 
