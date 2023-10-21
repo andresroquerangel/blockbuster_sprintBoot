@@ -35,10 +35,13 @@ public class Venta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_venta")
     private int id_venta;
-    @Column(name = "id_usuario")
-    private int id_usuario;
-    @Column(name = "id_tipo_pago")
-    private int id_tipo_pago;
+    @ManyToOne
+    @JoinColumn(name="id_usuario", referencedColumnName = "id_usuario")
+    private Usuario usuario;
+
+    @ManyToOne
+    @JoinColumn(name="id_tipo_pago", referencedColumnName = "id_tipo_pago")
+    private TipoPago tipoPago;
 
 
     // Getters y setters

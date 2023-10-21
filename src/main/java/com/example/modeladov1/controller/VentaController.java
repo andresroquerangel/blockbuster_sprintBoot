@@ -1,6 +1,8 @@
 package com.example.modeladov1.controller;
 
 import java.util.List;
+
+import com.example.modeladov1.model.Rol;
 import com.example.modeladov1.model.Venta;
 import com.example.modeladov1.service.VentaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +36,12 @@ public class VentaController {
     public void eliminarVenta(@PathVariable int id) {
         ser.eliminarVenta(id);
     }
+
+    @PostMapping("/add")
+    public void add(@RequestBody Venta body){
+        ser.add(body);
+    }
+
 
     @PutMapping("/{id}")
     public ResponseEntity<Venta> actualizarVenta(

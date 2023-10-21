@@ -33,17 +33,21 @@ public class UsuarioService {
     }
 
     public void add(Usuario usuario){
-        Ciudad ciudad = ciudadService.getOne(usuario.getCiudad().getId_ciudad()); // Usa municipioService para llamar a getOne
-        usuario.setCiudad(ciudad); // Establece el Municipio en la Ciudad
-        repo.save(usuario);
+        System.out.println("Usuario: " + usuario);
+        try {
+            Ciudad ciudad = ciudadService.getOne(usuario.getCiudad().getId_ciudad());
+            usuario.setCiudad(ciudad);
+            repo.save(usuario);
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
     }
 
     public void eliminarUsuario(int id) {
         repo.deleteById(id);
     }
 
-    public Usuario actualizarUsuario(Integer id_usuario, Usuario usuarioActualizado) {
-        Optional<Usuario> usuarioExistente = repo.findById(id_usuario);
+    public Usuario actualizarUsuario(Integer id_usuario, Usuario usuarioActualizado) {Optional<Usuario> usuarioExistente = repo.findById(id_usuario);
 
         if (usuarioExistente.isPresent()) {
             Usuario usuario = usuarioExistente.get();
@@ -54,10 +58,8 @@ public class UsuarioService {
             usuario.setTelefono(usuarioActualizado.getTelefono());
             usuario.setToken(usuarioActualizado.getToken());
 
-
-            Ciudad ciudad = ciudadService.getOne(usuarioActualizado.getCiudad().getId_ciudad()); // Usa municipioService para llamar a getOne
-            usuario.setCiudad(ciudad); // Establece el Municipio en la Ciudad
-            // Actualiza otros campos según sea necesario
+            Ciudad ciudad = ciudadService.getOne(usuarioActualizado.getCiudad().getId_ciudad()); // Usa ciudadService para llamar a getOne
+            usuario.setCiudad(ciudad); // Establece la Ciudad en el Usuario
 
             // Guarda el usuario actualizado en la base de datos
             return repo.save(usuario);

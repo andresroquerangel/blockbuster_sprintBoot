@@ -39,14 +39,17 @@ public class NotificacionesPedido {
     @Column(name = "fecha_hora_creacion")
     private Time fecha_hora_creacion;
 
-    @Column(name="id_pedido")
-    private int id_pedido;
+    @ManyToOne
+    @JoinColumn(name="id_pedido", referencedColumnName = "id_pedido")
+    private Pedido pedido;
 
-    @Column(name="id_estado_pedido")
-    private int id_estado_pedido;
+    @ManyToOne
+    @JoinColumn(name="id_usuario", referencedColumnName = "id_usuario")
+    private Usuario usuario;
+    @ManyToOne
+    @JoinColumn(name="id_estado_pedido", referencedColumnName = "id_estado_pedido")
+    private EstadoPedido estadoPedido;
 
-    @Column(name="id_usuario")
-    private int id_usuario;
 
     // Getters y setters
 }
