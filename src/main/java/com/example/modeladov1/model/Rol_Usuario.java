@@ -33,11 +33,14 @@ public class Rol_Usuario {
     @Column(name = "rol_usuario")
     private int rol_usuario;
 
-    @Column(name="id_rol")
-    private int id_rol;
+    @ManyToOne
+    @JoinColumn(name="id_rol", referencedColumnName = "id_rol")
+    private Rol rol; // Agrega la relación ManyToOne con Municipio
 
-    @Column(name="id_usuario")
-    private int id_usuario;
+
+    @ManyToOne
+    @JoinColumn(name="id_usuario", referencedColumnName = "id_usuario")
+    private Usuario usuario; // Agrega la relación ManyToOne con Municipio
 
 
     // Getters y setters

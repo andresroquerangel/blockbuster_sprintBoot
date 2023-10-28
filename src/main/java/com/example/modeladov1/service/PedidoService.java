@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 import com.example.modeladov1.model.Pedido;
+import com.example.modeladov1.model.Tienda;
+import com.example.modeladov1.model.Venta;
+import com.example.modeladov1.model.Usuario;
 import com.example.modeladov1.repository.PedidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,6 +15,15 @@ import org.springframework.stereotype.Service;
 public class PedidoService {
     @Autowired
     PedidoRepository repo;
+
+    @Autowired
+    UsuarioService usuarioService;
+
+    @Autowired
+    TiendaService tiendaService;
+
+    @Autowired
+    VentaService ventaService;
 
     public List<Pedido> getAll(){
         List<Pedido> pedidos = new ArrayList<>();
@@ -26,6 +38,12 @@ public class PedidoService {
     }
 
     public void add(Pedido pedido){
+        Tienda tienda = tiendaService.getTiendaById(pedido.getTienda().getId_tienda()); // Usa tiendaService para llamar a getOne
+        Venta venta = ventaService.getOne(pedido.getVenta().getId_venta()); // Usa ventaService para llamar a getOne
+        Usuario usuario = usuarioService.getOne(pedido.getUsuario().getId_usuario()); // Usa usuarioService para llamar a getOne
+        pedido.setTienda(tienda); // Establece la Tienda en el Pedido
+        pedido.setVenta(venta); // Establece la Venta en el Pedido
+        pedido.setUsuario(usuario); // Establece el Usuario en el Pedido
         repo.save(pedido);
     }
 
@@ -38,10 +56,12 @@ public class PedidoService {
 
         if (pedidoExistente.isPresent()) {
             Pedido pedido = pedidoExistente.get();
-            pedido.setFecha_pedido(pedidoActualizado.getFecha_pedido());
-            pedido.setId_tienda(pedidoActualizado.getId_tienda());
-            pedido.setId_venta(pedidoActualizado.getId_venta());
-            pedido.setId_usuario(pedidoActualizado.getId_usuario());
+            Tienda tienda = tiendaService.getTiendaById(pedidoActualizado.getTienda().getId_tienda()); // Usa tiendaService para llamar a getOne
+            Venta venta = ventaService.getOne(pedidoActualizado.getVenta().getId_venta()); // Usa ventaService para llamar a getOne
+            Usuario usuario = usuarioService.getOne(pedidoActualizado.getUsuario().getId_usuario()); // Usa usuarioService para llamar a getOne
+            pedido.setTienda(tienda); // Establece la Tienda en el Pedido
+            pedido.setVenta(venta); // Establece la Venta en el Pedido
+            pedido.setUsuario(usuario); // Establece el Usuario en el Pedido
             return repo.save(pedido);
         } else {
             throw new NoSuchElementException("Pedido no encontrado");

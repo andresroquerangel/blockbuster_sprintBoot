@@ -5,6 +5,9 @@ import java.util.NoSuchElementException;
 import java.util.Optional;
 
 import com.example.modeladov1.model.NotificacionesPedido;
+import com.example.modeladov1.model.Usuario;
+import com.example.modeladov1.model.Pedido;
+import com.example.modeladov1.model.EstadoPedido;
 import com.example.modeladov1.repository.NotificacionesPedidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,6 +16,15 @@ import org.springframework.stereotype.Service;
 public class NotificacionesPedidoService {
     @Autowired
     NotificacionesPedidoRepository repo;
+
+    @Autowired
+    PedidoService pedidoService;
+
+    @Autowired
+    UsuarioService usuarioService;
+
+    @Autowired
+    EstadoPedidoService estadoPedidoService;
 
     public List<NotificacionesPedido> getAll(){
         List<NotificacionesPedido> notificacionesPedidos = new ArrayList<>();
@@ -27,6 +39,12 @@ public class NotificacionesPedidoService {
     }
 
     public void add(NotificacionesPedido notificacionesPedido){
+        Pedido pedido = pedidoService.getOne(notificacionesPedido.getPedido().getId_pedido()); // Usa pedidoService para llamar a getOne
+        Usuario usuario = usuarioService.getOne(notificacionesPedido.getUsuario().getId_usuario()); // Usa usuarioService para llamar a getOne
+        EstadoPedido estadoPedido = estadoPedidoService.getOne(notificacionesPedido.getEstadoPedido().getId_estado_pedido()); // Usa estadoPedidoService para llamar a getOne
+        notificacionesPedido.setPedido(pedido); // Establece el Pedido en la NotificacionesPedido
+        notificacionesPedido.setUsuario(usuario); // Establece el Usuario en la NotificacionesPedido
+        notificacionesPedido.setEstadoPedido(estadoPedido); // Establece el EstadoPedido en la NotificacionesPedido
         repo.save(notificacionesPedido);
     }
 
@@ -41,15 +59,20 @@ public class NotificacionesPedidoService {
             NotificacionesPedido notificacionesPedido = notificacionesPedidoExistente.get();
             notificacionesPedido.setMensaje(notificacionesPedidoActualizado.getMensaje());
             notificacionesPedido.setFecha_hora_creacion(notificacionesPedidoActualizado.getFecha_hora_creacion());
-            notificacionesPedido.setId_estado_pedido(notificacionesPedidoActualizado.getId_estado_pedido());
-            notificacionesPedido.setId_pedido(notificacionesPedidoActualizado.getId_pedido());
-            notificacionesPedido.setId_usuario(notificacionesPedidoActualizado.getId_usuario());
-            // Actualiza otros campos según sea necesario
 
-            // Guarda las notificaciones del pedido actualizadas en la base de datos
-            return repo.save(notificacionesPedido);
+            Pedido pedido = pedidoService.getOne(notificacionesPedidoActualizado.getPedido().getId_pedido());
+            notificacionesPedido.setPedido(pedido);
+
+            Usuario usuario = usuarioService.getOne(notificacionesPedidoActualizado.getUsuario().getId_usuario());
+            notificacionesPedido.setUsuario(usuario);
+
+            EstadoPedido estadoPedido = estadoPedidoService.getOne(notificacionesPedidoActualizado.getEstadoPedido().getId_estado_pedido());
+            notificacionesPedido.setEstadoPedido(estadoPedido);
+
+            repo.save(notificacionesPedido);
+            return notificacionesPedido;
         } else {
-            throw new NoSuchElementException("Notificaciones del pedido no encontradas");
+            throw new NoSuchElementException("NotificacionesPedido con id " + id_notificacionesPedido + " no encontrado");
         }
     }
 }

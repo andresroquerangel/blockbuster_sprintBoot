@@ -6,6 +6,8 @@ import java.util.Optional;
 
 import com.example.modeladov1.model.Resena;
 import com.example.modeladov1.repository.ResenaRepository;
+import com.example.modeladov1.model.Producto;
+import com.example.modeladov1.model.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +15,12 @@ import org.springframework.stereotype.Service;
 public class ResenaService {
     @Autowired
     ResenaRepository repo;
+
+    @Autowired
+    UsuarioService usuarioService; // Inyecta usuarioService
+
+    @Autowired
+    ProductoService productoService; // Inyecta productoService
 
     public List<Resena> getAll(){
         List<Resena> resenas = new ArrayList<>();
@@ -27,6 +35,10 @@ public class ResenaService {
     }
 
     public void add(Resena resena){
+        Usuario usuario = usuarioService.getOne(resena.getUsuario().getId_usuario()); // Usa usuarioService para llamar a getOne
+        Producto producto = productoService.getProductoById(resena.getProducto().getId_producto()); // Usa productoService para llamar a getOne
+        resena.setUsuario(usuario); // Establece el Usuario en la Resena
+        resena.setProducto(producto); // Establece el Producto en la Resena
         repo.save(resena);
     }
 
@@ -39,13 +51,12 @@ public class ResenaService {
 
         if (resenaExistente.isPresent()) {
             Resena resena = resenaExistente.get();
+            Usuario usuario = usuarioService.getOne(resenaActualizada.getUsuario().getId_usuario()); // Usa usuarioService para llamar a getOne
+            Producto producto = productoService.getProductoById(resenaActualizada.getProducto().getId_producto()); // Usa productoService para llamar a getOne
+            resena.setUsuario(usuario); // Establece el Usuario en la Resena
+            resena.setProducto(producto); // Establece el Producto en la Resena
             resena.setResena(resenaActualizada.getResena());
             resena.setCalificacion(resenaActualizada.getCalificacion());
-            resena.setId_producto(resenaActualizada.getId_producto());
-            resena.setId_usuario(resenaActualizada.getId_usuario());
-            // Actualiza otros campos según sea necesario
-
-            // Guarda la reseña actualizada en la base de datos
             return repo.save(resena);
         } else {
             throw new NoSuchElementException("Reseña no encontrada");

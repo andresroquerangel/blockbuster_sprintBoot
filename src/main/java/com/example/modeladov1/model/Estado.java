@@ -32,6 +32,7 @@ import java.util.List;
 @Table(name = "estado")
 public class Estado {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_estado")
@@ -39,8 +40,9 @@ public class Estado {
 
     @Column(name="nombre")
     private String nombre;
-    @Column(name="id_pais")
-    private int id_pais;
 
-    // Getters y setters
+    @ManyToOne
+    @JoinColumn(name="id_pais", referencedColumnName = "id_pais")
+    private Pais pais;
+    // getters y setters...
 }

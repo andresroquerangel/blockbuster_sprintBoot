@@ -40,8 +40,8 @@ public class Municipio {
     @Column(name = "nombre")
     private String nombre;
 
-    @Column(name="id_estado")
-    private int id_estado;
+    @ManyToOne
+    @JoinColumn(name="id_estado", referencedColumnName = "id_estado")
+    private Estado estado;
 
-    // Getters y setters
 }

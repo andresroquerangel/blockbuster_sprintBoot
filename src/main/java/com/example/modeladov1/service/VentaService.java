@@ -7,6 +7,8 @@ import java.util.Optional;
 
 import com.example.modeladov1.model.Categoria;
 import com.example.modeladov1.model.Venta;
+import com.example.modeladov1.model.Usuario;
+import com.example.modeladov1.model.TipoPago;
 import com.example.modeladov1.repository.VentaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +17,12 @@ import org.springframework.stereotype.Service;
 public class VentaService {
     @Autowired
     VentaRepository repo;
+
+    @Autowired
+    UsuarioService usuarioService;
+
+    @Autowired
+    TipoPagoService tipoPagoService;
 
     public List<Venta> getAll(){
         List<Venta> ventas = new ArrayList<>();
@@ -29,6 +37,10 @@ public class VentaService {
     }
 
     public void add(Venta venta){
+        Usuario usuario = usuarioService.getOne(venta.getUsuario().getId_usuario());
+        TipoPago tipoPago = tipoPagoService.getOne(venta.getTipoPago().getId_tipo_pago());
+        venta.setUsuario(usuario);
+        venta.setTipoPago(tipoPago);
         repo.save(venta);
     }
 
@@ -41,11 +53,8 @@ public class VentaService {
 
         if (ventaExistente.isPresent()) {
             Venta venta = ventaExistente.get();
-            venta.setId_usuario(ventaActualizada.getId_usuario());
-            venta.setId_tipo_pago(ventaActualizada.getId_tipo_pago());
-            // Actualiza otros campos según sea necesario
-
-            // Guarda la categoría actualizada en la base de datos
+            venta.setUsuario(usuarioService.getOne(ventaActualizada.getUsuario().getId_usuario()));
+            venta.setTipoPago(tipoPagoService.getOne(ventaActualizada.getTipoPago().getId_tipo_pago()));
             return repo.save(venta);
         } else {
             throw new NoSuchElementException("Venta no encontrada");
