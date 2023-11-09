@@ -33,6 +33,7 @@ class VentaDetalleServiceTest {
 
     @Test
     void getAll() {
+
         when(repo.findAll()).thenReturn(Arrays.asList(ventaDetalle));
         assertNotNull(ventaDetalleService.getAll());
     }
