@@ -20,6 +20,8 @@ public class CiudadService {
     @Autowired
     MunicipioService municipioService; // Inyecta municipioService
 
+
+
     public List<Ciudad> getAll(){
         List<Ciudad> ciudades = new ArrayList<>();
         for(Ciudad ciudad : repo.findAll()){
