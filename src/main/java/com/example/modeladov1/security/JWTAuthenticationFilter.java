@@ -2,9 +2,11 @@ package com.example.modeladov1.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.Authorization;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import javax.servlet.FilterChain;
@@ -15,6 +17,12 @@ import java.io.IOException;
 import java.util.Collections;
 
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
+    private final AuthenticationManager authManager;
+    private final UserDetailsService userDetailsService;
+    public JWTAuthenticationFilter(AuthenticationManager authManager, UserDetailsService userDetailsService) {
+        this.authManager = authManager;
+        this.userDetailsService = userDetailsService;
+    }
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
         AuthCredentials authCredentials = new AuthCredentials();
