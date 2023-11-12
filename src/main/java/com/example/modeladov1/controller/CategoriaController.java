@@ -6,6 +6,7 @@ import com.example.modeladov1.model.Pedido;
 import com.example.modeladov1.service.CategoriaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -46,6 +47,8 @@ public class CategoriaController {
         return ResponseEntity.ok(categoria);
     }
 
+
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     public void deleteCategoria(@PathVariable int id) {
         ser.deleteCategoria(id);
