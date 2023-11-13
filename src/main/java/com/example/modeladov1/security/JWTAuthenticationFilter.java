@@ -2,9 +2,11 @@ package com.example.modeladov1.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.Authorization;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import javax.servlet.FilterChain;
@@ -15,6 +17,13 @@ import java.io.IOException;
 import java.util.Collections;
 
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
+    private final AuthenticationManager authManager;
+    private final UserDetailsService userDetailsService;
+    public JWTAuthenticationFilter(AuthenticationManager authManager, UserDetailsService userDetailsService) {
+        this.authManager = authManager;
+        this.userDetailsService = userDetailsService;
+        super.setAuthenticationManager(authManager); // Asegúrate de establecer el AuthenticationManager correctamente
+    }
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
         AuthCredentials authCredentials = new AuthCredentials();
@@ -31,7 +40,7 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authResult) throws IOException, ServletException {
         UserDetailsImpl userDetails = (UserDetailsImpl) authResult.getPrincipal();
 
-        String token = TokenUtil.createToken(userDetails.getNombre(),userDetails.getUsername());
+        String token = TokenUtil.createToken(userDetails.getNombre(),userDetails.getUsername(),userDetails.getAuthorities());
 
         response.addHeader("Authorization","Bearer "+token);
         response.getWriter().flush();

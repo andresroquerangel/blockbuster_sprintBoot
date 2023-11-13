@@ -21,6 +21,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.util.List;
+import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -58,4 +59,8 @@ public class Usuario {
     @ManyToOne
     @JoinColumn(name="id_ciudad", referencedColumnName = "id_ciudad")
     private Ciudad ciudad;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "rol_usuario", joinColumns = @JoinColumn(name = "id_usuario"), inverseJoinColumns = @JoinColumn(name = "id_rol"))
+    private Set<Rol> roles;
 }
