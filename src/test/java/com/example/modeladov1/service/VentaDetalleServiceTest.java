@@ -28,6 +28,7 @@ class VentaDetalleServiceTest {
 
         ventaDetalle = new VentaDetalle();
         ventaDetalle.setVenta(new Venta());
+        ventaDetalle.setCantidad(20);
         ventaDetalle.setId_venta_detalle(1);
     }
 
