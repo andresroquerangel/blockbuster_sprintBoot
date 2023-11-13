@@ -24,15 +24,15 @@ public class WebSecurityConfig {
 
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http, AuthenticationManager authManager) throws Exception {
-        JWTAuthenticationFilter jwtAuthenticationFilter = new JWTAuthenticationFilter();
-        jwtAuthenticationFilter.setAuthenticationManager(authManager);
+        JWTAuthenticationFilter jwtAuthenticationFilter = new JWTAuthenticationFilter(authManager, userDetailsService);
         jwtAuthenticationFilter.setFilterProcessesUrl("/login");
 
         return http
                 .csrf().disable()
                 .authorizeRequests()
-                .anyRequest()
-                .authenticated()
+                .antMatchers("/public/**").permitAll()
+                .antMatchers("/categorias/**").hasRole("ADMIN")
+                .anyRequest().authenticated()
                 .and()
                 .httpBasic()
                 .and()
@@ -43,6 +43,7 @@ public class WebSecurityConfig {
                 .addFilterBefore(jwtAuthorizationFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
     }
+
 
     /*@Bean
     UserDetailsService userDetailsService(){
@@ -69,7 +70,7 @@ public class WebSecurityConfig {
     }
 
     public static void main(String[] args) {
-        System.out.println("pass: "+new BCryptPasswordEncoder().encode("1234"));
+        System.out.println("pass: "+new BCryptPasswordEncoder().encode("123"));
     }
 
 }
