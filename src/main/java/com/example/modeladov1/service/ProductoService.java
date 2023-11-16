@@ -9,12 +9,17 @@ import com.example.modeladov1.model.Tienda;
 import com.example.modeladov1.model.TipoProducto;
 import com.example.modeladov1.model.Categoria;
 import com.example.modeladov1.repository.ProductoRepository;
+import com.example.modeladov1.security.JWTAuthenticationFilter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ProductoService {
     private final ProductoRepository repo;
+
+    private static final Logger logger = LoggerFactory.getLogger(JWTAuthenticationFilter.class);
 
     @Autowired
     TiendaService tiendaService;
@@ -31,7 +36,12 @@ public class ProductoService {
     }
 
     public List<Producto> getProductos() {
-        return repo.findAll();
+        try {
+            return repo.findAll();
+        }catch (javax.persistence.EntityNotFoundException e){
+            logger.error("Error, fetch con id no existente",e.getCause());
+        }
+        return null;
     }
 
     public Producto getProductoById(int id) {

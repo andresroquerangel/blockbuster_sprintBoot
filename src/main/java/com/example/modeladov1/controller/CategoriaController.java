@@ -6,6 +6,7 @@ import com.example.modeladov1.model.Pedido;
 import com.example.modeladov1.service.CategoriaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 @RestController
-@RequestMapping("/categorias")
+@RequestMapping("/admin/categorias")
 public class CategoriaController {
     private final CategoriaService ser;
 

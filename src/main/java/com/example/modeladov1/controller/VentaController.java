@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 
 @RestController
-@RequestMapping("/ventas")
+@RequestMapping("/admin/ventas")
 
 public class VentaController {
     @Autowired
