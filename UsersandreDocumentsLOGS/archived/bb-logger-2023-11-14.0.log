@@ -1,0 +1,99 @@
+[INFO ] [restartedMain] [14112023 12:40:57] [com.example.modeladov1.Modeladov1Application[55]] Starting Modeladov1Application using Java 20.0.2 on PCANDRES with PID 22740 (C:\Users\andre\OneDrive\Documents\SpringBoot Projects\modeladov1\target\classes started by andre in C:\Users\andre\OneDrive\Documents\SpringBoot Projects\modeladov1) 
+[INFO ] [restartedMain] [14112023 12:40:57] [com.example.modeladov1.Modeladov1Application[631]] No active profile set, falling back to 1 default profile: "default" 
+[INFO ] [restartedMain] [14112023 12:40:57] [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor[255]] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+[INFO ] [restartedMain] [14112023 12:40:57] [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor[255]] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+[INFO ] [restartedMain] [14112023 12:40:59] [org.springframework.data.repository.config.RepositoryConfigurationDelegate[132]] Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+[INFO ] [restartedMain] [14112023 12:41:00] [org.springframework.data.repository.config.RepositoryConfigurationDelegate[201]] Finished Spring Data repository scanning in 259 ms. Found 18 JPA repository interfaces. 
+[INFO ] [restartedMain] [14112023 12:41:02] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer[108]] Tomcat initialized with port(s): 8082 (http) 
+[INFO ] [restartedMain] [14112023 12:41:03] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext[292]] Root WebApplicationContext: initialization completed in 5511 ms 
+[WARN ] [restartedMain] [14112023 12:41:06] [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator[133]] HHH000342: Could not obtain connection to query metadata 
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:175)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:181)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:272)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:246)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:223)
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:175)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:295)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:252)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:223)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:173)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1460)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1494)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1160)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:911)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.example.modeladov1.Modeladov1Application.main(Modeladov1Application.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:150)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:166)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:121)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:945)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815)
+	... 52 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:673)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:540)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:590)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:666)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:153)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
+	... 55 common frames omitted
+[INFO ] [restartedMain] [14112023 12:41:08] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[437]] Initialized JPA EntityManagerFactory for persistence unit 'blockbusterp' 
+[WARN ] [restartedMain] [14112023 12:41:11] [org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration[223]] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+[INFO ] [restartedMain] [14112023 12:41:12] [org.springframework.security.web.DefaultSecurityFilterChain[55]] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6b96d8e7, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@48b443cc, org.springframework.security.web.context.SecurityContextPersistenceFilter@18e7f7aa, org.springframework.security.web.header.HeaderWriterFilter@307cd99c, org.springframework.security.web.authentication.logout.LogoutFilter@424efe8, com.example.modeladov1.security.JWTAuthorizationFilter@13bed545, com.example.modeladov1.security.JWTAuthenticationFilter@32bd4ee2, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5c3fe7ce, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7512ff85, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2d389f2c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@29df6873, org.springframework.security.web.session.SessionManagementFilter@3fa9410, org.springframework.security.web.access.ExceptionTranslationFilter@7f607269, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@772688ee] 
+[INFO ] [restartedMain] [14112023 12:41:13] [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer[59]] LiveReload server is running on port 35729 
+[INFO ] [restartedMain] [14112023 12:41:14] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer[220]] Tomcat started on port(s): 8082 (http) with context path '/blockbuster-wsp' 
+[INFO ] [restartedMain] [14112023 12:41:15] [com.example.modeladov1.Modeladov1Application[61]] Started Modeladov1Application in 19.121 seconds (JVM running for 21.025) 
+[INFO ] [SpringApplicationShutdownHook] [14112023 15:19:41] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[651]] Closing JPA EntityManagerFactory for persistence unit 'blockbusterp' 
