@@ -12,6 +12,7 @@ import org.mockito.MockitoAnnotations;
 import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 class RolServiceTest {
@@ -40,4 +41,6 @@ class RolServiceTest {
         when(repo.findAll()).thenReturn(Arrays.asList(rol));
         assertNotNull(rolService.getAll());
     }
+
+
 }
