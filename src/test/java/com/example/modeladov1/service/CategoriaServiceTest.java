@@ -60,7 +60,7 @@ class CategoriaServiceTest {
         Categoria updCategoria = new Categoria();
         updCategoria.setNombre("Nueva categoria");
 
-        ResponseEntity<Object> responseEntity = categoriaService.actualizarCategoria(1, updCategoria);
+        ResponseEntity<Object> responseEntity = categoriaService.actualizarCategoria(1,updCategoria);
 
         assertEquals(200, responseEntity.getStatusCodeValue());
         assertNotNull(responseEntity.getBody());
