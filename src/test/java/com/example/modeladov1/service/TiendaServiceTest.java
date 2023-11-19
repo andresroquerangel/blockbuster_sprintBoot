@@ -1,7 +1,5 @@
 package com.example.modeladov1.service;
 
-import com.example.modeladov1.model.Categoria;
-import com.example.modeladov1.model.Rol;
 import com.example.modeladov1.model.Tienda;
 import com.example.modeladov1.repository.TiendaRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,6 +14,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
+
 
 class TiendaServiceTest {
 

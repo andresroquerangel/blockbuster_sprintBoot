@@ -10,7 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/municipios")
+@RequestMapping("/admin/municipios")
 public class MunicipioController {
     @Autowired
     MunicipioService ser;

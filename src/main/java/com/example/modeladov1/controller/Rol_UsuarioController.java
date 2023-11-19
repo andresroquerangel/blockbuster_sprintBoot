@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/rol_usuarios")
+@RequestMapping("/admin/rol_usuarios")
 public class Rol_UsuarioController {
     @Autowired
     Rol_UsuarioService ser;

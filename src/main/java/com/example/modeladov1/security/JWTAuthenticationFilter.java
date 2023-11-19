@@ -2,6 +2,8 @@ package com.example.modeladov1.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.Authorization;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -19,6 +21,7 @@ import java.util.Collections;
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
     private final AuthenticationManager authManager;
     private final UserDetailsService userDetailsService;
+    private static final Logger logger = LoggerFactory.getLogger(JWTAuthenticationFilter.class);
     public JWTAuthenticationFilter(AuthenticationManager authManager, UserDetailsService userDetailsService) {
         this.authManager = authManager;
         this.userDetailsService = userDetailsService;
@@ -41,7 +44,7 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
         UserDetailsImpl userDetails = (UserDetailsImpl) authResult.getPrincipal();
 
         String token = TokenUtil.createToken(userDetails.getNombre(),userDetails.getUsername(),userDetails.getAuthorities());
-
+        logger.info(token);
         response.addHeader("Authorization","Bearer "+token);
         response.getWriter().flush();
 
