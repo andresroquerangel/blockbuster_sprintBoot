@@ -10,8 +10,10 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import java.util.Arrays;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 class RolServiceTest {
@@ -40,4 +42,12 @@ class RolServiceTest {
         when(repo.findAll()).thenReturn(Arrays.asList(rol));
         assertNotNull(rolService.getAll());
     }
+
+    @Test
+    void getOne() {
+        rol.setId_rol(1);
+        Optional<Rol> optionalRol = Optional.of(rol);
+    }
+
+
 }

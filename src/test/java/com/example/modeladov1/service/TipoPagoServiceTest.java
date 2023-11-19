@@ -1,5 +1,6 @@
 package com.example.modeladov1.service;
 
+import com.example.modeladov1.model.Tienda;
 import com.example.modeladov1.model.TipoPago;
 import com.example.modeladov1.repository.TipoPagoRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -9,8 +10,10 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import java.util.Arrays;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 class TipoPagoServiceTest {
@@ -38,5 +41,12 @@ class TipoPagoServiceTest {
     void getAll() {
         when(repo.findAll()).thenReturn(Arrays.asList(tipoPago));
         assertNotNull(tipoPagoService.getAll());
+    }
+
+
+    @Test
+    void getOne() {
+        tipoPago.setId_tipo_pago(1);
+        Optional<TipoPago> optionalTipoPago = Optional.of(tipoPago);
     }
 }

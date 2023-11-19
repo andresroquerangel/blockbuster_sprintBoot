@@ -9,8 +9,10 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import java.util.Arrays;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 
@@ -38,5 +40,17 @@ class TiendaServiceTest {
     void getTiendas() {
         when(repo.findAll()).thenReturn(Arrays.asList(tienda));
         assertNotNull(tiendaService.getTiendas());
+    }
+
+    @Test
+    void newTienda() {
+        when(repo.save(any(Tienda.class))).thenReturn(tienda);
+        assertNotNull(tiendaService.saveTienda(new Tienda()));
+    }
+
+    @Test
+    void getOne() {
+        tienda.setId_tienda(1);
+        Optional<Tienda> optionalTienda = Optional.of(tienda);
     }
 }
