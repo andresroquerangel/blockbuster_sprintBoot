@@ -33,7 +33,7 @@ class TiendaServiceTest {
         tienda = new Tienda();
         tienda.setDescripcion("Prueba de mi primera tienda");
         tienda.setNombre("Pruebas");
-        tienda.setId_tienda(3);
+        tienda.setId_tienda(100);
     }
 
     @Test
@@ -53,4 +53,24 @@ class TiendaServiceTest {
         tienda.setId_tienda(1);
         Optional<Tienda> optionalTienda = Optional.of(tienda);
     }
+
+    @Test
+    void update() {
+        when(repo.save(any(Tienda.class))).thenReturn(tienda);
+        Tienda t = tiendaService.saveTienda(tienda);
+        assertNotNull(t);
+        when(repo.findById(any(Integer.class))).thenReturn(Optional.of(t));
+        Tienda t2 = tiendaService.getTiendaById(t.getId_tienda());
+        assertNotNull(t2);
+        Tienda tienda2 = new Tienda();
+        tienda2.setDescripcion("Prueba de mi primera tienda2");
+        tienda2.setNombre("Pruebas2");
+        when(repo.save(any(Tienda.class))).thenReturn(tienda2);
+        Tienda updatedTienda = tiendaService.actualizarTienda(t.getId_tienda(), tienda2);
+        assertNotNull(updatedTienda);
+        Tienda t3 = tiendaService.getTiendaById(t.getId_tienda());
+        assertEquals(tienda2.getNombre(), t3.getNombre());
+        assertEquals(tienda2.getDescripcion(), t3.getDescripcion());
+    }
+
 }

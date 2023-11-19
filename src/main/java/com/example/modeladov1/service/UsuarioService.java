@@ -32,15 +32,8 @@ public class UsuarioService {
         return repo.findById(id).orElse(null);
     }
 
-    public void add(Usuario usuario){
-        System.out.println("Usuario: " + usuario);
-        try {
-            Ciudad ciudad = ciudadService.getOne(usuario.getCiudad().getId_ciudad());
-            usuario.setCiudad(ciudad);
-            repo.save(usuario);
-        } catch (NullPointerException e) {
-            e.printStackTrace();
-        }
+    public Usuario add(Usuario usuario){
+        return repo.save(usuario);
     }
 
     public void eliminarUsuario(int id) {

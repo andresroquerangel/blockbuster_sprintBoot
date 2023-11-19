@@ -1,6 +1,7 @@
 package com.example.modeladov1.service;
 
 import com.example.modeladov1.model.Categoria;
+import com.example.modeladov1.model.Tienda;
 import com.example.modeladov1.repository.CategoriaRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -50,22 +51,22 @@ class CategoriaServiceTest {
         assertNotNull(categoriaService.saveCategoria(new Categoria()));
     }
 
-    /*@Test
-    void updateCategoria() {
-        Categoria existCategoria = new Categoria();
-        existCategoria.setId_categoria(1);
-
-        when(repo.findById(1)).thenReturn(Optional.of(existCategoria));
-
-        Categoria updCategoria = new Categoria();
-        updCategoria.setNombre("Nueva categoria");
-
-        ResponseEntity<Object> responseEntity = categoriaService.actualizarCategoria(1,updCategoria);
-
-        assertEquals(200, responseEntity.getStatusCodeValue());
-        assertNotNull(responseEntity.getBody());
-
-    }*/
+    @Test
+    void update() {
+        when(repo.save(any(Categoria.class))).thenReturn(categoria);
+        Categoria t = categoriaService.saveCategoria(categoria);
+        assertNotNull(t);
+        when(repo.findById(any(Integer.class))).thenReturn(Optional.of(t));
+        Categoria t2 = categoriaService.getCategoriaById(t.getId_categoria());
+        assertNotNull(t2);
+        Categoria categoria2 = new Categoria();
+        categoria2.setNombre("Pruebas2");
+        when(repo.save(any(Categoria.class))).thenReturn(categoria2);
+        Categoria updatedCategoria = categoriaService.actualizarCategoria(t.getId_categoria(), categoria2);
+        assertNotNull(updatedCategoria);
+        Categoria t3 = categoriaService.getCategoriaById(t.getId_categoria());
+        assertEquals(categoria2.getNombre(), t3.getNombre());
+    }
 
     @Test
     void getOne() {

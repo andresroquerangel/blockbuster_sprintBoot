@@ -1,5 +1,6 @@
 package com.example.modeladov1.service;
 
+import com.example.modeladov1.model.Categoria;
 import com.example.modeladov1.model.Tienda;
 import com.example.modeladov1.model.TipoProducto;
 import com.example.modeladov1.repository.TipoProductoRepository;
@@ -45,6 +46,23 @@ class TipoProductoServiceTest {
     void newTipoProducto() {
         when(repo.save(any(TipoProducto.class))).thenReturn(tipoProducto);
         assertNotNull(tipoProductoService.saveTipoProducto(new TipoProducto()));
+    }
+
+    @Test
+    void update() {
+        when(repo.save(any(TipoProducto.class))).thenReturn(tipoProducto);
+        TipoProducto t = tipoProductoService.saveTipoProducto(tipoProducto);
+        assertNotNull(t);
+        when(repo.findById(any(Integer.class))).thenReturn(Optional.of(t));
+        TipoProducto t2 = tipoProductoService.getTipoProductoById(t.getId_tipo());
+        assertNotNull(t2);
+        TipoProducto TipoProducto2 = new TipoProducto();
+        TipoProducto2.setNombre("Pruebas2");
+        when(repo.save(any(TipoProducto.class))).thenReturn(TipoProducto2);
+        TipoProducto updatedTipoProducto = tipoProductoService.actualizarTipoProducto(t.getId_tipo(), TipoProducto2);
+        assertNotNull(updatedTipoProducto);
+        TipoProducto t3 = tipoProductoService.getTipoProductoById(t.getId_tipo());
+        assertEquals(TipoProducto2.getNombre(), t3.getNombre());
     }
 
     @Test

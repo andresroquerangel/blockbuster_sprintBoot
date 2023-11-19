@@ -49,12 +49,6 @@ public class ProductoService {
     }
 
     public Producto saveProducto(Producto producto) {
-        Tienda tienda = tiendaService.getTiendaById(producto.getTienda().getId_tienda());
-        TipoProducto tipoProducto = tipoProductoService.getTipoProductoById(producto.getTipoProducto().getId_tipo());
-        Categoria categoria = categoriaService.getCategoriaById(producto.getCategoria().getId_categoria());
-        producto.setTienda(tienda);
-        producto.setTipoProducto(tipoProducto);
-        producto.setCategoria(categoria);
         return repo.save(producto);
     }
 
