@@ -7,6 +7,7 @@ import com.example.modeladov1.model.Pedido;
 import com.example.modeladov1.model.Tienda;
 import com.example.modeladov1.model.Venta;
 import com.example.modeladov1.model.Usuario;
+import com.example.modeladov1.model.EstadoPedido;
 import com.example.modeladov1.repository.PedidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,6 +25,9 @@ public class PedidoService {
 
     @Autowired
     VentaService ventaService;
+
+    @Autowired
+    private EstadoPedidoService estadoPedidoService;
 
     public List<Pedido> getAll(){
         List<Pedido> pedidos = new ArrayList<>();
@@ -66,5 +70,21 @@ public class PedidoService {
         } else {
             throw new NoSuchElementException("Pedido no encontrado");
         }
+    }
+
+    //Workflow
+    public Pedido actualizarEstadoPedido(Integer idPedido, Integer nuevoEstadoId) {
+        Pedido pedido = repo.findById(idPedido).orElseThrow(NoSuchElementException::new);
+        EstadoPedido nuevoEstado = estadoPedidoService.getOne(nuevoEstadoId);
+
+        // Actualizar el estado del pedido
+        pedido.setEstado(nuevoEstado);
+        repo.save(pedido);
+
+        // Enviar notificación al usuario
+        String mensaje = "Su pedido ha cambiado a " + nuevoEstado.getNombre();
+        // Aquí puedes implementar la lógica para enviar la notificación al usuario
+
+        return pedido;
     }
 }

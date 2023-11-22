@@ -40,4 +40,12 @@ public class PedidoController {
         Pedido pedido = ser.actualizarPedido(id, body);
         return ResponseEntity.ok(pedido);
     }
+
+    @PutMapping("/{id}/cambiarEstado/{nuevoEstadoId}")
+    public ResponseEntity<Pedido> cambiarEstadoPedido(
+            @PathVariable Integer id,
+            @PathVariable Integer nuevoEstadoId) {
+        Pedido pedidoActualizado = ser.actualizarEstadoPedido(id, nuevoEstadoId);
+        return ResponseEntity.ok(pedidoActualizado);
+    }
 }

@@ -54,7 +54,14 @@ public class Pedido {
     @JoinColumn(name="id_usuario", referencedColumnName = "id_usuario")
     private Usuario usuario; // Agrega la relación ManyToOne con Municipio
 
+    @ManyToOne
+    @JoinColumn(name = "id_estado_pedido") // Cambia el nombre de la columna a la que hace referencia en la tabla Pedido
+    private EstadoPedido estado;
+
+
+
 
     // Getters y setters
 
 }
+
