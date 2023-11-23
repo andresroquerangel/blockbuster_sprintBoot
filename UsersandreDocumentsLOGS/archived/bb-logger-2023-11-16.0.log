@@ -1,0 +1,847 @@
+[INFO ] [restartedMain] [16112023 02:24:39] [com.example.modeladov1.Modeladov1Application[55]] Starting Modeladov1Application using Java 20.0.2 on PCANDRES with PID 1524 (C:\Users\andre\OneDrive\Documents\SpringBoot Projects\modeladov1\target\classes started by andre in C:\Users\andre\OneDrive\Documents\SpringBoot Projects\modeladov1) 
+[INFO ] [restartedMain] [16112023 02:24:39] [com.example.modeladov1.Modeladov1Application[631]] No active profile set, falling back to 1 default profile: "default" 
+[INFO ] [restartedMain] [16112023 02:24:39] [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor[255]] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+[INFO ] [restartedMain] [16112023 02:24:39] [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor[255]] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+[INFO ] [restartedMain] [16112023 02:24:43] [org.springframework.data.repository.config.RepositoryConfigurationDelegate[132]] Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+[INFO ] [restartedMain] [16112023 02:24:43] [org.springframework.data.repository.config.RepositoryConfigurationDelegate[201]] Finished Spring Data repository scanning in 299 ms. Found 18 JPA repository interfaces. 
+[INFO ] [restartedMain] [16112023 02:24:47] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer[108]] Tomcat initialized with port(s): 8082 (http) 
+[INFO ] [restartedMain] [16112023 02:24:47] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext[292]] Root WebApplicationContext: initialization completed in 7483 ms 
+[INFO ] [restartedMain] [16112023 02:24:52] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[437]] Initialized JPA EntityManagerFactory for persistence unit 'blockbusterp' 
+[WARN ] [restartedMain] [16112023 02:24:54] [org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration[223]] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+[INFO ] [restartedMain] [16112023 02:24:55] [org.springframework.security.web.DefaultSecurityFilterChain[55]] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1684ffa8, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@34171e61, org.springframework.security.web.context.SecurityContextPersistenceFilter@663e084, org.springframework.security.web.header.HeaderWriterFilter@73be32a7, org.springframework.security.web.authentication.logout.LogoutFilter@3e86d7c3, com.example.modeladov1.security.JWTAuthorizationFilter@249ed6ce, com.example.modeladov1.security.JWTAuthenticationFilter@324c8425, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1ae71adb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3869d27c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@582f8334, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@40d78f7d, org.springframework.security.web.session.SessionManagementFilter@731cca46, org.springframework.security.web.access.ExceptionTranslationFilter@45ac3632, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@a982347] 
+[INFO ] [restartedMain] [16112023 02:24:56] [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer[59]] LiveReload server is running on port 35729 
+[INFO ] [restartedMain] [16112023 02:24:56] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer[220]] Tomcat started on port(s): 8082 (http) with context path '/blockbuster-wsp' 
+[INFO ] [restartedMain] [16112023 02:24:58] [com.example.modeladov1.Modeladov1Application[61]] Started Modeladov1Application in 20.22 seconds (JVM running for 25.691) 
+[INFO ] [http-nio-8082-exec-1] [16112023 02:26:42] [org.springframework.web.servlet.DispatcherServlet[525]] Initializing Servlet 'dispatcherServlet' 
+[INFO ] [http-nio-8082-exec-1] [16112023 02:26:42] [org.springframework.web.servlet.DispatcherServlet[547]] Completed initialization in 7 ms 
+[ERROR] [http-nio-8082-exec-1] [16112023 02:26:44] [com.example.modeladov1.security.UserDetailServiceImpl[23]] Unauthorized error: class org.springframework.security.core.userdetails.UsernameNotFoundException 
+[WARN ] [http-nio-8082-exec-3] [16112023 02:27:16] [org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver[208]] Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; nested exception is java.lang.NumberFormatException: For input string: "getAll"] 
+[INFO ] [SpringApplicationShutdownHook] [16112023 02:29:01] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[651]] Closing JPA EntityManagerFactory for persistence unit 'blockbusterp' 
+[INFO ] [restartedMain] [16112023 02:29:14] [com.example.modeladov1.Modeladov1Application[55]] Starting Modeladov1Application using Java 20.0.2 on PCANDRES with PID 12304 (C:\Users\andre\OneDrive\Documents\SpringBoot Projects\modeladov1\target\classes started by andre in C:\Users\andre\OneDrive\Documents\SpringBoot Projects\modeladov1) 
+[INFO ] [restartedMain] [16112023 02:29:14] [com.example.modeladov1.Modeladov1Application[631]] No active profile set, falling back to 1 default profile: "default" 
+[INFO ] [restartedMain] [16112023 02:29:14] [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor[255]] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+[INFO ] [restartedMain] [16112023 02:29:14] [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor[255]] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+[INFO ] [restartedMain] [16112023 02:29:15] [org.springframework.data.repository.config.RepositoryConfigurationDelegate[132]] Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+[INFO ] [restartedMain] [16112023 02:29:15] [org.springframework.data.repository.config.RepositoryConfigurationDelegate[201]] Finished Spring Data repository scanning in 156 ms. Found 18 JPA repository interfaces. 
+[INFO ] [restartedMain] [16112023 02:29:17] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer[108]] Tomcat initialized with port(s): 8082 (http) 
+[INFO ] [restartedMain] [16112023 02:29:17] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext[292]] Root WebApplicationContext: initialization completed in 3199 ms 
+[INFO ] [restartedMain] [16112023 02:29:20] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[437]] Initialized JPA EntityManagerFactory for persistence unit 'blockbusterp' 
+[WARN ] [restartedMain] [16112023 02:29:21] [org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration[223]] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+[INFO ] [restartedMain] [16112023 02:29:22] [org.springframework.security.web.DefaultSecurityFilterChain[55]] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4d079ddb, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@674231a5, org.springframework.security.web.context.SecurityContextPersistenceFilter@86dbf49, org.springframework.security.web.header.HeaderWriterFilter@719d78a9, org.springframework.security.web.authentication.logout.LogoutFilter@645cecee, com.example.modeladov1.security.JWTAuthorizationFilter@2d7cb9fd, com.example.modeladov1.security.JWTAuthenticationFilter@32ca1f6b, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@513f6a14, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@285c7453, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@457370a7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7a7c8933, org.springframework.security.web.session.SessionManagementFilter@175a7429, org.springframework.security.web.access.ExceptionTranslationFilter@363e55ab, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4334d3e1] 
+[INFO ] [restartedMain] [16112023 02:29:22] [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer[59]] LiveReload server is running on port 35729 
+[INFO ] [restartedMain] [16112023 02:29:22] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer[220]] Tomcat started on port(s): 8082 (http) with context path '/blockbuster-wsp' 
+[INFO ] [restartedMain] [16112023 02:29:23] [com.example.modeladov1.Modeladov1Application[61]] Started Modeladov1Application in 10.541 seconds (JVM running for 12.637) 
+[INFO ] [http-nio-8082-exec-1] [16112023 02:29:48] [org.springframework.web.servlet.DispatcherServlet[525]] Initializing Servlet 'dispatcherServlet' 
+[INFO ] [http-nio-8082-exec-1] [16112023 02:29:48] [org.springframework.web.servlet.DispatcherServlet[547]] Completed initialization in 6 ms 
+[INFO ] [File Watcher] [16112023 02:30:25] [org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener[211]] Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications) 
+[INFO ] [Thread-4] [16112023 02:30:25] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[651]] Closing JPA EntityManagerFactory for persistence unit 'blockbusterp' 
+[INFO ] [restartedMain] [16112023 02:30:26] [com.example.modeladov1.Modeladov1Application[55]] Starting Modeladov1Application using Java 20.0.2 on PCANDRES with PID 12304 (C:\Users\andre\OneDrive\Documents\SpringBoot Projects\modeladov1\target\classes started by andre in C:\Users\andre\OneDrive\Documents\SpringBoot Projects\modeladov1) 
+[INFO ] [restartedMain] [16112023 02:30:26] [com.example.modeladov1.Modeladov1Application[631]] No active profile set, falling back to 1 default profile: "default" 
+[INFO ] [restartedMain] [16112023 02:30:28] [org.springframework.data.repository.config.RepositoryConfigurationDelegate[132]] Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+[INFO ] [restartedMain] [16112023 02:30:28] [org.springframework.data.repository.config.RepositoryConfigurationDelegate[201]] Finished Spring Data repository scanning in 260 ms. Found 18 JPA repository interfaces. 
+[INFO ] [restartedMain] [16112023 02:30:30] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer[108]] Tomcat initialized with port(s): 8082 (http) 
+[INFO ] [restartedMain] [16112023 02:30:30] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext[292]] Root WebApplicationContext: initialization completed in 4069 ms 
+[INFO ] [restartedMain] [16112023 02:30:30] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[437]] Initialized JPA EntityManagerFactory for persistence unit 'blockbusterp' 
+[WARN ] [restartedMain] [16112023 02:30:31] [org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration[223]] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+[INFO ] [restartedMain] [16112023 02:30:32] [org.springframework.security.web.DefaultSecurityFilterChain[55]] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@66442f7b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@51a95b58, org.springframework.security.web.context.SecurityContextPersistenceFilter@4fbcf870, org.springframework.security.web.header.HeaderWriterFilter@8aa8ea6, org.springframework.security.web.authentication.logout.LogoutFilter@78d4c7cd, com.example.modeladov1.security.JWTAuthorizationFilter@6bf0b3ba, com.example.modeladov1.security.JWTAuthenticationFilter@28cc40ee, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@72e3be36, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4b2cb555, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@172fcd28, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@473149cf, org.springframework.security.web.session.SessionManagementFilter@2b084cb6, org.springframework.security.web.access.ExceptionTranslationFilter@26145012, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5e74fd0e] 
+[INFO ] [restartedMain] [16112023 02:30:32] [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer[59]] LiveReload server is running on port 35729 
+[INFO ] [restartedMain] [16112023 02:30:32] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer[220]] Tomcat started on port(s): 8082 (http) with context path '/blockbuster-wsp' 
+[INFO ] [restartedMain] [16112023 02:30:33] [com.example.modeladov1.Modeladov1Application[61]] Started Modeladov1Application in 7.629 seconds (JVM running for 82.485) 
+[INFO ] [restartedMain] [16112023 02:30:33] [org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener[63]] Condition evaluation unchanged 
+[INFO ] [File Watcher] [16112023 02:30:51] [org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener[211]] Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications) 
+[INFO ] [Thread-7] [16112023 02:30:51] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[651]] Closing JPA EntityManagerFactory for persistence unit 'blockbusterp' 
+[INFO ] [restartedMain] [16112023 02:30:51] [com.example.modeladov1.Modeladov1Application[55]] Starting Modeladov1Application using Java 20.0.2 on PCANDRES with PID 12304 (C:\Users\andre\OneDrive\Documents\SpringBoot Projects\modeladov1\target\classes started by andre in C:\Users\andre\OneDrive\Documents\SpringBoot Projects\modeladov1) 
+[INFO ] [restartedMain] [16112023 02:30:51] [com.example.modeladov1.Modeladov1Application[631]] No active profile set, falling back to 1 default profile: "default" 
+[INFO ] [restartedMain] [16112023 02:30:52] [org.springframework.data.repository.config.RepositoryConfigurationDelegate[132]] Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+[INFO ] [restartedMain] [16112023 02:30:52] [org.springframework.data.repository.config.RepositoryConfigurationDelegate[201]] Finished Spring Data repository scanning in 128 ms. Found 18 JPA repository interfaces. 
+[INFO ] [restartedMain] [16112023 02:30:53] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer[108]] Tomcat initialized with port(s): 8082 (http) 
+[INFO ] [restartedMain] [16112023 02:30:53] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext[292]] Root WebApplicationContext: initialization completed in 1920 ms 
+[INFO ] [restartedMain] [16112023 02:30:54] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[437]] Initialized JPA EntityManagerFactory for persistence unit 'blockbusterp' 
+[WARN ] [restartedMain] [16112023 02:30:55] [org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration[223]] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+[INFO ] [restartedMain] [16112023 02:30:55] [org.springframework.security.web.DefaultSecurityFilterChain[55]] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@663d44ee, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@128b0b8, org.springframework.security.web.context.SecurityContextPersistenceFilter@1e02e23b, org.springframework.security.web.header.HeaderWriterFilter@7a454d1c, org.springframework.security.web.authentication.logout.LogoutFilter@3182aa53, com.example.modeladov1.security.JWTAuthorizationFilter@66486922, com.example.modeladov1.security.JWTAuthenticationFilter@475e370a, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2bd4e8f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@125994ee, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@42240614, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2fffd058, org.springframework.security.web.session.SessionManagementFilter@7f60a4cd, org.springframework.security.web.access.ExceptionTranslationFilter@3c060a27, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2f0d37a0] 
+[INFO ] [restartedMain] [16112023 02:30:55] [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer[59]] LiveReload server is running on port 35729 
+[INFO ] [restartedMain] [16112023 02:30:55] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer[220]] Tomcat started on port(s): 8082 (http) with context path '/blockbuster-wsp' 
+[INFO ] [restartedMain] [16112023 02:30:56] [com.example.modeladov1.Modeladov1Application[61]] Started Modeladov1Application in 4.704 seconds (JVM running for 105.028) 
+[INFO ] [restartedMain] [16112023 02:30:56] [org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener[63]] Condition evaluation unchanged 
+[INFO ] [File Watcher] [16112023 02:31:30] [org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener[211]] Restarting due to 2 class path changes (0 additions, 2 deletions, 0 modifications) 
+[INFO ] [Thread-11] [16112023 02:31:30] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[651]] Closing JPA EntityManagerFactory for persistence unit 'blockbusterp' 
+[INFO ] [restartedMain] [16112023 02:31:31] [com.example.modeladov1.Modeladov1Application[55]] Starting Modeladov1Application using Java 20.0.2 on PCANDRES with PID 12304 (C:\Users\andre\OneDrive\Documents\SpringBoot Projects\modeladov1\target\classes started by andre in C:\Users\andre\OneDrive\Documents\SpringBoot Projects\modeladov1) 
+[INFO ] [restartedMain] [16112023 02:31:31] [com.example.modeladov1.Modeladov1Application[631]] No active profile set, falling back to 1 default profile: "default" 
+[INFO ] [restartedMain] [16112023 02:31:31] [org.springframework.data.repository.config.RepositoryConfigurationDelegate[132]] Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+[INFO ] [restartedMain] [16112023 02:31:32] [org.springframework.data.repository.config.RepositoryConfigurationDelegate[201]] Finished Spring Data repository scanning in 147 ms. Found 18 JPA repository interfaces. 
+[INFO ] [restartedMain] [16112023 02:31:32] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer[108]] Tomcat initialized with port(s): 8082 (http) 
+[INFO ] [restartedMain] [16112023 02:31:32] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext[292]] Root WebApplicationContext: initialization completed in 1791 ms 
+[INFO ] [restartedMain] [16112023 02:31:33] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[437]] Initialized JPA EntityManagerFactory for persistence unit 'blockbusterp' 
+[WARN ] [restartedMain] [16112023 02:31:35] [org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration[223]] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+[INFO ] [restartedMain] [16112023 02:31:35] [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer[59]] LiveReload server is running on port 35729 
+[INFO ] [restartedMain] [16112023 02:31:35] [org.springframework.security.web.DefaultSecurityFilterChain[55]] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@293a80b3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7d07d5c0, org.springframework.security.web.context.SecurityContextPersistenceFilter@1edf5c94, org.springframework.security.web.header.HeaderWriterFilter@4852479c, org.springframework.security.web.csrf.CsrfFilter@73a543de, org.springframework.security.web.authentication.logout.LogoutFilter@7eb48251, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1678a982, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@1a491636, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@2ee0475b, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@42be2197, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6d0da5f9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@37396163, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1d616989, org.springframework.security.web.session.SessionManagementFilter@473d5c1e, org.springframework.security.web.access.ExceptionTranslationFilter@23e33ed, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4262c17d] 
+[INFO ] [restartedMain] [16112023 02:31:35] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer[220]] Tomcat started on port(s): 8082 (http) with context path '/blockbuster-wsp' 
+[INFO ] [restartedMain] [16112023 02:31:36] [com.example.modeladov1.Modeladov1Application[61]] Started Modeladov1Application in 5.835 seconds (JVM running for 145.619) 
+[INFO ] [restartedMain] [16112023 02:31:36] [org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener[58]] Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   SpringBootWebSecurityConfiguration.SecurityFilterChainConfiguration matched:
+      - AllNestedConditions 2 matched 0 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter,org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) did not find any beans; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+
+
+Negative matches:
+-----------------
+
+    None
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+ 
+[INFO ] [SpringApplicationShutdownHook] [16112023 02:31:45] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[651]] Closing JPA EntityManagerFactory for persistence unit 'blockbusterp' 
+[INFO ] [restartedMain] [16112023 02:32:03] [com.example.modeladov1.Modeladov1Application[55]] Starting Modeladov1Application using Java 20.0.2 on PCANDRES with PID 2548 (C:\Users\andre\OneDrive\Documents\SpringBoot Projects\modeladov1\target\classes started by andre in C:\Users\andre\OneDrive\Documents\SpringBoot Projects\modeladov1) 
+[INFO ] [restartedMain] [16112023 02:32:03] [com.example.modeladov1.Modeladov1Application[631]] No active profile set, falling back to 1 default profile: "default" 
+[INFO ] [restartedMain] [16112023 02:32:03] [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor[255]] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+[INFO ] [restartedMain] [16112023 02:32:03] [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor[255]] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+[INFO ] [restartedMain] [16112023 02:32:04] [org.springframework.data.repository.config.RepositoryConfigurationDelegate[132]] Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+[INFO ] [restartedMain] [16112023 02:32:04] [org.springframework.data.repository.config.RepositoryConfigurationDelegate[201]] Finished Spring Data repository scanning in 204 ms. Found 18 JPA repository interfaces. 
+[INFO ] [restartedMain] [16112023 02:32:06] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer[108]] Tomcat initialized with port(s): 8082 (http) 
+[INFO ] [restartedMain] [16112023 02:32:06] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext[292]] Root WebApplicationContext: initialization completed in 3315 ms 
+[INFO ] [restartedMain] [16112023 02:32:09] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[437]] Initialized JPA EntityManagerFactory for persistence unit 'blockbusterp' 
+[WARN ] [restartedMain] [16112023 02:32:10] [org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration[223]] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+[INFO ] [restartedMain] [16112023 02:32:11] [org.springframework.security.web.DefaultSecurityFilterChain[55]] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@67bdff02, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@25f1c95e, org.springframework.security.web.context.SecurityContextPersistenceFilter@4c527951, org.springframework.security.web.header.HeaderWriterFilter@538de0fe, org.springframework.security.web.authentication.logout.LogoutFilter@5f2ce530, com.example.modeladov1.security.JWTAuthorizationFilter@2d7cb9fd, com.example.modeladov1.security.JWTAuthenticationFilter@27e2eb91, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@30ee4c1f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@457370a7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@208108b7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5ede8278, org.springframework.security.web.session.SessionManagementFilter@2e994e76, org.springframework.security.web.access.ExceptionTranslationFilter@72697276, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4d079ddb] 
+[INFO ] [restartedMain] [16112023 02:32:11] [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer[59]] LiveReload server is running on port 35729 
+[INFO ] [restartedMain] [16112023 02:32:11] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer[220]] Tomcat started on port(s): 8082 (http) with context path '/blockbuster-wsp' 
+[INFO ] [restartedMain] [16112023 02:32:12] [com.example.modeladov1.Modeladov1Application[61]] Started Modeladov1Application in 10.674 seconds (JVM running for 12.875) 
+[INFO ] [http-nio-8082-exec-1] [16112023 02:32:32] [org.springframework.web.servlet.DispatcherServlet[525]] Initializing Servlet 'dispatcherServlet' 
+[INFO ] [http-nio-8082-exec-1] [16112023 02:32:32] [org.springframework.web.servlet.DispatcherServlet[547]] Completed initialization in 3 ms 
+[INFO ] [SpringApplicationShutdownHook] [16112023 02:33:06] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[651]] Closing JPA EntityManagerFactory for persistence unit 'blockbusterp' 
+[INFO ] [restartedMain] [16112023 02:33:17] [com.example.modeladov1.Modeladov1Application[55]] Starting Modeladov1Application using Java 20.0.2 on PCANDRES with PID 3696 (C:\Users\andre\OneDrive\Documents\SpringBoot Projects\modeladov1\target\classes started by andre in C:\Users\andre\OneDrive\Documents\SpringBoot Projects\modeladov1) 
+[INFO ] [restartedMain] [16112023 02:33:17] [com.example.modeladov1.Modeladov1Application[631]] No active profile set, falling back to 1 default profile: "default" 
+[INFO ] [restartedMain] [16112023 02:33:17] [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor[255]] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+[INFO ] [restartedMain] [16112023 02:33:17] [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor[255]] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+[INFO ] [restartedMain] [16112023 02:33:19] [org.springframework.data.repository.config.RepositoryConfigurationDelegate[132]] Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+[INFO ] [restartedMain] [16112023 02:33:19] [org.springframework.data.repository.config.RepositoryConfigurationDelegate[201]] Finished Spring Data repository scanning in 201 ms. Found 18 JPA repository interfaces. 
+[INFO ] [restartedMain] [16112023 02:33:24] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer[108]] Tomcat initialized with port(s): 8082 (http) 
+[INFO ] [restartedMain] [16112023 02:33:24] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext[292]] Root WebApplicationContext: initialization completed in 6414 ms 
+[INFO ] [restartedMain] [16112023 02:33:28] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[437]] Initialized JPA EntityManagerFactory for persistence unit 'blockbusterp' 
+[WARN ] [restartedMain] [16112023 02:33:29] [org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration[223]] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+[INFO ] [restartedMain] [16112023 02:33:30] [org.springframework.security.web.DefaultSecurityFilterChain[55]] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@34e91b2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4e53f0c7, org.springframework.security.web.context.SecurityContextPersistenceFilter@14aa24e0, org.springframework.security.web.header.HeaderWriterFilter@5eeb8fd, org.springframework.security.web.authentication.logout.LogoutFilter@72050df9, com.example.modeladov1.security.JWTAuthorizationFilter@2bf7d091, com.example.modeladov1.security.JWTAuthenticationFilter@57c06817, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@231dd9ad, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6f51253c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5ccdf101, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@62b86922, org.springframework.security.web.session.SessionManagementFilter@25fadab4, org.springframework.security.web.access.ExceptionTranslationFilter@1b79fcf2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@235dd03d] 
+[INFO ] [restartedMain] [16112023 02:33:30] [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer[59]] LiveReload server is running on port 35729 
+[INFO ] [restartedMain] [16112023 02:33:30] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer[220]] Tomcat started on port(s): 8082 (http) with context path '/blockbuster-wsp' 
+[INFO ] [restartedMain] [16112023 02:33:31] [com.example.modeladov1.Modeladov1Application[61]] Started Modeladov1Application in 15.121 seconds (JVM running for 16.717) 
+[INFO ] [http-nio-8082-exec-2] [16112023 02:33:41] [org.springframework.web.servlet.DispatcherServlet[525]] Initializing Servlet 'dispatcherServlet' 
+[INFO ] [http-nio-8082-exec-2] [16112023 02:33:41] [org.springframework.web.servlet.DispatcherServlet[547]] Completed initialization in 1 ms 
+[INFO ] [SpringApplicationShutdownHook] [16112023 02:34:52] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[651]] Closing JPA EntityManagerFactory for persistence unit 'blockbusterp' 
+[INFO ] [restartedMain] [16112023 02:35:03] [com.example.modeladov1.Modeladov1Application[55]] Starting Modeladov1Application using Java 20.0.2 on PCANDRES with PID 11388 (C:\Users\andre\OneDrive\Documents\SpringBoot Projects\modeladov1\target\classes started by andre in C:\Users\andre\OneDrive\Documents\SpringBoot Projects\modeladov1) 
+[INFO ] [restartedMain] [16112023 02:35:03] [com.example.modeladov1.Modeladov1Application[631]] No active profile set, falling back to 1 default profile: "default" 
+[INFO ] [restartedMain] [16112023 02:35:03] [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor[255]] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+[INFO ] [restartedMain] [16112023 02:35:03] [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor[255]] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+[INFO ] [restartedMain] [16112023 02:35:04] [org.springframework.data.repository.config.RepositoryConfigurationDelegate[132]] Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+[INFO ] [restartedMain] [16112023 02:35:04] [org.springframework.data.repository.config.RepositoryConfigurationDelegate[201]] Finished Spring Data repository scanning in 157 ms. Found 18 JPA repository interfaces. 
+[INFO ] [restartedMain] [16112023 02:35:06] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer[108]] Tomcat initialized with port(s): 8082 (http) 
+[INFO ] [restartedMain] [16112023 02:35:06] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext[292]] Root WebApplicationContext: initialization completed in 3129 ms 
+[INFO ] [restartedMain] [16112023 02:35:08] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[437]] Initialized JPA EntityManagerFactory for persistence unit 'blockbusterp' 
+[WARN ] [restartedMain] [16112023 02:35:10] [org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration[223]] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+[INFO ] [restartedMain] [16112023 02:35:10] [org.springframework.security.web.DefaultSecurityFilterChain[55]] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@372ea789, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@65237498, org.springframework.security.web.context.SecurityContextPersistenceFilter@38d1c975, org.springframework.security.web.header.HeaderWriterFilter@4d3a906c, org.springframework.security.web.authentication.logout.LogoutFilter@74cc1b22, com.example.modeladov1.security.JWTAuthorizationFilter@41b89b43, com.example.modeladov1.security.JWTAuthenticationFilter@5212570b, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@318c7a7e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6ad09c11, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2fbe04dd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@31e01624, org.springframework.security.web.session.SessionManagementFilter@18d29dae, org.springframework.security.web.access.ExceptionTranslationFilter@5ccdf101, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5d21bbdb] 
+[INFO ] [restartedMain] [16112023 02:35:10] [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer[59]] LiveReload server is running on port 35729 
+[INFO ] [restartedMain] [16112023 02:35:11] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer[220]] Tomcat started on port(s): 8082 (http) with context path '/blockbuster-wsp' 
+[INFO ] [restartedMain] [16112023 02:35:11] [com.example.modeladov1.Modeladov1Application[61]] Started Modeladov1Application in 9.495 seconds (JVM running for 11.051) 
+[INFO ] [http-nio-8082-exec-1] [16112023 02:36:04] [org.springframework.web.servlet.DispatcherServlet[525]] Initializing Servlet 'dispatcherServlet' 
+[INFO ] [http-nio-8082-exec-1] [16112023 02:36:04] [org.springframework.web.servlet.DispatcherServlet[547]] Completed initialization in 2 ms 
+[INFO ] [File Watcher] [16112023 02:36:49] [org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener[211]] Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications) 
+[INFO ] [Thread-4] [16112023 02:36:49] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[651]] Closing JPA EntityManagerFactory for persistence unit 'blockbusterp' 
+[INFO ] [restartedMain] [16112023 02:36:49] [com.example.modeladov1.Modeladov1Application[55]] Starting Modeladov1Application using Java 20.0.2 on PCANDRES with PID 11388 (C:\Users\andre\OneDrive\Documents\SpringBoot Projects\modeladov1\target\classes started by andre in C:\Users\andre\OneDrive\Documents\SpringBoot Projects\modeladov1) 
+[INFO ] [restartedMain] [16112023 02:36:49] [com.example.modeladov1.Modeladov1Application[631]] No active profile set, falling back to 1 default profile: "default" 
+[INFO ] [restartedMain] [16112023 02:36:50] [org.springframework.data.repository.config.RepositoryConfigurationDelegate[132]] Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+[INFO ] [restartedMain] [16112023 02:36:50] [org.springframework.data.repository.config.RepositoryConfigurationDelegate[201]] Finished Spring Data repository scanning in 118 ms. Found 18 JPA repository interfaces. 
+[INFO ] [restartedMain] [16112023 02:36:51] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer[108]] Tomcat initialized with port(s): 8082 (http) 
+[INFO ] [restartedMain] [16112023 02:36:51] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext[292]] Root WebApplicationContext: initialization completed in 1397 ms 
+[INFO ] [restartedMain] [16112023 02:36:52] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[437]] Initialized JPA EntityManagerFactory for persistence unit 'blockbusterp' 
+[WARN ] [restartedMain] [16112023 02:36:53] [org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration[223]] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+[INFO ] [restartedMain] [16112023 02:36:53] [org.springframework.security.web.DefaultSecurityFilterChain[55]] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@450c7e4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@67eb1891, org.springframework.security.web.context.SecurityContextPersistenceFilter@14d7265d, org.springframework.security.web.header.HeaderWriterFilter@f6f1a88, org.springframework.security.web.authentication.logout.LogoutFilter@334e4529, com.example.modeladov1.security.JWTAuthorizationFilter@2b652836, com.example.modeladov1.security.JWTAuthenticationFilter@11114d37, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@22021309, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@40f5786, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@73c3a6d5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@23399e47, org.springframework.security.web.session.SessionManagementFilter@7b3d14d3, org.springframework.security.web.access.ExceptionTranslationFilter@f13eb7a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7720359e] 
+[INFO ] [restartedMain] [16112023 02:36:53] [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer[59]] LiveReload server is running on port 35729 
+[INFO ] [restartedMain] [16112023 02:36:54] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer[220]] Tomcat started on port(s): 8082 (http) with context path '/blockbuster-wsp' 
+[INFO ] [restartedMain] [16112023 02:36:54] [com.example.modeladov1.Modeladov1Application[61]] Started Modeladov1Application in 4.581 seconds (JVM running for 113.587) 
+[INFO ] [restartedMain] [16112023 02:36:54] [org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener[63]] Condition evaluation unchanged 
+[INFO ] [File Watcher] [16112023 02:36:55] [org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener[211]] Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications) 
+[INFO ] [Thread-7] [16112023 02:36:55] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[651]] Closing JPA EntityManagerFactory for persistence unit 'blockbusterp' 
+[INFO ] [restartedMain] [16112023 02:36:56] [com.example.modeladov1.Modeladov1Application[55]] Starting Modeladov1Application using Java 20.0.2 on PCANDRES with PID 11388 (C:\Users\andre\OneDrive\Documents\SpringBoot Projects\modeladov1\target\classes started by andre in C:\Users\andre\OneDrive\Documents\SpringBoot Projects\modeladov1) 
+[INFO ] [restartedMain] [16112023 02:36:56] [com.example.modeladov1.Modeladov1Application[631]] No active profile set, falling back to 1 default profile: "default" 
+[INFO ] [restartedMain] [16112023 02:36:56] [org.springframework.data.repository.config.RepositoryConfigurationDelegate[132]] Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+[INFO ] [restartedMain] [16112023 02:36:57] [org.springframework.data.repository.config.RepositoryConfigurationDelegate[201]] Finished Spring Data repository scanning in 123 ms. Found 18 JPA repository interfaces. 
+[INFO ] [restartedMain] [16112023 02:36:57] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer[108]] Tomcat initialized with port(s): 8082 (http) 
+[INFO ] [restartedMain] [16112023 02:36:57] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext[292]] Root WebApplicationContext: initialization completed in 1648 ms 
+[INFO ] [restartedMain] [16112023 02:36:58] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[437]] Initialized JPA EntityManagerFactory for persistence unit 'blockbusterp' 
+[WARN ] [restartedMain] [16112023 02:36:59] [org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration[223]] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+[INFO ] [restartedMain] [16112023 02:36:59] [org.springframework.security.web.DefaultSecurityFilterChain[55]] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@56085445, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1f132ce, org.springframework.security.web.context.SecurityContextPersistenceFilter@4528da5b, org.springframework.security.web.header.HeaderWriterFilter@400b5a0e, org.springframework.security.web.authentication.logout.LogoutFilter@5affb99d, com.example.modeladov1.security.JWTAuthorizationFilter@1742576a, com.example.modeladov1.security.JWTAuthenticationFilter@14690d90, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5d33052, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@36d81524, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2c99e2db, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@824eeef, org.springframework.security.web.session.SessionManagementFilter@5d151feb, org.springframework.security.web.access.ExceptionTranslationFilter@4e27b49e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@681fa252] 
+[INFO ] [restartedMain] [16112023 02:36:59] [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer[59]] LiveReload server is running on port 35729 
+[INFO ] [restartedMain] [16112023 02:36:59] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer[220]] Tomcat started on port(s): 8082 (http) with context path '/blockbuster-wsp' 
+[INFO ] [restartedMain] [16112023 02:37:00] [com.example.modeladov1.Modeladov1Application[61]] Started Modeladov1Application in 4.317 seconds (JVM running for 119.353) 
+[INFO ] [restartedMain] [16112023 02:37:00] [org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener[63]] Condition evaluation unchanged 
+[INFO ] [SpringApplicationShutdownHook] [16112023 02:39:12] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[651]] Closing JPA EntityManagerFactory for persistence unit 'blockbusterp' 
+[INFO ] [restartedMain] [16112023 02:39:25] [com.example.modeladov1.Modeladov1Application[55]] Starting Modeladov1Application using Java 20.0.2 on PCANDRES with PID 12564 (C:\Users\andre\OneDrive\Documents\SpringBoot Projects\modeladov1\target\classes started by andre in C:\Users\andre\OneDrive\Documents\SpringBoot Projects\modeladov1) 
+[INFO ] [restartedMain] [16112023 02:39:25] [com.example.modeladov1.Modeladov1Application[631]] No active profile set, falling back to 1 default profile: "default" 
+[INFO ] [restartedMain] [16112023 02:39:25] [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor[255]] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+[INFO ] [restartedMain] [16112023 02:39:25] [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor[255]] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+[INFO ] [restartedMain] [16112023 02:39:27] [org.springframework.data.repository.config.RepositoryConfigurationDelegate[132]] Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+[INFO ] [restartedMain] [16112023 02:39:27] [org.springframework.data.repository.config.RepositoryConfigurationDelegate[201]] Finished Spring Data repository scanning in 477 ms. Found 18 JPA repository interfaces. 
+[INFO ] [restartedMain] [16112023 02:39:29] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer[108]] Tomcat initialized with port(s): 8082 (http) 
+[INFO ] [restartedMain] [16112023 02:39:29] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext[292]] Root WebApplicationContext: initialization completed in 4032 ms 
+[INFO ] [restartedMain] [16112023 02:39:34] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[437]] Initialized JPA EntityManagerFactory for persistence unit 'blockbusterp' 
+[WARN ] [restartedMain] [16112023 02:39:35] [org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration[223]] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+[INFO ] [restartedMain] [16112023 02:39:36] [org.springframework.security.web.DefaultSecurityFilterChain[55]] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@691a0c0b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@ae13f4e, org.springframework.security.web.context.SecurityContextPersistenceFilter@35e11c8b, org.springframework.security.web.header.HeaderWriterFilter@87a0196, org.springframework.security.web.authentication.logout.LogoutFilter@1abebf70, com.example.modeladov1.security.JWTAuthorizationFilter@609f0dcb, com.example.modeladov1.security.JWTAuthenticationFilter@13a91f38, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@122e36d0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@13dcb56e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7c03a260, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@44da1024, org.springframework.security.web.session.SessionManagementFilter@17de1409, org.springframework.security.web.access.ExceptionTranslationFilter@480d7e7d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@355fcf86] 
+[INFO ] [restartedMain] [16112023 02:39:36] [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer[59]] LiveReload server is running on port 35729 
+[INFO ] [restartedMain] [16112023 02:39:37] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer[220]] Tomcat started on port(s): 8082 (http) with context path '/blockbuster-wsp' 
+[INFO ] [restartedMain] [16112023 02:39:38] [com.example.modeladov1.Modeladov1Application[61]] Started Modeladov1Application in 14.253 seconds (JVM running for 15.758) 
+[INFO ] [http-nio-8082-exec-3] [16112023 02:39:41] [org.springframework.web.servlet.DispatcherServlet[525]] Initializing Servlet 'dispatcherServlet' 
+[INFO ] [http-nio-8082-exec-3] [16112023 02:39:41] [org.springframework.web.servlet.DispatcherServlet[547]] Completed initialization in 3 ms 
+[ERROR] [http-nio-8082-exec-1] [16112023 02:39:54] [com.example.modeladov1.security.UserDetailServiceImpl[23]] Unauthorized error: class org.springframework.security.core.userdetails.UsernameNotFoundException 
+[INFO ] [SpringApplicationShutdownHook] [16112023 02:40:47] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[651]] Closing JPA EntityManagerFactory for persistence unit 'blockbusterp' 
+[INFO ] [restartedMain] [16112023 10:01:59] [com.example.modeladov1.Modeladov1Application[55]] Starting Modeladov1Application using Java 20.0.2 on PCANDRES with PID 1652 (C:\Users\andre\OneDrive\Documents\SpringBoot Projects\modeladov1\target\classes started by andre in C:\Users\andre\OneDrive\Documents\SpringBoot Projects\modeladov1) 
+[INFO ] [restartedMain] [16112023 10:01:59] [com.example.modeladov1.Modeladov1Application[631]] No active profile set, falling back to 1 default profile: "default" 
+[INFO ] [restartedMain] [16112023 10:01:59] [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor[255]] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+[INFO ] [restartedMain] [16112023 10:01:59] [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor[255]] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+[INFO ] [restartedMain] [16112023 10:02:02] [org.springframework.data.repository.config.RepositoryConfigurationDelegate[132]] Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+[INFO ] [restartedMain] [16112023 10:02:02] [org.springframework.data.repository.config.RepositoryConfigurationDelegate[201]] Finished Spring Data repository scanning in 288 ms. Found 18 JPA repository interfaces. 
+[INFO ] [restartedMain] [16112023 10:02:06] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer[108]] Tomcat initialized with port(s): 8082 (http) 
+[INFO ] [restartedMain] [16112023 10:02:06] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext[292]] Root WebApplicationContext: initialization completed in 7201 ms 
+[INFO ] [restartedMain] [16112023 10:02:12] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[437]] Initialized JPA EntityManagerFactory for persistence unit 'blockbusterp' 
+[WARN ] [restartedMain] [16112023 10:02:15] [org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration[223]] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+[INFO ] [restartedMain] [16112023 10:02:17] [org.springframework.security.web.DefaultSecurityFilterChain[55]] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@76193ece, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3febe669, org.springframework.security.web.context.SecurityContextPersistenceFilter@30912ffc, org.springframework.security.web.header.HeaderWriterFilter@b351c04, org.springframework.security.web.authentication.logout.LogoutFilter@f3e5533, com.example.modeladov1.security.JWTAuthorizationFilter@155d03a3, com.example.modeladov1.security.JWTAuthenticationFilter@3ca8ffe1, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@70973599, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6b0543ab, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7c7b088e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4c149ac, org.springframework.security.web.session.SessionManagementFilter@3cac96c9, org.springframework.security.web.access.ExceptionTranslationFilter@70e2ec13, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7cdec55c] 
+[INFO ] [restartedMain] [16112023 10:02:18] [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer[59]] LiveReload server is running on port 35729 
+[INFO ] [restartedMain] [16112023 10:02:18] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer[220]] Tomcat started on port(s): 8082 (http) with context path '/blockbuster-wsp' 
+[INFO ] [restartedMain] [16112023 10:02:19] [com.example.modeladov1.Modeladov1Application[61]] Started Modeladov1Application in 23.066 seconds (JVM running for 27.819) 
+[INFO ] [http-nio-8082-exec-2] [16112023 10:03:30] [org.springframework.web.servlet.DispatcherServlet[525]] Initializing Servlet 'dispatcherServlet' 
+[INFO ] [http-nio-8082-exec-2] [16112023 10:03:30] [org.springframework.web.servlet.DispatcherServlet[547]] Completed initialization in 3 ms 
+[ERROR] [http-nio-8082-exec-2] [16112023 10:03:31] [com.example.modeladov1.security.UserDetailServiceImpl[23]] Unauthorized error: class org.springframework.security.core.userdetails.UsernameNotFoundException 
+[INFO ] [http-nio-8082-exec-2] [16112023 10:03:31] [com.example.modeladov1.security.JWTAuthenticationFilter[47]] eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqdWFuQGV4YW1wbGUuY29tIiwiZXhwIjoxNzAyNzQyNjExLCJyb2xlcyI6WyJST0xFX0FETUlOIl0sIm5vbWJyZSI6Ikp1YW4gUGVyZXoifQ.Cx5bop7a5YxTdqYgZLoGvECvGZyMFFock9CwCJw8WW4 
+[INFO ] [File Watcher] [16112023 10:14:05] [org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener[211]] Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications) 
+[INFO ] [Thread-4] [16112023 10:14:05] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[651]] Closing JPA EntityManagerFactory for persistence unit 'blockbusterp' 
+[INFO ] [restartedMain] [16112023 10:14:06] [com.example.modeladov1.Modeladov1Application[55]] Starting Modeladov1Application using Java 20.0.2 on PCANDRES with PID 1652 (C:\Users\andre\OneDrive\Documents\SpringBoot Projects\modeladov1\target\classes started by andre in C:\Users\andre\OneDrive\Documents\SpringBoot Projects\modeladov1) 
+[INFO ] [restartedMain] [16112023 10:14:06] [com.example.modeladov1.Modeladov1Application[631]] No active profile set, falling back to 1 default profile: "default" 
+[INFO ] [restartedMain] [16112023 10:14:07] [org.springframework.data.repository.config.RepositoryConfigurationDelegate[132]] Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+[INFO ] [restartedMain] [16112023 10:14:07] [org.springframework.data.repository.config.RepositoryConfigurationDelegate[201]] Finished Spring Data repository scanning in 127 ms. Found 18 JPA repository interfaces. 
+[INFO ] [restartedMain] [16112023 10:14:07] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer[108]] Tomcat initialized with port(s): 8082 (http) 
+[INFO ] [restartedMain] [16112023 10:14:07] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext[292]] Root WebApplicationContext: initialization completed in 1640 ms 
+[INFO ] [restartedMain] [16112023 10:14:08] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[437]] Initialized JPA EntityManagerFactory for persistence unit 'blockbusterp' 
+[WARN ] [restartedMain] [16112023 10:14:09] [org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext[591]] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webSecurityConfig' defined in file [C:\Users\andre\OneDrive\Documents\SpringBoot Projects\modeladov1\target\classes\com\example\modeladov1\security\WebSecurityConfig.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.security.core.userdetails.UserDetailsService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {} 
+[INFO ] [restartedMain] [16112023 10:14:09] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[651]] Closing JPA EntityManagerFactory for persistence unit 'blockbusterp' 
+[INFO ] [restartedMain] [16112023 10:14:09] [org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener[136]] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled. 
+[ERROR] [restartedMain] [16112023 10:14:09] [org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter[40]] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.example.modeladov1.security.WebSecurityConfig required a bean of type 'org.springframework.security.core.userdetails.UserDetailsService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.core.userdetails.UserDetailsService' in your configuration.
+ 
+[INFO ] [restartedMain] [16112023 10:14:12] [com.example.modeladov1.Modeladov1Application[55]] Starting Modeladov1Application using Java 20.0.2 on PCANDRES with PID 1652 (C:\Users\andre\OneDrive\Documents\SpringBoot Projects\modeladov1\target\classes started by andre in C:\Users\andre\OneDrive\Documents\SpringBoot Projects\modeladov1) 
+[INFO ] [restartedMain] [16112023 10:14:12] [com.example.modeladov1.Modeladov1Application[631]] No active profile set, falling back to 1 default profile: "default" 
+[INFO ] [restartedMain] [16112023 10:14:13] [org.springframework.data.repository.config.RepositoryConfigurationDelegate[132]] Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+[INFO ] [restartedMain] [16112023 10:14:13] [org.springframework.data.repository.config.RepositoryConfigurationDelegate[201]] Finished Spring Data repository scanning in 90 ms. Found 18 JPA repository interfaces. 
+[INFO ] [restartedMain] [16112023 10:14:13] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer[108]] Tomcat initialized with port(s): 8082 (http) 
+[INFO ] [restartedMain] [16112023 10:14:13] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext[292]] Root WebApplicationContext: initialization completed in 1327 ms 
+[INFO ] [restartedMain] [16112023 10:14:14] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[437]] Initialized JPA EntityManagerFactory for persistence unit 'blockbusterp' 
+[WARN ] [restartedMain] [16112023 10:14:15] [org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration[223]] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+[INFO ] [restartedMain] [16112023 10:14:15] [org.springframework.security.web.DefaultSecurityFilterChain[55]] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@503a5671, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@549a455f, org.springframework.security.web.context.SecurityContextPersistenceFilter@3511826a, org.springframework.security.web.header.HeaderWriterFilter@2225dba8, org.springframework.security.web.authentication.logout.LogoutFilter@76746222, com.example.modeladov1.security.JWTAuthorizationFilter@647e2e95, com.example.modeladov1.security.JWTAuthenticationFilter@5831d7c4, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5fbba6a7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@505b7bc2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5caf12fa, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5abddcfb, org.springframework.security.web.session.SessionManagementFilter@1e10dccf, org.springframework.security.web.access.ExceptionTranslationFilter@2d2900da, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5c1a07b7] 
+[INFO ] [restartedMain] [16112023 10:14:15] [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer[59]] LiveReload server is running on port 35729 
+[INFO ] [restartedMain] [16112023 10:14:15] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer[220]] Tomcat started on port(s): 8082 (http) with context path '/blockbuster-wsp' 
+[INFO ] [restartedMain] [16112023 10:14:16] [com.example.modeladov1.Modeladov1Application[61]] Started Modeladov1Application in 4.054 seconds (JVM running for 744.097) 
+[INFO ] [restartedMain] [16112023 10:14:16] [org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener[63]] Condition evaluation unchanged 
+[INFO ] [http-nio-8082-exec-3] [16112023 10:15:02] [org.springframework.web.servlet.DispatcherServlet[525]] Initializing Servlet 'dispatcherServlet' 
+[INFO ] [http-nio-8082-exec-3] [16112023 10:15:02] [org.springframework.web.servlet.DispatcherServlet[547]] Completed initialization in 2 ms 
+[INFO ] [File Watcher] [16112023 10:21:59] [org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener[211]] Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications) 
+[INFO ] [Thread-7] [16112023 10:21:59] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[651]] Closing JPA EntityManagerFactory for persistence unit 'blockbusterp' 
+[INFO ] [restartedMain] [16112023 10:22:00] [com.example.modeladov1.Modeladov1Application[55]] Starting Modeladov1Application using Java 20.0.2 on PCANDRES with PID 1652 (C:\Users\andre\OneDrive\Documents\SpringBoot Projects\modeladov1\target\classes started by andre in C:\Users\andre\OneDrive\Documents\SpringBoot Projects\modeladov1) 
+[INFO ] [restartedMain] [16112023 10:22:00] [com.example.modeladov1.Modeladov1Application[631]] No active profile set, falling back to 1 default profile: "default" 
+[INFO ] [restartedMain] [16112023 10:22:01] [org.springframework.data.repository.config.RepositoryConfigurationDelegate[132]] Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+[INFO ] [restartedMain] [16112023 10:22:01] [org.springframework.data.repository.config.RepositoryConfigurationDelegate[201]] Finished Spring Data repository scanning in 88 ms. Found 18 JPA repository interfaces. 
+[INFO ] [restartedMain] [16112023 10:22:01] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer[108]] Tomcat initialized with port(s): 8082 (http) 
+[INFO ] [restartedMain] [16112023 10:22:02] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext[292]] Root WebApplicationContext: initialization completed in 2009 ms 
+[INFO ] [restartedMain] [16112023 10:22:02] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[437]] Initialized JPA EntityManagerFactory for persistence unit 'blockbusterp' 
+[WARN ] [restartedMain] [16112023 10:22:03] [org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext[591]] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'productoController': Resolution of declared constructors on bean Class [com.example.modeladov1.controller.ProductoController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@258d001d] failed; nested exception is java.lang.NoClassDefFoundError: com/example/modeladov1/service/ProductoService 
+[INFO ] [restartedMain] [16112023 10:22:03] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[651]] Closing JPA EntityManagerFactory for persistence unit 'blockbusterp' 
+[INFO ] [restartedMain] [16112023 10:22:03] [org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener[136]] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled. 
+[ERROR] [restartedMain] [16112023 10:22:03] [org.springframework.boot.SpringApplication[821]] Application run failed 
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'productoController': Resolution of declared constructors on bean Class [com.example.modeladov1.controller.ProductoController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@258d001d] failed; nested exception is java.lang.NoClassDefFoundError: com/example/modeladov1/service/ProductoService
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:318)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1302)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1219)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:921)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.example.modeladov1.Modeladov1Application.main(Modeladov1Application.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.lang.NoClassDefFoundError: com/example/modeladov1/service/ProductoService
+	at java.base/java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredConstructors(Class.java:3473)
+	at java.base/java.lang.Class.getDeclaredConstructors(Class.java:2652)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:313)
+	... 21 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.example.modeladov1.service.ProductoService
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:496)
+	at java.base/java.lang.Class.forName(Class.java:475)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:145)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	... 25 common frames omitted
+[INFO ] [restartedMain] [16112023 10:23:25] [com.example.modeladov1.Modeladov1Application[55]] Starting Modeladov1Application using Java 20.0.2 on PCANDRES with PID 1652 (C:\Users\andre\OneDrive\Documents\SpringBoot Projects\modeladov1\target\classes started by andre in C:\Users\andre\OneDrive\Documents\SpringBoot Projects\modeladov1) 
+[INFO ] [restartedMain] [16112023 10:23:25] [com.example.modeladov1.Modeladov1Application[631]] No active profile set, falling back to 1 default profile: "default" 
+[INFO ] [restartedMain] [16112023 10:23:25] [org.springframework.data.repository.config.RepositoryConfigurationDelegate[132]] Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+[INFO ] [restartedMain] [16112023 10:23:26] [org.springframework.data.repository.config.RepositoryConfigurationDelegate[201]] Finished Spring Data repository scanning in 96 ms. Found 18 JPA repository interfaces. 
+[INFO ] [restartedMain] [16112023 10:23:26] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer[108]] Tomcat initialized with port(s): 8082 (http) 
+[INFO ] [restartedMain] [16112023 10:23:26] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext[292]] Root WebApplicationContext: initialization completed in 1213 ms 
+[INFO ] [restartedMain] [16112023 10:23:26] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[437]] Initialized JPA EntityManagerFactory for persistence unit 'blockbusterp' 
+[WARN ] [restartedMain] [16112023 10:23:27] [org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration[223]] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+[INFO ] [restartedMain] [16112023 10:23:27] [org.springframework.security.web.DefaultSecurityFilterChain[55]] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6997914, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6621be53, org.springframework.security.web.context.SecurityContextPersistenceFilter@496c72c2, org.springframework.security.web.header.HeaderWriterFilter@52b96664, org.springframework.security.web.authentication.logout.LogoutFilter@20a021e6, com.example.modeladov1.security.JWTAuthorizationFilter@333f175, com.example.modeladov1.security.JWTAuthenticationFilter@2c8fc29, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@b6ace2a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@124b6b07, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@b58a56c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5f8e79c4, org.springframework.security.web.session.SessionManagementFilter@14eb9a3d, org.springframework.security.web.access.ExceptionTranslationFilter@19184c84, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@55d62b7d] 
+[INFO ] [restartedMain] [16112023 10:23:27] [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer[59]] LiveReload server is running on port 35729 
+[INFO ] [restartedMain] [16112023 10:23:28] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer[220]] Tomcat started on port(s): 8082 (http) with context path '/blockbuster-wsp' 
+[INFO ] [restartedMain] [16112023 10:23:28] [com.example.modeladov1.Modeladov1Application[61]] Started Modeladov1Application in 3.269 seconds (JVM running for 1296.164) 
+[INFO ] [restartedMain] [16112023 10:23:28] [org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener[63]] Condition evaluation unchanged 
+[INFO ] [http-nio-8082-exec-2] [16112023 10:23:32] [org.springframework.web.servlet.DispatcherServlet[525]] Initializing Servlet 'dispatcherServlet' 
+[INFO ] [http-nio-8082-exec-2] [16112023 10:23:32] [org.springframework.web.servlet.DispatcherServlet[547]] Completed initialization in 1 ms 
+[ERROR] [http-nio-8082-exec-3] [16112023 10:23:59] [com.example.modeladov1.security.UserDetailServiceImpl[23]] Unauthorized error: org.springframework.security.core.userdetails.UsernameNotFoundException 
+[INFO ] [http-nio-8082-exec-3] [16112023 10:23:59] [com.example.modeladov1.security.JWTAuthenticationFilter[47]] eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqdWFuQGV4YW1wbGUuY29tIiwiZXhwIjoxNzAyNzQzODM5LCJyb2xlcyI6WyJST0xFX0FETUlOIl0sIm5vbWJyZSI6Ikp1YW4gUGVyZXoifQ.Mlo9fwTAoK1bCXexIt0zubqTVb6c9KJG_e4LqVlSnz4 
+[ERROR] [http-nio-8082-exec-5] [16112023 10:24:13] [org.apache.catalina.core.ContainerBase.[Tomcat-2].[localhost].[/blockbuster-wsp].[dispatcherServlet][175]] Servlet.service() for servlet [dispatcherServlet] in context with path [/blockbuster-wsp] threw exception [Request processing failed; nested exception is org.springframework.orm.jpa.JpaObjectRetrievalFailureException: Unable to find com.example.modeladov1.model.Categoria with id 1; nested exception is javax.persistence.EntityNotFoundException: Unable to find com.example.modeladov1.model.Categoria with id 1] with root cause 
+javax.persistence.EntityNotFoundException: Unable to find com.example.modeladov1.model.Categoria with id 1
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$JpaEntityNotFoundDelegate.handleEntityNotFound(EntityManagerFactoryBuilderImpl.java:177)
+	at org.hibernate.event.internal.DefaultLoadEventListener.load(DefaultLoadEventListener.java:216)
+	at org.hibernate.event.internal.DefaultLoadEventListener.proxyOrLoad(DefaultLoadEventListener.java:327)
+	at org.hibernate.event.internal.DefaultLoadEventListener.doOnLoad(DefaultLoadEventListener.java:108)
+	at org.hibernate.event.internal.DefaultLoadEventListener.onLoad(DefaultLoadEventListener.java:74)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:118)
+	at org.hibernate.internal.SessionImpl.fireLoadNoChecks(SessionImpl.java:1231)
+	at org.hibernate.internal.SessionImpl.internalLoad(SessionImpl.java:1096)
+	at org.hibernate.type.EntityType.resolveIdentifier(EntityType.java:706)
+	at org.hibernate.type.EntityType.resolve(EntityType.java:465)
+	at org.hibernate.type.ManyToOneType.resolve(ManyToOneType.java:265)
+	at org.hibernate.engine.internal.TwoPhaseLoad$EntityResolver.lambda$static$0(TwoPhaseLoad.java:576)
+	at org.hibernate.engine.internal.TwoPhaseLoad.initializeEntityEntryLoadedState(TwoPhaseLoad.java:221)
+	at org.hibernate.engine.internal.TwoPhaseLoad.initializeEntity(TwoPhaseLoad.java:155)
+	at org.hibernate.engine.internal.TwoPhaseLoad.initializeEntity(TwoPhaseLoad.java:126)
+	at org.hibernate.loader.Loader.initializeEntitiesAndCollections(Loader.java:1201)
+	at org.hibernate.loader.Loader.processResultSet(Loader.java:1009)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:967)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:357)
+	at org.hibernate.loader.Loader.doList(Loader.java:2868)
+	at org.hibernate.loader.Loader.doList(Loader.java:2850)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2682)
+	at org.hibernate.loader.Loader.list(Loader.java:2677)
+	at org.hibernate.loader.hql.QueryLoader.list(QueryLoader.java:540)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.list(QueryTranslatorImpl.java:400)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.performList(HQLQueryPlan.java:218)
+	at org.hibernate.internal.SessionImpl.list(SessionImpl.java:1459)
+	at org.hibernate.query.internal.AbstractProducedQuery.doList(AbstractProducedQuery.java:1649)
+	at org.hibernate.query.internal.AbstractProducedQuery.list(AbstractProducedQuery.java:1617)
+	at org.hibernate.query.Query.getResultList(Query.java:165)
+	at org.hibernate.query.criteria.internal.compile.CriteriaQueryTypeQueryAdapter.getResultList(CriteriaQueryTypeQueryAdapter.java:76)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.findAll(SimpleJpaRepository.java:427)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.findAll(SimpleJpaRepository.java:88)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:289)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:530)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:286)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:640)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:164)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:76)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:241)
+	at jdk.proxy8/jdk.proxy8.$Proxy230.findAll(Unknown Source)
+	at com.example.modeladov1.service.ProductoService.getProductos(ProductoService.java:39)
+	at com.example.modeladov1.controller.ProductoController.getProductos(ProductoController.java:24)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:111)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:337)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:164)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:223)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:217)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at com.example.modeladov1.security.JWTAuthorizationFilter.doFilterInternal(JWTAuthorizationFilter.java:26)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:112)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:82)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:221)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:186)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1790)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+[INFO ] [SpringApplicationShutdownHook] [16112023 10:26:28] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[651]] Closing JPA EntityManagerFactory for persistence unit 'blockbusterp' 
+[INFO ] [restartedMain] [16112023 10:27:01] [com.example.modeladov1.Modeladov1Application[55]] Starting Modeladov1Application using Java 20.0.2 on PCANDRES with PID 14636 (C:\Users\andre\OneDrive\Documents\SpringBoot Projects\modeladov1\target\classes started by andre in C:\Users\andre\OneDrive\Documents\SpringBoot Projects\modeladov1) 
+[INFO ] [restartedMain] [16112023 10:27:01] [com.example.modeladov1.Modeladov1Application[631]] No active profile set, falling back to 1 default profile: "default" 
+[INFO ] [restartedMain] [16112023 10:27:01] [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor[255]] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+[INFO ] [restartedMain] [16112023 10:27:01] [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor[255]] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+[INFO ] [restartedMain] [16112023 10:27:02] [org.springframework.data.repository.config.RepositoryConfigurationDelegate[132]] Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+[INFO ] [restartedMain] [16112023 10:27:02] [org.springframework.data.repository.config.RepositoryConfigurationDelegate[201]] Finished Spring Data repository scanning in 210 ms. Found 18 JPA repository interfaces. 
+[INFO ] [restartedMain] [16112023 10:27:04] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer[108]] Tomcat initialized with port(s): 8082 (http) 
+[INFO ] [restartedMain] [16112023 10:27:04] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext[292]] Root WebApplicationContext: initialization completed in 3507 ms 
+[INFO ] [restartedMain] [16112023 10:27:07] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[437]] Initialized JPA EntityManagerFactory for persistence unit 'blockbusterp' 
+[WARN ] [restartedMain] [16112023 10:27:09] [org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration[223]] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+[INFO ] [restartedMain] [16112023 10:27:09] [org.springframework.security.web.DefaultSecurityFilterChain[55]] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@15c5ad10, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5b5eba1, org.springframework.security.web.context.SecurityContextPersistenceFilter@17c1db7f, org.springframework.security.web.header.HeaderWriterFilter@5124054e, org.springframework.security.web.authentication.logout.LogoutFilter@6b48dda6, com.example.modeladov1.security.JWTAuthorizationFilter@275ef399, com.example.modeladov1.security.JWTAuthenticationFilter@22064f35, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1e81dc3d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@248df622, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@34653906, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@213f801d, org.springframework.security.web.session.SessionManagementFilter@60193f3d, org.springframework.security.web.access.ExceptionTranslationFilter@13ed151d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@63cef932] 
+[INFO ] [restartedMain] [16112023 10:27:09] [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer[59]] LiveReload server is running on port 35729 
+[INFO ] [restartedMain] [16112023 10:27:10] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer[220]] Tomcat started on port(s): 8082 (http) with context path '/blockbuster-wsp' 
+[INFO ] [restartedMain] [16112023 10:27:11] [com.example.modeladov1.Modeladov1Application[61]] Started Modeladov1Application in 10.993 seconds (JVM running for 13.596) 
+[INFO ] [http-nio-8082-exec-1] [16112023 10:27:58] [org.springframework.web.servlet.DispatcherServlet[525]] Initializing Servlet 'dispatcherServlet' 
+[INFO ] [http-nio-8082-exec-1] [16112023 10:27:58] [org.springframework.web.servlet.DispatcherServlet[547]] Completed initialization in 2 ms 
+[ERROR] [http-nio-8082-exec-1] [16112023 10:27:59] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blockbuster-wsp].[dispatcherServlet][175]] Servlet.service() for servlet [dispatcherServlet] in context with path [/blockbuster-wsp] threw exception [Request processing failed; nested exception is org.springframework.orm.jpa.JpaObjectRetrievalFailureException: Unable to find com.example.modeladov1.model.Categoria with id 1; nested exception is javax.persistence.EntityNotFoundException: Unable to find com.example.modeladov1.model.Categoria with id 1] with root cause 
+javax.persistence.EntityNotFoundException: Unable to find com.example.modeladov1.model.Categoria with id 1
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$JpaEntityNotFoundDelegate.handleEntityNotFound(EntityManagerFactoryBuilderImpl.java:177)
+	at org.hibernate.event.internal.DefaultLoadEventListener.load(DefaultLoadEventListener.java:216)
+	at org.hibernate.event.internal.DefaultLoadEventListener.proxyOrLoad(DefaultLoadEventListener.java:327)
+	at org.hibernate.event.internal.DefaultLoadEventListener.doOnLoad(DefaultLoadEventListener.java:108)
+	at org.hibernate.event.internal.DefaultLoadEventListener.onLoad(DefaultLoadEventListener.java:74)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:118)
+	at org.hibernate.internal.SessionImpl.fireLoadNoChecks(SessionImpl.java:1231)
+	at org.hibernate.internal.SessionImpl.internalLoad(SessionImpl.java:1096)
+	at org.hibernate.type.EntityType.resolveIdentifier(EntityType.java:706)
+	at org.hibernate.type.EntityType.resolve(EntityType.java:465)
+	at org.hibernate.type.ManyToOneType.resolve(ManyToOneType.java:265)
+	at org.hibernate.engine.internal.TwoPhaseLoad$EntityResolver.lambda$static$0(TwoPhaseLoad.java:576)
+	at org.hibernate.engine.internal.TwoPhaseLoad.initializeEntityEntryLoadedState(TwoPhaseLoad.java:221)
+	at org.hibernate.engine.internal.TwoPhaseLoad.initializeEntity(TwoPhaseLoad.java:155)
+	at org.hibernate.engine.internal.TwoPhaseLoad.initializeEntity(TwoPhaseLoad.java:126)
+	at org.hibernate.loader.Loader.initializeEntitiesAndCollections(Loader.java:1201)
+	at org.hibernate.loader.Loader.processResultSet(Loader.java:1009)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:967)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:357)
+	at org.hibernate.loader.Loader.doList(Loader.java:2868)
+	at org.hibernate.loader.Loader.doList(Loader.java:2850)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2682)
+	at org.hibernate.loader.Loader.list(Loader.java:2677)
+	at org.hibernate.loader.hql.QueryLoader.list(QueryLoader.java:540)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.list(QueryTranslatorImpl.java:400)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.performList(HQLQueryPlan.java:218)
+	at org.hibernate.internal.SessionImpl.list(SessionImpl.java:1459)
+	at org.hibernate.query.internal.AbstractProducedQuery.doList(AbstractProducedQuery.java:1649)
+	at org.hibernate.query.internal.AbstractProducedQuery.list(AbstractProducedQuery.java:1617)
+	at org.hibernate.query.Query.getResultList(Query.java:165)
+	at org.hibernate.query.criteria.internal.compile.CriteriaQueryTypeQueryAdapter.getResultList(CriteriaQueryTypeQueryAdapter.java:76)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.findAll(SimpleJpaRepository.java:427)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.findAll(SimpleJpaRepository.java:88)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:289)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:530)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:286)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:640)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:164)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:76)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:241)
+	at jdk.proxy4/jdk.proxy4.$Proxy137.findAll(Unknown Source)
+	at com.example.modeladov1.service.ProductoService.getProductos(ProductoService.java:40)
+	at com.example.modeladov1.controller.ProductoController.getProductos(ProductoController.java:24)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:111)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:337)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:164)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:223)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:217)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at com.example.modeladov1.security.JWTAuthorizationFilter.doFilterInternal(JWTAuthorizationFilter.java:26)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:112)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:82)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:221)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:186)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1790)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+[ERROR] [http-nio-8082-exec-3] [16112023 10:28:30] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blockbuster-wsp].[dispatcherServlet][175]] Servlet.service() for servlet [dispatcherServlet] in context with path [/blockbuster-wsp] threw exception [Request processing failed; nested exception is org.springframework.orm.jpa.JpaObjectRetrievalFailureException: Unable to find com.example.modeladov1.model.Categoria with id 1; nested exception is javax.persistence.EntityNotFoundException: Unable to find com.example.modeladov1.model.Categoria with id 1] with root cause 
+javax.persistence.EntityNotFoundException: Unable to find com.example.modeladov1.model.Categoria with id 1
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$JpaEntityNotFoundDelegate.handleEntityNotFound(EntityManagerFactoryBuilderImpl.java:177)
+	at org.hibernate.event.internal.DefaultLoadEventListener.load(DefaultLoadEventListener.java:216)
+	at org.hibernate.event.internal.DefaultLoadEventListener.proxyOrLoad(DefaultLoadEventListener.java:327)
+	at org.hibernate.event.internal.DefaultLoadEventListener.doOnLoad(DefaultLoadEventListener.java:108)
+	at org.hibernate.event.internal.DefaultLoadEventListener.onLoad(DefaultLoadEventListener.java:74)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:118)
+	at org.hibernate.internal.SessionImpl.fireLoadNoChecks(SessionImpl.java:1231)
+	at org.hibernate.internal.SessionImpl.internalLoad(SessionImpl.java:1096)
+	at org.hibernate.type.EntityType.resolveIdentifier(EntityType.java:706)
+	at org.hibernate.type.EntityType.resolve(EntityType.java:465)
+	at org.hibernate.type.ManyToOneType.resolve(ManyToOneType.java:265)
+	at org.hibernate.engine.internal.TwoPhaseLoad$EntityResolver.lambda$static$0(TwoPhaseLoad.java:576)
+	at org.hibernate.engine.internal.TwoPhaseLoad.initializeEntityEntryLoadedState(TwoPhaseLoad.java:221)
+	at org.hibernate.engine.internal.TwoPhaseLoad.initializeEntity(TwoPhaseLoad.java:155)
+	at org.hibernate.engine.internal.TwoPhaseLoad.initializeEntity(TwoPhaseLoad.java:126)
+	at org.hibernate.loader.Loader.initializeEntitiesAndCollections(Loader.java:1201)
+	at org.hibernate.loader.Loader.processResultSet(Loader.java:1009)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:967)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:357)
+	at org.hibernate.loader.Loader.doList(Loader.java:2868)
+	at org.hibernate.loader.Loader.doList(Loader.java:2850)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2682)
+	at org.hibernate.loader.Loader.list(Loader.java:2677)
+	at org.hibernate.loader.hql.QueryLoader.list(QueryLoader.java:540)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.list(QueryTranslatorImpl.java:400)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.performList(HQLQueryPlan.java:218)
+	at org.hibernate.internal.SessionImpl.list(SessionImpl.java:1459)
+	at org.hibernate.query.internal.AbstractProducedQuery.doList(AbstractProducedQuery.java:1649)
+	at org.hibernate.query.internal.AbstractProducedQuery.list(AbstractProducedQuery.java:1617)
+	at org.hibernate.query.Query.getResultList(Query.java:165)
+	at org.hibernate.query.criteria.internal.compile.CriteriaQueryTypeQueryAdapter.getResultList(CriteriaQueryTypeQueryAdapter.java:76)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.findAll(SimpleJpaRepository.java:427)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.findAll(SimpleJpaRepository.java:88)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:289)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:530)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:286)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:640)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:164)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:76)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:241)
+	at jdk.proxy4/jdk.proxy4.$Proxy137.findAll(Unknown Source)
+	at com.example.modeladov1.service.ProductoService.getProductos(ProductoService.java:40)
+	at com.example.modeladov1.controller.ProductoController.getProductos(ProductoController.java:24)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:111)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:337)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:164)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:223)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:217)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at com.example.modeladov1.security.JWTAuthorizationFilter.doFilterInternal(JWTAuthorizationFilter.java:26)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:112)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:82)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:221)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:186)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1790)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+[INFO ] [SpringApplicationShutdownHook] [16112023 10:28:51] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean[651]] Closing JPA EntityManagerFactory for persistence unit 'blockbusterp' 
