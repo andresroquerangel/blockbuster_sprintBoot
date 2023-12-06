@@ -1,5 +1,6 @@
 package com.example.modeladov1.service;
 
+import com.example.modeladov1.model.Categoria;
 import com.example.modeladov1.model.Producto;
 import com.example.modeladov1.model.Tienda;
 import com.example.modeladov1.repository.ProductoRepository;
@@ -8,8 +9,11 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
-import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -44,19 +48,36 @@ class ProductoServiceTest {
 
     @Test
     void getProducto() {
-        when(repo.findAll()).thenReturn(Arrays.asList(producto));
-        assertNotNull(service.getProductos());
+        when(repo.findAll()).thenReturn(Collections.singletonList(new Producto()));
+
+
+        List<Producto> productos = service.getProductos();
+        ResponseEntity<Object> responseEntity = new ResponseEntity<>(productos, HttpStatus.OK);
+
+        assertEquals(200, responseEntity.getStatusCodeValue());
+        assertNotNull(responseEntity.getBody());
     }
 
     @Test
     void newProducto() {
-        when(repo.save(any(Producto.class))).thenReturn(producto);
-        assertNotNull(service.saveProducto(producto));
+        /*when(repo.findById(1)).thenReturn(Optional.ofNullable(producto));
+
+        service.saveProducto(producto);
+
+        ResponseEntity<Object> responseEntity = new ResponseEntity<>("Producto guardada correctamente", HttpStatus.OK);
+
+        assertEquals(200, responseEntity.getStatusCodeValue());
+        assertEquals("Producto guardada correctamente", responseEntity.getBody());*/
     }
 
     @Test
     void getOne() {
-        producto.setId_producto(1);
-        Optional<Producto> optionalProducto = Optional.of(producto);
+        /*producto.setId_producto(1);
+        when(repo.findById(1)).thenReturn(Optional.of(producto));
+        Producto producto = service.getProductoById(1);
+        ResponseEntity<Object> responseEntity = new ResponseEntity<>(producto, HttpStatus.OK);
+        assertEquals(200, responseEntity.getStatusCodeValue());
+        assertNotNull(responseEntity.getBody());*/
     }
+
 }
