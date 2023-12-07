@@ -14,30 +14,29 @@ public class EstadoPedidoController {
     EstadoPedidoService ser;
 
     @PostMapping("/add")
-    public void add(@RequestBody EstadoPedido body){
-        ser.add(body);
+    public ResponseEntity<EstadoPedido> add(@RequestBody EstadoPedido body){
+        return ser.add(body);
     }
 
     @GetMapping("/getAll")
-    public List<EstadoPedido> getAll(){
+    public ResponseEntity<List<EstadoPedido>> getAll(){
         return ser.getAll();
     }
 
     @GetMapping("/{id}")
-    public EstadoPedido getOne(@PathVariable int id){
+    public ResponseEntity<EstadoPedido> getOne(@PathVariable int id){
         return ser.getOne(id);
     }
 
     @DeleteMapping("/{id}")
-    public void eliminarEstadoPedido(@PathVariable int id) {
-        ser.eliminarEstadoPedido(id);
+    public ResponseEntity<EstadoPedido> eliminarEstadoPedido(@PathVariable int id) {
+        return ser.eliminarEstadoPedido(id);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<EstadoPedido> actualizarEstadoPedido(
             @RequestBody EstadoPedido body,
             @PathVariable Integer id) {
-        EstadoPedido estadoPedido = ser.actualizarEstadoPedido(id, body);
-        return ResponseEntity.ok(estadoPedido);
+        return ser.actualizarEstadoPedido(id, body);
     }
 }

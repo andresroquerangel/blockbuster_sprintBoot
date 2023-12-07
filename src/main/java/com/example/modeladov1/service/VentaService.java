@@ -37,10 +37,6 @@ public class VentaService {
     }
 
     public void add(Venta venta){
-        Usuario usuario = usuarioService.getOne(venta.getUsuario().getId_usuario());
-        TipoPago tipoPago = tipoPagoService.getOne(venta.getTipoPago().getId_tipo_pago()).getBody();
-        venta.setUsuario(usuario);
-        venta.setTipoPago(tipoPago);
         repo.save(venta);
     }
 
@@ -53,8 +49,6 @@ public class VentaService {
 
         if (ventaExistente.isPresent()) {
             Venta venta = ventaExistente.get();
-            venta.setUsuario(usuarioService.getOne(ventaActualizada.getUsuario().getId_usuario()));
-            venta.setTipoPago(tipoPagoService.getOne(ventaActualizada.getTipoPago().getId_tipo_pago()).getBody());
             return repo.save(venta);
         } else {
             throw new NoSuchElementException("Venta no encontrada");

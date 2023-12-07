@@ -16,31 +16,30 @@ public class UsuarioController {
     UsuarioService ser;
 
     @PostMapping("/add")
-    public void add(@RequestBody Usuario body){
-        ser.add(body);
+    public ResponseEntity<Usuario> add(@RequestBody Usuario body){
+        return ser.add(body);
     }
 
     @GetMapping("/getAll")
-    public List<Usuario> getAll(){
+    public ResponseEntity<List<Usuario>> getAll(){
         return ser.getAll();
     }
 
     @GetMapping("/{id}")
-    public Usuario getOne(@PathVariable int id){
+    public ResponseEntity<Usuario> getOne(@PathVariable int id){
         return ser.getOne(id);
     }
 
     @DeleteMapping("/{id}")
-    public void eliminarUsuario(@PathVariable int id) {
-        ser.eliminarUsuario(id);
+    public ResponseEntity<Usuario> eliminarUsuario(@PathVariable int id) {
+        return ser.eliminarUsuario(id);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Usuario> actualizarUsuario(
             @RequestBody Usuario body,
             @PathVariable Integer id) {
-        Usuario usuario = ser.actualizarUsuario(id, body);
-        return ResponseEntity.ok(usuario);
+        return ser.actualizarUsuario(id, body);
     }
 
 }

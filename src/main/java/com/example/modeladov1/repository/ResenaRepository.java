@@ -6,5 +6,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ResenaRepository extends CrudRepository<Resena, Integer> {
-    Resena findById(int id);
 }

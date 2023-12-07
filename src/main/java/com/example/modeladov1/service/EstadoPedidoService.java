@@ -6,6 +6,8 @@ import java.util.Optional;
 import com.example.modeladov1.model.EstadoPedido;
 import com.example.modeladov1.repository.EstadoPedidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -13,24 +15,37 @@ public class EstadoPedidoService {
     @Autowired
     EstadoPedidoRepository repo;
 
-    public List<EstadoPedido> getAll(){
+    public ResponseEntity<List<EstadoPedido> > getAll(){
         List<EstadoPedido> estadosPedidos = new ArrayList<>();
         for(EstadoPedido estadoPedido : repo.findAll()){
             estadosPedidos.add(estadoPedido);
         }
-        return estadosPedidos;
+        return new ResponseEntity<>(estadosPedidos, HttpStatus.OK);
     }
 
-    public EstadoPedido getOne(Integer id) {
-        return repo.findById(id).orElse(null);
+    public ResponseEntity<EstadoPedido> getOne(Integer id) {
+        EstadoPedido objeto = repo.findById(id).orElse(null);
+        if(objeto!=null){
+            return new ResponseEntity<>(objeto, HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
     }
 
-    public void add(EstadoPedido estadoPedido){
-        repo.save(estadoPedido);
+    public ResponseEntity<EstadoPedido> add(EstadoPedido estadoPedido){
+        EstadoPedido objeto = repo.save(estadoPedido);
+        return new ResponseEntity<>(objeto, HttpStatus.OK);
     }
-    public void eliminarEstadoPedido(int id) {repo.deleteById(id);}
+    public ResponseEntity<EstadoPedido> eliminarEstadoPedido(int id) {
+        if(repo.findById(id).isPresent()){
+            repo.deleteById(id);
+            return new ResponseEntity<>(HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+    }
 
-    public EstadoPedido actualizarEstadoPedido(Integer id_estadoPedido, EstadoPedido estadoPedidoActualizado) {
+    public ResponseEntity<EstadoPedido> actualizarEstadoPedido(Integer id_estadoPedido, EstadoPedido estadoPedidoActualizado) {
         Optional<EstadoPedido> estadoPedidoExistente = repo.findById(id_estadoPedido);
 
         if (estadoPedidoExistente.isPresent()) {
@@ -39,9 +54,10 @@ public class EstadoPedidoService {
             // Actualiza otros campos según sea necesario
 
             // Guarda el estadoPedido actualizado en la base de datos
-            return repo.save(estadoPedido);
+            EstadoPedido objeto = repo.save(estadoPedido);
+            return new ResponseEntity<>(objeto,HttpStatus.OK);
         } else {
-            throw new NoSuchElementException("EstadoPedido no encontrado");
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
     }
 }

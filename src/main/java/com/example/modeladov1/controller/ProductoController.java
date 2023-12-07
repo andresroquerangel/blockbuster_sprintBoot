@@ -20,17 +20,17 @@ public class ProductoController {
     }
 
     @GetMapping("/getAll")
-    public List<Producto> getProductos() {
+    public ResponseEntity<List<Producto>> getProductos() {
         return ser.getProductos();
     }
 
     @GetMapping("/{id}")
-    public Producto getProductoById(@PathVariable int id) {
+    public ResponseEntity<Producto> getProductoById(@PathVariable int id) {
         return ser.getProductoById(id);
     }
 
     @PostMapping("/add")
-    public Producto saveProducto(@RequestBody Producto producto) {
+    public ResponseEntity<Producto> saveProducto(@RequestBody Producto producto) {
         return ser.saveProducto(producto);
     }
 
@@ -38,13 +38,12 @@ public class ProductoController {
     public ResponseEntity<Producto> actualizarProducto(
             @RequestBody Producto body,
             @PathVariable Integer id) {
-        Producto producto = ser.actualizarProducto(id, body);
-        return ResponseEntity.ok(producto);
+        return ser.actualizarProducto(id, body);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteProducto(@PathVariable int id) {
-        ser.deleteProducto(id);
+    public ResponseEntity<Producto> deleteProducto(@PathVariable int id) {
+        return ser.deleteProducto(id);
     }
 
 }

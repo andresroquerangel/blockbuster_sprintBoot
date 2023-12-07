@@ -2,6 +2,7 @@ package com.example.modeladov1.service;
 
 import com.example.modeladov1.model.*;
 import com.example.modeladov1.repository.CiudadRepository;
+import com.example.modeladov1.repository.UsuarioRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -18,64 +19,57 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
-public class CiudadServiceTest {
+public class UsuarioServiceTest {
     @Mock
-    private CiudadRepository repo;
+    private UsuarioRepository repo;
 
     @InjectMocks
-    private CiudadService service;
+    private UsuarioService service;
 
-    private Ciudad ciudad;
+    private Usuario usuario;
 
     @BeforeEach
     void setUp() {
         MockitoAnnotations.initMocks(this);
-        Pais pais = new Pais();
-        pais.setNombre("Mi pais");
-        Estado est = new Estado();
-        est.setNombre("Mi estado");
-        est.setPais(pais);
-        Municipio muni = new Municipio();
-        muni.setNombre("Mi municipio");
-        muni.setEstado(est);
-
-        ciudad = new Ciudad();
-        ciudad.setNombre("Mi ciudad");
-        ciudad.setMunicipio(muni);
+        usuario = new Usuario();
+        usuario.setNombre("Andres");
+        usuario.setDireccion("Granada");
+        usuario.setEmail("andres@gmail.com");
+        usuario.setTelefono("123456789");
     }
 
     @Test
     void getAll(){
-        when(repo.findAll()).thenReturn(Collections.singletonList(new Ciudad()));
-        ResponseEntity<List<Ciudad>> responseEntity = service.getAll();
+        when(repo.findAll()).thenReturn(Collections.singletonList(new Usuario()));
+        ResponseEntity<List<Usuario>> responseEntity = service.getAll();
 
         assertEquals(200, responseEntity.getStatusCodeValue());
         assertNotNull(responseEntity.getBody());
     }
 
     @Test
-    void newCiudad(){
-        when(repo.save(any(Ciudad.class))).thenReturn(ciudad);
-        ResponseEntity<Ciudad> response = service.add(ciudad);
+    void newUsuario(){
+        when(repo.save(any(Usuario.class))).thenReturn(usuario);
+        ResponseEntity<Usuario> response = service.add(usuario);
 
         assertNotNull(response.getBody());
         assertEquals(200,response.getStatusCodeValue());
     }
 
     @Test
-    void updateCiudad(){
-        when(repo.findById(1)).thenReturn(Optional.of(ciudad));
-        when(repo.save(any(Ciudad.class))).thenReturn(ciudad);
-        ResponseEntity<Ciudad> response = service.actualizarCiudad(1,ciudad);
+    void updateUsuario(){
+        when(repo.findById(1)).thenReturn(Optional.of(usuario));
+        when(repo.save(any(Usuario.class))).thenReturn(usuario);
+        ResponseEntity<Usuario> response = service.actualizarUsuario(1,usuario);
 
         assertNotNull(response);
         assertEquals(200,response.getStatusCodeValue());
     }
 
     @Test
-    void deleteCiudad(){
-        when(repo.findById(1)).thenReturn(Optional.of(ciudad));
-        ResponseEntity<Ciudad> response = service.eliminarCiudad(1);
+    void deleteUsuario(){
+        when(repo.findById(1)).thenReturn(Optional.of(usuario));
+        ResponseEntity<Usuario> response = service.eliminarUsuario(1);
 
         assertNotNull(response);
         assertEquals(200, response.getStatusCodeValue());

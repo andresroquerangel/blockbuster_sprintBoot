@@ -13,6 +13,8 @@ import com.example.modeladov1.security.JWTAuthenticationFilter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,24 +38,31 @@ public class ProductoService {
         this.repo = productoRepository;
     }
 
-    public List<Producto> getProductos() {
+    public ResponseEntity<List<Producto>> getProductos() {
         try {
-            return repo.findAll();
+            List<Producto> lista = repo.findAll();
+            return new ResponseEntity<>(lista, HttpStatus.OK);
         }catch (javax.persistence.EntityNotFoundException e){
             logger.error("Error, fetch con id no existente",e.getCause());
         }
-        return null;
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    public Producto getProductoById(int id) {
-        return repo.findById(id);
+    public ResponseEntity<Producto> getProductoById(int id) {
+        Producto objeto = repo.findById(id).orElse(null);
+        if(objeto!=null){
+            return new ResponseEntity<>(objeto, HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
     }
 
-    public Producto saveProducto(Producto producto) {
-        return repo.save(producto);
+    public ResponseEntity<Producto> saveProducto(Producto producto) {
+        Producto objeto = repo.save(producto);
+        return new ResponseEntity<>(objeto, HttpStatus.OK);
     }
 
-    public Producto actualizarProducto(Integer id_pais, Producto productoActualizada) {
+    public ResponseEntity<Producto> actualizarProducto(Integer id_pais, Producto productoActualizada) {
         Optional<Producto> productoExistente = repo.findById(id_pais);
         if (productoExistente.isPresent()) {
             Producto producto = productoExistente.get();
@@ -62,13 +71,19 @@ public class ProductoService {
             producto.setPrecio(productoActualizada.getPrecio());
             producto.setCantidad(productoActualizada.getCantidad());
             producto.setPhoto(productoActualizada.getPhoto());
-            return repo.save(producto);
+            Producto objeto = repo.save(producto);
+            return new ResponseEntity<>(objeto,HttpStatus.OK);
         } else {
-            throw new NoSuchElementException("Producto no encontrado");
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
     }
-    public void deleteProducto(int id) {
-        repo.deleteById(id);
-        logger.info("Se borro el producto con la id: {}", id);
+    public ResponseEntity<Producto> deleteProducto(int id) {
+        if(repo.findById(id).isPresent()){
+            repo.deleteById(id);
+            logger.info("Se borro el producto con la id: {}", id);
+            return new ResponseEntity<>(HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
     }
 }

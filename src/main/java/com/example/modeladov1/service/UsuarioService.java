@@ -4,12 +4,11 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
-import com.example.modeladov1.model.Categoria;
-import com.example.modeladov1.model.Municipio;
-import com.example.modeladov1.model.Usuario;
-import com.example.modeladov1.model.Ciudad;
+import com.example.modeladov1.model.*;
 import com.example.modeladov1.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -20,27 +19,38 @@ public class UsuarioService {
     @Autowired
     CiudadService ciudadService; // Inyecta ciudadService
 
-    public List<Usuario> getAll(){
+    public ResponseEntity<List<Usuario>> getAll(){
         List<Usuario> usuarios = new ArrayList<>();
         for(Usuario usuario : repo.findAll()){
             usuarios.add(usuario);
         }
-        return usuarios;
+        return new ResponseEntity<>(usuarios,HttpStatus.OK);
     }
 
-    public Usuario getOne(Integer id) {
-        return repo.findById(id).orElse(null);
+    public ResponseEntity<Usuario> getOne(Integer id) {
+        Usuario objeto = repo.findById(id).orElse(null);
+        if(objeto!=null){
+            return new ResponseEntity<>(objeto, HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
     }
 
-    public Usuario add(Usuario usuario){
-        return repo.save(usuario);
+    public ResponseEntity<Usuario> add(Usuario usuario){
+        Usuario objeto = repo.save(usuario);
+        return new ResponseEntity<>(objeto, HttpStatus.OK);
     }
 
-    public void eliminarUsuario(int id) {
-        repo.deleteById(id);
+    public ResponseEntity<Usuario> eliminarUsuario(int id) {
+        if(repo.findById(id).isPresent()){
+            repo.deleteById(id);
+            return new ResponseEntity<>(HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
     }
 
-    public Usuario actualizarUsuario(Integer id_usuario, Usuario usuarioActualizado) {Optional<Usuario> usuarioExistente = repo.findById(id_usuario);
+    public ResponseEntity<Usuario> actualizarUsuario(Integer id_usuario, Usuario usuarioActualizado) {Optional<Usuario> usuarioExistente = repo.findById(id_usuario);
 
         if (usuarioExistente.isPresent()) {
             Usuario usuario = usuarioExistente.get();
@@ -52,9 +62,10 @@ public class UsuarioService {
             usuario.setToken(usuarioActualizado.getToken());
 
             // Guarda el usuario actualizado en la base de datos
-            return repo.save(usuario);
+            Usuario objeto = repo.save(usuario);
+            return new ResponseEntity<>(objeto, HttpStatus.OK);
         } else {
-            throw new NoSuchElementException("Usuario no encontrado");
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
     }
 

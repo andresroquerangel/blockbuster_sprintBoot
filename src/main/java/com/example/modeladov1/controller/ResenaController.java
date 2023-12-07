@@ -15,23 +15,23 @@ public class ResenaController {
     ResenaService ser;
 
     @PostMapping("/add")
-    public void add(@RequestBody Resena body){
-        ser.add(body);
+    public ResponseEntity<Resena> add(@RequestBody Resena body){
+        return ser.add(body);
     }
 
     @GetMapping("/getAll")
-    public List<Resena> getAll(){
+    public ResponseEntity<List<Resena>> getAll(){
         return ser.getAll();
     }
 
     @GetMapping("/{id}")
-    public Resena getOne(@PathVariable int id){
+    public ResponseEntity<Resena> getOne(@PathVariable int id){
         return ser.getOne(id);
     }
 
     @DeleteMapping("/{id}")
-    public void eliminarResena(@PathVariable int id) {
-        ser.eliminarResena(id);
+    public ResponseEntity<Resena> eliminarResena(@PathVariable int id) {
+        return ser.eliminarResena(id);
     }
 
     @PutMapping("/{id}")
@@ -39,7 +39,6 @@ public class ResenaController {
             @RequestBody Resena body,
             @PathVariable Integer id) {
         System.out.println(body);
-        Resena resena = ser.actualizarResena(id, body);
-        return ResponseEntity.ok(resena);
+        return ser.actualizarResena(id, body);
     }
 }

@@ -8,8 +8,11 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.http.ResponseEntity;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -43,20 +46,39 @@ class ProductoServiceTest {
     }
 
     @Test
-    void getProducto() {
-        when(repo.findAll()).thenReturn(Arrays.asList(producto));
-        assertNotNull(service.getProductos());
+    void getAll(){
+        when(repo.findAll()).thenReturn(Collections.singletonList(new Producto()));
+        ResponseEntity<List<Producto>> responseEntity = service.getProductos();
+
+        assertEquals(200, responseEntity.getStatusCodeValue());
+        assertNotNull(responseEntity.getBody());
     }
 
     @Test
-    void newProducto() {
+    void newProducto(){
         when(repo.save(any(Producto.class))).thenReturn(producto);
-        assertNotNull(service.saveProducto(producto));
+        ResponseEntity<Producto> response = service.saveProducto(producto);
+
+        assertNotNull(response.getBody());
+        assertEquals(200,response.getStatusCodeValue());
     }
 
     @Test
-    void getOne() {
-        producto.setId_producto(1);
-        Optional<Producto> optionalProducto = Optional.of(producto);
+    void updateProducto(){
+        when(repo.findById(1)).thenReturn(Optional.of(producto));
+        when(repo.save(any(Producto.class))).thenReturn(producto);
+        ResponseEntity<Producto> response = service.actualizarProducto(1,producto);
+
+        assertNotNull(response);
+        assertEquals(200,response.getStatusCodeValue());
+    }
+
+    @Test
+    void deleteProducto(){
+        when(repo.findById(1)).thenReturn(Optional.of(producto));
+        ResponseEntity<Producto> response = service.deleteProducto(1);
+
+        assertNotNull(response);
+        assertEquals(200, response.getStatusCodeValue());
     }
 }
