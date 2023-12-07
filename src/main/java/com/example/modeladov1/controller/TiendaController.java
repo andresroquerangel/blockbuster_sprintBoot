@@ -20,17 +20,17 @@ public class TiendaController {
     }
 
     @GetMapping("/getAll")
-    public List<Tienda> getTiendas() {
+    public ResponseEntity<List<Tienda>> getTiendas() {
         return ser.getTiendas();
     }
 
     @GetMapping("/{id}")
-    public Tienda getTiendaById(@PathVariable int id) {
+    public ResponseEntity<Tienda> getTiendaById(@PathVariable int id) {
         return ser.getTiendaById(id);
     }
 
     @PostMapping("/add")
-    public Tienda saveTienda(@RequestBody Tienda tienda) {
+    public ResponseEntity<Tienda> saveTienda(@RequestBody Tienda tienda) {
         return ser.saveTienda(tienda);
     }
 
@@ -38,12 +38,11 @@ public class TiendaController {
     public ResponseEntity<Tienda> tiendaCategoria(
             @RequestBody Tienda body,
             @PathVariable Integer id) {
-        Tienda tienda = ser.actualizarTienda(id, body);
-        return ResponseEntity.ok(tienda);
+        return ser.actualizarTienda(id, body);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteTienda(@PathVariable int id) {
-        ser.deleteTienda(id);
+    public ResponseEntity<Tienda> deleteTienda(@PathVariable int id) {
+        return ser.deleteTienda(id);
     }
 }

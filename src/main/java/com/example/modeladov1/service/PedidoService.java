@@ -42,7 +42,7 @@ public class PedidoService {
     }
 
     public void add(Pedido pedido){
-        Tienda tienda = tiendaService.getTiendaById(pedido.getTienda().getId_tienda()); // Usa tiendaService para llamar a getOne
+        Tienda tienda = tiendaService.getTiendaById(pedido.getTienda().getId_tienda()).getBody(); // Usa tiendaService para llamar a getOne
         Venta venta = ventaService.getOne(pedido.getVenta().getId_venta()); // Usa ventaService para llamar a getOne
         Usuario usuario = usuarioService.getOne(pedido.getUsuario().getId_usuario()); // Usa usuarioService para llamar a getOne
         pedido.setTienda(tienda); // Establece la Tienda en el Pedido
@@ -60,7 +60,7 @@ public class PedidoService {
 
         if (pedidoExistente.isPresent()) {
             Pedido pedido = pedidoExistente.get();
-            Tienda tienda = tiendaService.getTiendaById(pedidoActualizado.getTienda().getId_tienda()); // Usa tiendaService para llamar a getOne
+            Tienda tienda = tiendaService.getTiendaById(pedidoActualizado.getTienda().getId_tienda()).getBody(); // Usa tiendaService para llamar a getOne
             Venta venta = ventaService.getOne(pedidoActualizado.getVenta().getId_venta()); // Usa ventaService para llamar a getOne
             Usuario usuario = usuarioService.getOne(pedidoActualizado.getUsuario().getId_usuario()); // Usa usuarioService para llamar a getOne
             pedido.setTienda(tienda); // Establece la Tienda en el Pedido

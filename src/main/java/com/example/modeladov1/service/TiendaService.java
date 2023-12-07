@@ -8,6 +8,8 @@ import com.example.modeladov1.model.Pais;
 import com.example.modeladov1.model.Tienda;
 import com.example.modeladov1.repository.TiendaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -19,31 +21,48 @@ public class TiendaService {
         this.repo = tiendaRepository;
     }
 
-    public List<Tienda> getTiendas() {
-        return repo.findAll();
+    public ResponseEntity<List<Tienda>> getTiendas() {
+        List<Tienda> lista= repo.findAll();
+        if (!lista.isEmpty()) {
+            return new ResponseEntity<>(lista, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
     }
 
-    public Tienda getTiendaById(int id) {
-        return repo.findById(id).orElse(null);
+    public ResponseEntity<Tienda> getTiendaById(int id) {
+        Tienda objeto = repo.findById(id).orElse(null);
+        if(objeto!=null){
+            return new ResponseEntity<>(objeto, HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
     }
 
-    public Tienda saveTienda(Tienda tienda) {
-        return repo.save(tienda);
+    public ResponseEntity<Tienda> saveTienda(Tienda tienda) {
+        Tienda objeto = repo.save(tienda);
+        return new ResponseEntity<>(objeto, HttpStatus.OK);
     }
 
-    public Tienda actualizarTienda(Integer id_tienda, Tienda tiendaActualizada) {
+    public ResponseEntity<Tienda> actualizarTienda(Integer id_tienda, Tienda tiendaActualizada) {
         Optional<Tienda> tiendaExistente = repo.findById(id_tienda);
         if (tiendaExistente.isPresent()) {
             Tienda tienda = tiendaExistente.get();
             tienda.setNombre(tiendaActualizada.getNombre());
             tienda.setDescripcion(tiendaActualizada.getDescripcion());
-            return repo.save(tienda);
+            Tienda objeto = repo.save(tienda);
+            return new ResponseEntity<>(objeto, HttpStatus.OK);
         } else {
-            throw new NoSuchElementException("Tienda no encontrada");
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
     }
 
-    public void deleteTienda(int id) {
-        repo.deleteById(id);
+    public ResponseEntity<Tienda> deleteTienda(int id) {
+        if(repo.findById(id).isPresent()){
+            repo.deleteById(id);
+            return new ResponseEntity<>(HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
     }
 }

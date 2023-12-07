@@ -20,7 +20,7 @@ public class UserDetailServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         Usuario usuario = usuarioRepository.findOneByEmail(email)
                 .orElseThrow(()-> new UsernameNotFoundException("El usuario con email "+email+" no existe."));
-        logger.error("Unauthorized error: {}",UsernameNotFoundException.class.getName());
+        logger.error("Unauthorized error: {}"+usuario.getNombre());
         return new UserDetailsImpl(usuario);
     }
 }

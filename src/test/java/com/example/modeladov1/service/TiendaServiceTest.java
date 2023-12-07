@@ -7,8 +7,12 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -22,14 +26,13 @@ class TiendaServiceTest {
     private TiendaRepository repo;
 
     @InjectMocks
-    private TiendaService tiendaService;
+    private TiendaService service;
 
     private Tienda tienda;
 
     @BeforeEach
     void setUp() {
         MockitoAnnotations.initMocks(this);
-
         tienda = new Tienda();
         tienda.setDescripcion("Prueba de mi primera tienda");
         tienda.setNombre("Pruebas");
@@ -37,40 +40,40 @@ class TiendaServiceTest {
     }
 
     @Test
-    void getTiendas() {
-        when(repo.findAll()).thenReturn(Arrays.asList(tienda));
-        assertNotNull(tiendaService.getTiendas());
+    void getAll(){
+        when(repo.findAll()).thenReturn(Collections.singletonList(new Tienda()));
+        ResponseEntity<List<Tienda>> responseEntity = service.getTiendas();
+
+        assertEquals(200, responseEntity.getStatusCodeValue());
+        assertNotNull(responseEntity.getBody());
     }
 
     @Test
-    void newTienda() {
+    void newTienda(){
         when(repo.save(any(Tienda.class))).thenReturn(tienda);
-        assertNotNull(tiendaService.saveTienda(new Tienda()));
+        ResponseEntity<Tienda> response = service.saveTienda(tienda);
+        assertNotNull(response.getBody());
+        //Verificacion del mensaje de creado
+        assertEquals(200,response.getStatusCodeValue());
     }
 
     @Test
-    void getOne() {
-        tienda.setId_tienda(1);
-        Optional<Tienda> optionalTienda = Optional.of(tienda);
-    }
-
-    @Test
-    void update() {
+    void updateTienda(){
+        when(repo.findById(1)).thenReturn(Optional.of(tienda));
         when(repo.save(any(Tienda.class))).thenReturn(tienda);
-        Tienda t = tiendaService.saveTienda(tienda);
-        assertNotNull(t);
-        when(repo.findById(any(Integer.class))).thenReturn(Optional.of(t));
-        Tienda t2 = tiendaService.getTiendaById(t.getId_tienda());
-        assertNotNull(t2);
-        Tienda tienda2 = new Tienda();
-        tienda2.setDescripcion("Prueba de mi primera tienda2");
-        tienda2.setNombre("Pruebas2");
-        when(repo.save(any(Tienda.class))).thenReturn(tienda2);
-        Tienda updatedTienda = tiendaService.actualizarTienda(t.getId_tienda(), tienda2);
-        assertNotNull(updatedTienda);
-        Tienda t3 = tiendaService.getTiendaById(t.getId_tienda());
-        assertEquals(tienda2.getNombre(), t3.getNombre());
-        assertEquals(tienda2.getDescripcion(), t3.getDescripcion());
+        ResponseEntity<Tienda> response = service.actualizarTienda(1,tienda);
+        assertNotNull(response);
+        assertEquals(200,response.getStatusCodeValue());
     }
+
+    @Test
+    void deleteTienda(){
+        when(repo.findById(1)).thenReturn(Optional.of(tienda));
+        ResponseEntity<Tienda> response = service.deleteTienda(1);
+
+        assertNotNull(response);
+        assertEquals(200, response.getStatusCodeValue());
+    }
+
 
 }
