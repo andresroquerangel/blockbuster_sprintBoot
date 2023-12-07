@@ -8,8 +8,10 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.http.ResponseEntity;
 
-import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -22,7 +24,7 @@ class TipoPagoServiceTest {
     private TipoPagoRepository repo;
 
     @InjectMocks
-    private TipoPagoService tipoPagoService;
+    private TipoPagoService service;
 
     private TipoPago tipoPago;
 
@@ -38,15 +40,39 @@ class TipoPagoServiceTest {
     }
 
     @Test
-    void getAll() {
-        when(repo.findAll()).thenReturn(Arrays.asList(tipoPago));
-        assertNotNull(tipoPagoService.getAll());
+    void getAll(){
+        when(repo.findAll()).thenReturn(Collections.singletonList(new TipoPago()));
+        ResponseEntity<List<TipoPago>> responseEntity = service.getAll();
+
+        assertEquals(200, responseEntity.getStatusCodeValue());
+        assertNotNull(responseEntity.getBody());
     }
 
+    @Test
+    void newTienda(){
+        when(repo.save(any(TipoPago.class))).thenReturn(tipoPago);
+        ResponseEntity<TipoPago> response = service.add(tipoPago);
+
+        assertNotNull(response.getBody());
+        assertEquals(200,response.getStatusCodeValue());
+    }
 
     @Test
-    void getOne() {
-        tipoPago.setId_tipo_pago(1);
-        Optional<TipoPago> optionalTipoPago = Optional.of(tipoPago);
+    void updateTienda(){
+        when(repo.findById(1)).thenReturn(Optional.of(tipoPago));
+        when(repo.save(any(TipoPago.class))).thenReturn(tipoPago);
+        ResponseEntity<TipoPago> response = service.actualizarTipoPago(1,tipoPago);
+
+        assertNotNull(response);
+        assertEquals(200,response.getStatusCodeValue());
+    }
+
+    @Test
+    void deleteTienda(){
+        when(repo.findById(1)).thenReturn(Optional.of(tipoPago));
+        ResponseEntity<TipoPago> response = service.eliminarTipoPago(1);
+
+        assertNotNull(response);
+        assertEquals(200, response.getStatusCodeValue());
     }
 }

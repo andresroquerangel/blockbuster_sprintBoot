@@ -11,6 +11,8 @@ import com.example.modeladov1.model.Pais;
 import com.example.modeladov1.repository.EstadoRepository;
 import com.example.modeladov1.service.PaisService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -22,41 +24,49 @@ public class EstadoService {
     PaisService paisService; // Inyecta PaisService
 
 
-    public List<Estado> getAll(){
+    public ResponseEntity<List<Estado>> getAll(){
         List<Estado> estados = new ArrayList<>();
         for(Estado estado : repo.findAll()){
             estados.add(estado);
         }
-        return estados;
+        return new ResponseEntity<>(estados, HttpStatus.OK);
     }
 
-    public Estado getOne(Integer id) {
-        return repo.findById(id).orElse(null);
+    public ResponseEntity<Estado> getOne(Integer id) {
+        Estado objeto = repo.findById(id).orElse(null);
+        if(objeto!=null){
+            return new ResponseEntity<>(objeto, HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
     }
 
-    public void add(Estado estado){
-        Pais pais = paisService.getPaisById(estado.getPais().getId_pais()); // Usa paisService para llamar a getPaisById
-        estado.setPais(pais); // Establece el Pais en el Estado
-        repo.save(estado);
+    public ResponseEntity<Estado> add(Estado estado){
+        Estado objeto = repo.save(estado);
+        return new ResponseEntity<>(objeto, HttpStatus.OK);
     }
 
 
 
-    public void eliminarEstado(int id) {
-        repo.deleteById(id);
+    public ResponseEntity<Estado> eliminarEstado(int id) {
+        if(repo.findById(id).isPresent()){
+            repo.deleteById(id);
+            return new ResponseEntity<>(HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
     }
 
-    public Estado actualizarEstado(Integer id_estado, Estado estadoActualizado) {
+    public ResponseEntity<Estado> actualizarEstado(Integer id_estado, Estado estadoActualizado) {
         Optional<Estado> estadoExistente = repo.findById(id_estado);
 
         if (estadoExistente.isPresent()) {
             Estado estado = estadoExistente.get();
             estado.setNombre(estadoActualizado.getNombre());
-            Pais pais = paisService.getPaisById(estadoActualizado.getPais().getId_pais()); // Usa paisService para llamar a getPaisById
-            estado.setPais(pais); // Establece el Pais en el Estado
-            return repo.save(estado);
+            Estado objeto = repo.save(estado);
+            return new ResponseEntity<>(objeto,HttpStatus.OK);
         } else {
-            throw new NoSuchElementException("Estado no encontrado");
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
     }
 

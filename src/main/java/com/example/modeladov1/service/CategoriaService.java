@@ -8,8 +8,11 @@ import java.util.Optional;
 
 import com.example.modeladov1.model.Categoria;
 import com.example.modeladov1.model.Pedido;
+import com.example.modeladov1.model.Tienda;
 import com.example.modeladov1.repository.CategoriaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -22,30 +25,47 @@ public class CategoriaService {
         this.repo = categoriaRepository;
     }
 
-    public List<Categoria> getCategorias() {
-        return repo.findAll();
+    public ResponseEntity<List<Categoria>> getCategorias() {
+        List<Categoria> lista= repo.findAll();
+        if (!lista.isEmpty()) {
+            return new ResponseEntity<>(lista, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
     }
 
-    public Categoria getCategoriaById(int id) {
-        return repo.findById(id).orElse(null);
+    public ResponseEntity<Categoria> getCategoriaById(int id) {
+        Categoria objeto = repo.findById(id).orElse(null);
+        if(objeto!=null){
+            return new ResponseEntity<>(objeto, HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
     }
 
-    public Categoria saveCategoria(Categoria categoria) {
-        return repo.save(categoria);
+    public ResponseEntity<Categoria> saveCategoria(Categoria categoria) {
+        Categoria objeto = repo.save(categoria);
+        return new ResponseEntity<>(objeto, HttpStatus.OK);
     }
 
-    public Categoria actualizarCategoria(Integer id_categoria, Categoria categoriaActualizada) {
+    public ResponseEntity<Categoria> actualizarCategoria(Integer id_categoria, Categoria categoriaActualizada) {
         Optional<Categoria> categoriaExistente = repo.findById(id_categoria);
         if (categoriaExistente.isPresent()) {
             Categoria categoria = categoriaExistente.get();
             categoria.setNombre(categoriaActualizada.getNombre());
-            return repo.save(categoria);
+            Categoria objeto = repo.save(categoria);
+            return new ResponseEntity<>(objeto, HttpStatus.OK);
         } else {
-            throw new NoSuchElementException("Categoria no encontrado");
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
     }
 
-    public void deleteCategoria(int id) {
-        repo.deleteById(id);
+    public ResponseEntity<Categoria> deleteCategoria(int id) {
+        if(repo.findById(id).isPresent()){
+            repo.deleteById(id);
+            return new ResponseEntity<>(HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
     }
 }

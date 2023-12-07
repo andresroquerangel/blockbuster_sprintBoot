@@ -10,6 +10,8 @@ import com.example.modeladov1.model.Pedido;
 import com.example.modeladov1.model.EstadoPedido;
 import com.example.modeladov1.repository.NotificacionesPedidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -26,53 +28,48 @@ public class NotificacionesPedidoService {
     @Autowired
     EstadoPedidoService estadoPedidoService;
 
-    public List<NotificacionesPedido> getAll(){
+    public ResponseEntity<List<NotificacionesPedido>> getAll(){
         List<NotificacionesPedido> notificacionesPedidos = new ArrayList<>();
         for(NotificacionesPedido notificacionesPedido : repo.findAll()){
             notificacionesPedidos.add(notificacionesPedido);
         }
-        return notificacionesPedidos;
+        return new ResponseEntity<>(notificacionesPedidos,HttpStatus.OK);
     }
 
-    public NotificacionesPedido getOne(Integer id) {
-        return repo.findById(id).orElse(null);
+    public ResponseEntity<NotificacionesPedido> getOne(Integer id) {
+        NotificacionesPedido objeto = repo.findById(id).orElse(null);
+        if(objeto!=null){
+            return new ResponseEntity<>(objeto, HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
     }
 
-    public void add(NotificacionesPedido notificacionesPedido){
-        Pedido pedido = pedidoService.getOne(notificacionesPedido.getPedido().getId_pedido()); // Usa pedidoService para llamar a getOne
-        Usuario usuario = usuarioService.getOne(notificacionesPedido.getUsuario().getId_usuario()); // Usa usuarioService para llamar a getOne
-        EstadoPedido estadoPedido = estadoPedidoService.getOne(notificacionesPedido.getEstadoPedido().getId_estado_pedido()); // Usa estadoPedidoService para llamar a getOne
-        notificacionesPedido.setPedido(pedido); // Establece el Pedido en la NotificacionesPedido
-        notificacionesPedido.setUsuario(usuario); // Establece el Usuario en la NotificacionesPedido
-        notificacionesPedido.setEstadoPedido(estadoPedido); // Establece el EstadoPedido en la NotificacionesPedido
-        repo.save(notificacionesPedido);
+    public ResponseEntity<NotificacionesPedido> add(NotificacionesPedido notificacionesPedido){
+        NotificacionesPedido objeto = repo.save(notificacionesPedido);
+        return new ResponseEntity<>(objeto, HttpStatus.OK);
     }
 
-    public void eliminarNotificacionesPedido(int id) {
-        repo.deleteById(id);
+    public ResponseEntity<NotificacionesPedido> eliminarNotificacionesPedido(int id) {
+        if(repo.findById(id).isPresent()){
+            repo.deleteById(id);
+            return new ResponseEntity<>(HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
     }
 
-    public NotificacionesPedido actualizarNotificacionesPedido(Integer id_notificacionesPedido, NotificacionesPedido notificacionesPedidoActualizado) {
+    public ResponseEntity<NotificacionesPedido> actualizarNotificacionesPedido(Integer id_notificacionesPedido, NotificacionesPedido notificacionesPedidoActualizado) {
         Optional<NotificacionesPedido> notificacionesPedidoExistente = repo.findById(id_notificacionesPedido);
 
         if (notificacionesPedidoExistente.isPresent()) {
             NotificacionesPedido notificacionesPedido = notificacionesPedidoExistente.get();
             notificacionesPedido.setMensaje(notificacionesPedidoActualizado.getMensaje());
             notificacionesPedido.setFecha_hora_creacion(notificacionesPedidoActualizado.getFecha_hora_creacion());
-
-            Pedido pedido = pedidoService.getOne(notificacionesPedidoActualizado.getPedido().getId_pedido());
-            notificacionesPedido.setPedido(pedido);
-
-            Usuario usuario = usuarioService.getOne(notificacionesPedidoActualizado.getUsuario().getId_usuario());
-            notificacionesPedido.setUsuario(usuario);
-
-            EstadoPedido estadoPedido = estadoPedidoService.getOne(notificacionesPedidoActualizado.getEstadoPedido().getId_estado_pedido());
-            notificacionesPedido.setEstadoPedido(estadoPedido);
-
-            repo.save(notificacionesPedido);
-            return notificacionesPedido;
+            NotificacionesPedido objeto = repo.save(notificacionesPedido);
+            return new ResponseEntity<>(objeto, HttpStatus.OK);
         } else {
-            throw new NoSuchElementException("NotificacionesPedido con id " + id_notificacionesPedido + " no encontrado");
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
     }
 }

@@ -21,17 +21,17 @@ public class TipoProductoController {
     }
 
     @GetMapping("/getAll")
-    public List<TipoProducto> getTiposProducto() {
+    public ResponseEntity<List<TipoProducto>> getTiposProducto() {
         return ser.getTiposProducto();
     }
 
     @GetMapping("/{id}")
-    public TipoProducto getTipoProductoById(@PathVariable int id) {
+    public ResponseEntity<TipoProducto> getTipoProductoById(@PathVariable int id) {
         return ser.getTipoProductoById(id);
     }
 
     @PostMapping("/add")
-    public TipoProducto saveTipoProducto(@RequestBody TipoProducto tipoProducto) {
+    public ResponseEntity<TipoProducto> saveTipoProducto(@RequestBody TipoProducto tipoProducto) {
         return ser.saveTipoProducto(tipoProducto);
     }
 
@@ -39,12 +39,11 @@ public class TipoProductoController {
     public ResponseEntity<TipoProducto> actualizarTipoProducto(
             @RequestBody TipoProducto body,
             @PathVariable Integer id) {
-        TipoProducto tipoProducto = ser.actualizarTipoProducto(id, body);
-        return ResponseEntity.ok(tipoProducto);
+        return ser.actualizarTipoProducto(id, body);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteTipoProducto(@PathVariable int id) {
-        ser.deleteTipoProducto(id);
+    public ResponseEntity<TipoProducto> deleteTipoProducto(@PathVariable int id) {
+        return ser.deleteTipoProducto(id);
     }
 }

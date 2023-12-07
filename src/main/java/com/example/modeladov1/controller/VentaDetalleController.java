@@ -17,23 +17,23 @@ public class VentaDetalleController {
     VentaDetalleService ser;
 
     @PostMapping("/add")
-    public void add(@RequestBody VentaDetalle body){
-        ser.add(body);
+    public ResponseEntity<VentaDetalle> add(@RequestBody VentaDetalle body){
+        return ser.add(body);
     }
 
     @GetMapping("/getAll")
-    public List<VentaDetalle> getAll(){
+    public ResponseEntity<List<VentaDetalle>> getAll(){
         return ser.getAll();
     }
 
     @GetMapping("/{id}")
-    public VentaDetalle getOne(@PathVariable int id){
+    public ResponseEntity<VentaDetalle> getOne(@PathVariable int id){
         return ser.getOne(id);
     }
 
     @DeleteMapping("/{id}")
-    public void eliminarVentaDetalle(@PathVariable int id) {
-        ser.eliminarVentaDetalle(id);
+    public ResponseEntity<VentaDetalle> eliminarVentaDetalle(@PathVariable int id) {
+        return ser.eliminarVentaDetalle(id);
     }
 
     @PutMapping("/{id}")
@@ -41,7 +41,6 @@ public class VentaDetalleController {
             @RequestBody VentaDetalle body,
             @PathVariable Integer id) {
         System.out.println(body);
-        VentaDetalle ventaDetalle = ser.actualizarVentaDetalle(id, body);
-        return ResponseEntity.ok(ventaDetalle);
+        return ser.actualizarVentaDetalle(id, body);
     }
 }

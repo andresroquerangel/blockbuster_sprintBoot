@@ -8,8 +8,11 @@ import java.util.NoSuchElementException;
 import com.example.modeladov1.model.Categoria;
 import com.example.modeladov1.model.Ciudad;
 import com.example.modeladov1.model.Municipio;
+import com.example.modeladov1.model.TipoProducto;
 import com.example.modeladov1.repository.CiudadRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -22,39 +25,47 @@ public class CiudadService {
 
 
 
-    public List<Ciudad> getAll(){
+    public ResponseEntity<List<Ciudad>> getAll(){
         List<Ciudad> ciudades = new ArrayList<>();
         for(Ciudad ciudad : repo.findAll()){
             ciudades.add(ciudad);
         }
-        return ciudades;
+        return new ResponseEntity<>(ciudades, HttpStatus.OK);
     }
 
-    public Ciudad getOne(Integer id) {
-        return repo.findById(id).orElse(null);
+    public ResponseEntity<Ciudad> getOne(Integer id) {
+        Ciudad objeto = repo.findById(id).orElse(null);
+        if(objeto!=null){
+            return new ResponseEntity<>(objeto, HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
     }
 
-    public void add(Ciudad ciudad){
-        Municipio municipio = municipioService.getOne(ciudad.getMunicipio().getId_municipio()); // Usa municipioService para llamar a getOne
-        ciudad.setMunicipio(municipio); // Establece el Municipio en la Ciudad
-        repo.save(ciudad);
+    public ResponseEntity<Ciudad> add(Ciudad ciudad){
+        Ciudad objeto = repo.save(ciudad);
+        return new ResponseEntity<>(objeto, HttpStatus.OK);
     }
 
-    public void eliminarCiudad(int id) {
-        repo.deleteById(id);
+    public ResponseEntity<Ciudad> eliminarCiudad(int id) {
+        if(repo.findById(id).isPresent()){
+            repo.deleteById(id);
+            return new ResponseEntity<>(HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
     }
 
-    public Ciudad actualizarCiudad(Integer id_ciudad, Ciudad ciudadActualizada) {
+    public ResponseEntity<Ciudad> actualizarCiudad(Integer id_ciudad, Ciudad ciudadActualizada) {
         Optional<Ciudad> ciudadExistente = repo.findById(id_ciudad);
 
         if (ciudadExistente.isPresent()) {
             Ciudad ciudad = ciudadExistente.get();
             ciudad.setNombre(ciudadActualizada.getNombre());
-            Municipio municipio = municipioService.getOne(ciudadActualizada.getMunicipio().getId_municipio()); // Usa municipioService para llamar a getOne
-            ciudad.setMunicipio(municipio); // Establece el Municipio en la Ciudad
-            return repo.save(ciudad);
+            Ciudad objeto = repo.save(ciudad);
+            return new ResponseEntity<>(objeto,HttpStatus.OK);
         } else {
-            throw new NoSuchElementException("Ciudad no encontrada");
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
     }
 }

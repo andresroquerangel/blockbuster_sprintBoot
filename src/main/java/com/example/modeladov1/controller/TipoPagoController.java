@@ -22,18 +22,18 @@ public class TipoPagoController {
     }
 
     @GetMapping("/getAll")
-    public List<TipoPago> getAll(){
+    public ResponseEntity<List<TipoPago>> getAll(){
         return ser.getAll();
     }
 
     @GetMapping("/{id}")
-    public TipoPago getOne(@PathVariable int id){
+    public ResponseEntity<TipoPago> getOne(@PathVariable int id){
         return ser.getOne(id);
     }
 
     @DeleteMapping("/{id}")
-    public void eliminarTipoPago(@PathVariable int id) {
-        ser.eliminarTipoPago(id);
+    public ResponseEntity<TipoPago> eliminarTipoPago(@PathVariable int id) {
+        return ser.eliminarTipoPago(id);
     }
 
     @PutMapping("/{id}")
@@ -41,7 +41,6 @@ public class TipoPagoController {
             @RequestBody TipoPago body,
             @PathVariable Integer id) {
         System.out.println(body);
-        TipoPago tipoPago = ser.actualizarTipoPago(id, body);
-        return ResponseEntity.ok(tipoPago);
+        return ser.actualizarTipoPago(id, body);
     }
 }

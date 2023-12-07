@@ -25,17 +25,17 @@ public class CategoriaController {
     }
 
     @GetMapping("/getAll")
-    public List<Categoria> getCategorias() {
+    public ResponseEntity<List<Categoria>> getCategorias() {
         return ser.getCategorias();
     }
 
     @GetMapping("/{id}")
-    public Categoria getCategoriaById(@PathVariable int id) {
+    public ResponseEntity<Categoria> getCategoriaById(@PathVariable int id) {
         return ser.getCategoriaById(id);
     }
 
     @PostMapping("/add")
-    public Categoria saveCategoria(@RequestBody Categoria categoria) {
+    public ResponseEntity<Categoria> saveCategoria(@RequestBody Categoria categoria) {
         return ser.saveCategoria(categoria);
     }
 
@@ -43,8 +43,7 @@ public class CategoriaController {
     public ResponseEntity<Categoria> actualizarCategoria(
             @RequestBody Categoria body,
             @PathVariable Integer id) {
-        Categoria categoria = ser.actualizarCategoria(id, body);
-        return ResponseEntity.ok(categoria);
+        return ser.actualizarCategoria(id, body);
     }
 
     @DeleteMapping("/{id}")

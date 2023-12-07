@@ -20,17 +20,17 @@ public class PaisController {
     }
 
     @GetMapping("/getAll")
-    public List<Pais> getPaises() {
+    public ResponseEntity<List<Pais>> getPaises() {
         return ser.getPaises();
     }
 
     @GetMapping("/{id}")
-    public Pais getPaisById(@PathVariable int id) {
+    public ResponseEntity<Pais> getPaisById(@PathVariable int id) {
         return ser.getPaisById(id);
     }
 
     @PostMapping("/add")
-    public Pais savePais(@RequestBody Pais pais) {
+    public ResponseEntity<Pais> savePais(@RequestBody Pais pais) {
         return ser.savePais(pais);
     }
 
@@ -38,12 +38,11 @@ public class PaisController {
     public ResponseEntity<Pais> actualizarCategoria(
             @RequestBody Pais body,
             @PathVariable Integer id) {
-        Pais pais = ser.actualizarPais(id, body);
-        return ResponseEntity.ok(pais);
+        return ser.actualizarPais(id, body);
     }
 
     @DeleteMapping("/{id}")
-    public void deletePais(@PathVariable int id) {
-        ser.deletePais(id);
+    public ResponseEntity<Pais> deletePais(@PathVariable int id) {
+        return ser.deletePais(id);
     }
 }

@@ -16,30 +16,29 @@ public class EstadoController {
     EstadoService ser;
 
     @PostMapping("/add")
-    public void add(@RequestBody Estado body){
-        ser.add(body);
+    public ResponseEntity<Estado> add(@RequestBody Estado body){
+        return ser.add(body);
     }
 
     @GetMapping("/getAll")
-    public List<Estado> getAll(){
+    public ResponseEntity<List<Estado>> getAll(){
         return ser.getAll();
     }
 
     @GetMapping("/{id}")
-    public Estado getOne(@PathVariable int id){
+    public ResponseEntity<Estado> getOne(@PathVariable int id){
         return ser.getOne(id);
     }
 
     @DeleteMapping("/{id}")
-    public void eliminarEstado(@PathVariable int id) {
-        ser.eliminarEstado(id);
+    public ResponseEntity<Estado> eliminarEstado(@PathVariable int id) {
+        return ser.eliminarEstado(id);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Estado> actualizarEstado(
             @RequestBody Estado body,
             @PathVariable Integer id) {
-        Estado estado = ser.actualizarEstado(id, body);
-        return ResponseEntity.ok(estado);
+        return ser.actualizarEstado(id, body);
     }
 }

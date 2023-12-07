@@ -36,7 +36,7 @@ public class Rol_UsuarioService {
     }
 
     public void add(Rol_Usuario rolUsuario){
-        Rol rol = rolService.getOne(rolUsuario.getRol().getId_rol()); // Usa rolService para llamar a getOne
+        Rol rol = rolService.getOne(rolUsuario.getRol().getId_rol()).getBody(); // Usa rolService para llamar a getOne
         Usuario usuario = usuarioService.getOne(rolUsuario.getUsuario().getId_usuario()); // Usa usuarioService para llamar a getOne
         rolUsuario.setRol(rol); // Establece el Rol en el Rol_Usuario
         rolUsuario.setUsuario(usuario); // Establece el Usuario en el Rol_Usuario
@@ -52,7 +52,7 @@ public class Rol_UsuarioService {
 
         if (rolUsuarioExistente.isPresent()) {
             Rol_Usuario rolUsuario = rolUsuarioExistente.get();
-            Rol rol = rolService.getOne(rolUsuarioActualizado.getRol().getId_rol()); // Usa rolService para llamar a getOne
+            Rol rol = rolService.getOne(rolUsuarioActualizado.getRol().getId_rol()).getBody(); // Usa rolService para llamar a getOne
             Usuario usuario = usuarioService.getOne(rolUsuarioActualizado.getUsuario().getId_usuario()); // Usa usuarioService para llamar a getOne
             rolUsuario.setRol(rol); // Establece el Rol en el Rol_Usuario
             rolUsuario.setUsuario(usuario); // Establece el Usuario en el Rol_Usuario

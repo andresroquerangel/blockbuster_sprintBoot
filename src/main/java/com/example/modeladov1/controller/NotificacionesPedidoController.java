@@ -15,30 +15,29 @@ public class NotificacionesPedidoController {
     NotificacionesPedidoService ser;
 
     @PostMapping("/add")
-    public void add(@RequestBody NotificacionesPedido body){
-        ser.add(body);
+    public ResponseEntity<NotificacionesPedido> add(@RequestBody NotificacionesPedido body){
+        return ser.add(body);
     }
 
     @GetMapping("/getAll")
-    public List<NotificacionesPedido> getAll(){
+    public ResponseEntity<List<NotificacionesPedido>> getAll(){
         return ser.getAll();
     }
 
     @GetMapping("/{id}")
-    public NotificacionesPedido getOne(@PathVariable int id){
+    public ResponseEntity<NotificacionesPedido> getOne(@PathVariable int id){
         return ser.getOne(id);
     }
 
     @DeleteMapping("/{id}")
-    public void eliminarNotificacionesPedido(@PathVariable int id) {
-        ser.eliminarNotificacionesPedido(id);
+    public ResponseEntity<NotificacionesPedido> eliminarNotificacionesPedido(@PathVariable int id) {
+        return ser.eliminarNotificacionesPedido(id);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<NotificacionesPedido> actualizarNotificacionesPedido(
             @RequestBody NotificacionesPedido body,
             @PathVariable Integer id) {
-        NotificacionesPedido notificacionesPedido = ser.actualizarNotificacionesPedido(id, body);
-        return ResponseEntity.ok(notificacionesPedido);
+        return ser.actualizarNotificacionesPedido(id, body);
     }
 }

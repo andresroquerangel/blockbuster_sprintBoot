@@ -16,31 +16,30 @@ public class RolController {
     RolService ser;
 
     @PostMapping("/add")
-    public void add(@RequestBody Rol body){
-        ser.add(body);
+    public ResponseEntity<Rol> add(@RequestBody Rol body){
+        return ser.add(body);
     }
 
     @GetMapping("/getAll")
-    public List<Rol> getAll(){
+    public ResponseEntity<List<Rol>> getAll(){
         return ser.getAll();
     }
 
     @GetMapping("/{id}")
-    public Rol getOne(@PathVariable int id){
+    public ResponseEntity<Rol> getOne(@PathVariable int id){
         return ser.getOne(id);
     }
 
     @DeleteMapping("/{id}")
-    public void eliminarRol(@PathVariable int id) {
-        ser.eliminarRol(id);
+    public ResponseEntity<Rol> eliminarRol(@PathVariable int id) {
+        return ser.eliminarRol(id);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Rol> actualizarRol(
             @RequestBody Rol body,
             @PathVariable Integer id) {
-        Rol rol = ser.actualizarRol(id, body);
-        return ResponseEntity.ok(rol);
+        return ser.actualizarRol(id, body);
     }
 
 }

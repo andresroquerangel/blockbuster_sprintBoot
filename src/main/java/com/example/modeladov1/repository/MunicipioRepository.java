@@ -6,5 +6,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface MunicipioRepository extends CrudRepository<Municipio, Integer>{
-    Municipio findById(int id);
 }

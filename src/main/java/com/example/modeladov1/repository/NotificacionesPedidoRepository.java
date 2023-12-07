@@ -6,5 +6,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface NotificacionesPedidoRepository extends CrudRepository<NotificacionesPedido, Integer>{
-    NotificacionesPedido findById(int id);
 }

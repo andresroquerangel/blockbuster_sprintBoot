@@ -16,30 +16,29 @@ public class MunicipioController {
     MunicipioService ser;
 
     @PostMapping("/add")
-    public void add(@RequestBody Municipio body){
-        ser.add(body);
+    public ResponseEntity<Municipio> add(@RequestBody Municipio body){
+        return ser.add(body);
     }
 
     @GetMapping("/getAll")
-    public List<Municipio> getAll(){
+    public ResponseEntity<List<Municipio>> getAll(){
         return ser.getAll();
     }
 
     @GetMapping("/{id}")
-    public Municipio getOne(@PathVariable int id){
+    public ResponseEntity<Municipio> getOne(@PathVariable int id){
         return ser.getOne(id);
     }
 
     @DeleteMapping("/{id}")
-    public void eliminarMunicipio(@PathVariable int id) {
-        ser.eliminarMunicipio(id);
+    public ResponseEntity<Municipio> eliminarMunicipio(@PathVariable int id) {
+        return ser.eliminarMunicipio(id);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Municipio> actualizarMunicipio(
             @RequestBody Municipio body,
             @PathVariable Integer id) {
-        Municipio municipio = ser.actualizarMunicipio(id, body);
-        return ResponseEntity.ok(municipio);
+        return ser.actualizarMunicipio(id, body);
     }
 }

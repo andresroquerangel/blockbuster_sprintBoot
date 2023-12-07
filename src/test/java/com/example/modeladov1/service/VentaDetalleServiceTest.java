@@ -1,5 +1,6 @@
 package com.example.modeladov1.service;
 
+import com.example.modeladov1.model.Tienda;
 import com.example.modeladov1.model.TipoProducto;
 import com.example.modeladov1.repository.VentaDetalleRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -9,10 +10,15 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import com.example.modeladov1.model.VentaDetalle;
 import com.example.modeladov1.model.Venta;
+import org.springframework.http.ResponseEntity;
+
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 class VentaDetalleServiceTest {
@@ -20,7 +26,7 @@ class VentaDetalleServiceTest {
     private VentaDetalleRepository repo;
 
     @InjectMocks
-    private VentaDetalleService ventaDetalleService;
+    private VentaDetalleService service;
 
     private VentaDetalle ventaDetalle;
 
@@ -35,14 +41,39 @@ class VentaDetalleServiceTest {
     }
 
     @Test
-    void getAll() {
-        when(repo.findAll()).thenReturn(Arrays.asList(ventaDetalle));
-        assertNotNull(ventaDetalleService.getAll());
+    void getAll(){
+        when(repo.findAll()).thenReturn(Collections.singletonList(new VentaDetalle()));
+        ResponseEntity<List<VentaDetalle>> responseEntity = service.getAll();
+
+        assertEquals(200, responseEntity.getStatusCodeValue());
+        assertNotNull(responseEntity.getBody());
     }
 
     @Test
-    void getOne() {
-        ventaDetalle.setId_venta_detalle(1);
-        Optional<VentaDetalle> optionalVentaDetalle = Optional.of(ventaDetalle);
+    void newVentaDetalle(){
+        when(repo.save(any(VentaDetalle.class))).thenReturn(ventaDetalle);
+        ResponseEntity<VentaDetalle> response = service.add(ventaDetalle);
+
+        assertNotNull(response.getBody());
+        assertEquals(200,response.getStatusCodeValue());
+    }
+
+    @Test
+    void updateVentaDetalle(){
+        when(repo.findById(1)).thenReturn(Optional.of(ventaDetalle));
+        when(repo.save(any(VentaDetalle.class))).thenReturn(ventaDetalle);
+        ResponseEntity<VentaDetalle> response = service.actualizarVentaDetalle(1,ventaDetalle);
+
+        assertNotNull(response);
+        assertEquals(200,response.getStatusCodeValue());
+    }
+
+    @Test
+    void deleteVentaDetalle(){
+        when(repo.findById(1)).thenReturn(Optional.of(ventaDetalle));
+        ResponseEntity<VentaDetalle> response = service.eliminarVentaDetalle(1);
+
+        assertNotNull(response);
+        assertEquals(200, response.getStatusCodeValue());
     }
 }

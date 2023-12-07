@@ -7,6 +7,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TipoPagoRepository extends CrudRepository<TipoPago, Integer>{
-    TipoPago findById(int id);
 
 }

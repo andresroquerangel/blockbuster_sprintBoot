@@ -10,6 +10,8 @@ import com.example.modeladov1.model.Municipio;
 import com.example.modeladov1.model.Estado;
 import com.example.modeladov1.repository.MunicipioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -20,40 +22,48 @@ public class MunicipioService {
     @Autowired
     EstadoService estadoService; // Inyecta estadoService
 
-    public List<Municipio> getAll(){
+    public ResponseEntity<List<Municipio>> getAll(){
         List<Municipio> municipios = new ArrayList<>();
         for(Municipio municipio : repo.findAll()){
             municipios.add(municipio);
         }
-        return municipios;
+        return new ResponseEntity<>(municipios, HttpStatus.OK);
     }
 
-    public Municipio getOne(Integer id) {
-        return repo.findById(id).orElse(null);
+    public ResponseEntity<Municipio> getOne(Integer id) {
+        Municipio objeto = repo.findById(id).orElse(null);
+        if(objeto!=null){
+            return new ResponseEntity<>(objeto, HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
     }
 
-    public void add(Municipio municipio){
-        Estado estado = estadoService.getOne(municipio.getEstado().getId_estado()); // Usa estadoService para llamar a getOne
-        municipio.setEstado(estado); // Establece el Estado en el Municipio
-        repo.save(municipio);
+    public ResponseEntity<Municipio> add(Municipio municipio){
+        Municipio objeto = repo.save(municipio);
+        return new ResponseEntity<>(objeto, HttpStatus.OK);
     }
 
 
-    public void eliminarMunicipio(int id) {
-        repo.deleteById(id);
+    public ResponseEntity<Municipio> eliminarMunicipio(int id) {
+        if(repo.findById(id).isPresent()){
+            repo.deleteById(id);
+            return new ResponseEntity<>(HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
     }
 
-    public Municipio actualizarMunicipio(Integer id_municipio, Municipio municipioActualizado) {
+    public ResponseEntity<Municipio> actualizarMunicipio(Integer id_municipio, Municipio municipioActualizado) {
         Optional<Municipio> municipioExistente = repo.findById(id_municipio);
 
         if (municipioExistente.isPresent()) {
             Municipio municipio = municipioExistente.get();
             municipio.setNombre(municipioActualizado.getNombre());
-            Estado estado = estadoService.getOne(municipioActualizado.getEstado().getId_estado()); // Usa estadoService para llamar a getOne
-            municipio.setEstado(estado); // Establece el Estado en el Municipio
-            return repo.save(municipio);
+            Municipio objeto = repo.save(municipio);
+            return new ResponseEntity<>(objeto,HttpStatus.OK);
         } else {
-            throw new NoSuchElementException("Municipio no encontrado");
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
     }
 }

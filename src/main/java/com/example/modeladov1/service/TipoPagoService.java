@@ -5,9 +5,12 @@ import java.util.NoSuchElementException;
 import java.util.Optional;
 
 import com.example.modeladov1.model.Categoria;
+import com.example.modeladov1.model.Tienda;
 import com.example.modeladov1.model.TipoPago;
 import com.example.modeladov1.repository.TipoPagoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -15,27 +18,38 @@ public class TipoPagoService {
     @Autowired
     TipoPagoRepository repo;
 
-    public List<TipoPago> getAll(){
+    public ResponseEntity<List<TipoPago>> getAll(){
         List<TipoPago> tiposPagos = new ArrayList<>();
         for(TipoPago tipoPago : repo.findAll()){
             tiposPagos.add(tipoPago);
         }
-        return tiposPagos;
+        return new ResponseEntity<>(tiposPagos, HttpStatus.OK);
     }
 
-    public TipoPago getOne(Integer id) {
-        return repo.findById(id).orElse(null);
+    public ResponseEntity<TipoPago> getOne(Integer id) {
+        TipoPago objeto = repo.findById(id).orElse(null);
+        if(objeto!=null){
+            return new ResponseEntity<>(objeto, HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
     }
 
-    public void add(TipoPago tipoPago){
-        repo.save(tipoPago);
+    public ResponseEntity<TipoPago> add(TipoPago tipoPago){
+        TipoPago objeto = repo.save(tipoPago);
+        return new ResponseEntity<>(objeto, HttpStatus.OK);
     }
 
-    public void eliminarTipoPago(int id) {
-        repo.deleteById(id);
+    public ResponseEntity<TipoPago> eliminarTipoPago(int id) {
+        if(repo.findById(id).isPresent()){
+            repo.deleteById(id);
+            return new ResponseEntity<>(HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
     }
 
-    public TipoPago actualizarTipoPago(Integer id_tipo_pago, TipoPago tipoPagoActualizada) {
+    public ResponseEntity<TipoPago> actualizarTipoPago(Integer id_tipo_pago, TipoPago tipoPagoActualizada) {
         Optional<TipoPago> tipoPagoExistente = repo.findById(id_tipo_pago);
 
         if (tipoPagoExistente.isPresent()) {
@@ -45,9 +59,10 @@ public class TipoPagoService {
             // Actualiza otros campos según sea necesario
 
             // Guarda la categoría actualizada en la base de datos
-            return repo.save(tipoPago);
+            TipoPago objeto = repo.save(tipoPago);
+            return new ResponseEntity<>(objeto,HttpStatus.OK);
         } else {
-            throw new NoSuchElementException("El tipo de pago no encontrado");
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
     }
 }

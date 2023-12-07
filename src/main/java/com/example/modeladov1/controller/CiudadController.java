@@ -16,30 +16,29 @@ public class CiudadController {
     CiudadService ser;
 
     @PostMapping("/add")
-    public void add(@RequestBody Ciudad body){
-        ser.add(body);
+    public ResponseEntity<Ciudad> add(@RequestBody Ciudad body){
+        return ser.add(body);
     }
 
     @GetMapping("/getAll")
-    public List<Ciudad> getAll(){
+    public ResponseEntity<List<Ciudad>> getAll(){
         return ser.getAll();
     }
 
     @GetMapping("/{id}")
-    public Ciudad getOne(@PathVariable int id){
+    public ResponseEntity<Ciudad> getOne(@PathVariable int id){
         return ser.getOne(id);
     }
 
     @DeleteMapping("/{id}")
-    public void eliminarCiudad(@PathVariable int id) {
-        ser.eliminarCiudad(id);
+    public ResponseEntity<Ciudad> eliminarCiudad(@PathVariable int id) {
+        return ser.eliminarCiudad(id);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Ciudad> actualizarCiudad(
             @RequestBody Ciudad body,
             @PathVariable Integer id) {
-        Ciudad ciudad = ser.actualizarCiudad(id, body);
-        return ResponseEntity.ok(ciudad);
+        return ser.actualizarCiudad(id, body);
     }
 }

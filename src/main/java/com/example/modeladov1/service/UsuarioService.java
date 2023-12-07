@@ -51,9 +51,6 @@ public class UsuarioService {
             usuario.setTelefono(usuarioActualizado.getTelefono());
             usuario.setToken(usuarioActualizado.getToken());
 
-            Ciudad ciudad = ciudadService.getOne(usuarioActualizado.getCiudad().getId_ciudad()); // Usa ciudadService para llamar a getOne
-            usuario.setCiudad(ciudad); // Establece la Ciudad en el Usuario
-
             // Guarda el usuario actualizado en la base de datos
             return repo.save(usuario);
         } else {

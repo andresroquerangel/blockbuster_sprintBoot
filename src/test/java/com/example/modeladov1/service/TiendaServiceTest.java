@@ -7,10 +7,8 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -52,8 +50,8 @@ class TiendaServiceTest {
     void newTienda(){
         when(repo.save(any(Tienda.class))).thenReturn(tienda);
         ResponseEntity<Tienda> response = service.saveTienda(tienda);
+
         assertNotNull(response.getBody());
-        //Verificacion del mensaje de creado
         assertEquals(200,response.getStatusCodeValue());
     }
 
@@ -62,6 +60,7 @@ class TiendaServiceTest {
         when(repo.findById(1)).thenReturn(Optional.of(tienda));
         when(repo.save(any(Tienda.class))).thenReturn(tienda);
         ResponseEntity<Tienda> response = service.actualizarTienda(1,tienda);
+
         assertNotNull(response);
         assertEquals(200,response.getStatusCodeValue());
     }
@@ -74,6 +73,4 @@ class TiendaServiceTest {
         assertNotNull(response);
         assertEquals(200, response.getStatusCodeValue());
     }
-
-
 }
