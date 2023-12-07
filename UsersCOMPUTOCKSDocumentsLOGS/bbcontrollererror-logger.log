@@ -1,0 +1,3 @@
+[ERROR] [http-nio-8082-exec-4] [06122023 19:16:43] [com.example.modeladov1.service.UsuarioService[41]] No se encontro el usuario con la id: 2000 
+[ERROR] [http-nio-8082-exec-4] [06122023 19:25:24] [com.example.modeladov1.security.UserDetailServiceImpl[23]] Unauthorized error admi2n@example.com no existe: org.springframework.security.core.userdetails.UsernameNotFoundException 
+[ERROR] [http-nio-8082-exec-4] [06122023 19:25:24] [com.example.modeladov1.security.UserDetailServiceImpl[23]] Unauthorized error admi2n@example.com no existe: org.springframework.security.core.userdetails.UsernameNotFoundException 

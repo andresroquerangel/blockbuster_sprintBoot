@@ -14,12 +14,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Service
 public class ProductoService {
+    private static final Logger logger = LoggerFactory.getLogger(UsuarioService.class);
     private final ProductoRepository repo;
-
-    private static final Logger logger = LoggerFactory.getLogger(JWTAuthenticationFilter.class);
 
     @Autowired
     TiendaService tiendaService;
@@ -68,5 +69,6 @@ public class ProductoService {
     }
     public void deleteProducto(int id) {
         repo.deleteById(id);
+        logger.info("Se borro el producto con la id: {}", id);
     }
 }

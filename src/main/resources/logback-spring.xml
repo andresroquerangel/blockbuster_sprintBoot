@@ -3,7 +3,7 @@
 
     <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
 
-    <property name="LOGS" value="C:\Users\andre\Documents\LOGS" />
+    <property name="LOGS" value="C:\Users\COMPUTOCKS\Documents\LOGS" />
     <appender name="Console"
               class="ch.qos.logback.core.ConsoleAppender">
         <layout class="ch.qos.logback.classic.PatternLayout">
@@ -49,12 +49,22 @@
         <appender-ref ref="Console" />
     </logger>
 
-    <logger name="com.example.modeladov1" level="info" additivity="true">
+    <logger name="com.example.modeladov1.security.JWTAuthenticationFilter" level="info" additivity="true">
         <appender-ref ref="RollingFile" />
     </logger>
 
-    <logger name="com.example.modeladov1.controller" level="error" additivity="true">
+    <logger name="com.example.modeladov1.service" level="info" additivity="true">
+        <appender-ref ref="RollingFile" />
+    </logger>
+
+
+
+    <logger name="com.example.modeladov1.security.UserDetailServiceImpl" level="error" additivity="true">
         <appender-ref ref="RollingFileControllerError" />
+    </logger>
+
+    <logger name="com.example.modeladov1" level="error" additivity="true">
+        <appender-ref ref="Console" />
     </logger>
 
 
